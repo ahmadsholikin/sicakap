@@ -1,0 +1,7 @@
+CRITICAL - 2021-04-14 14:06:16 --> Undefined property: stdClass::$link_foto
+#0 G:\xampp\htdocs\ekinerja\app\Controllers\Pages\Auth\Auth.php(55): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'G:\\xampp\\htdocs...', 55, Array)
+#1 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(936): App\Controllers\Pages\Auth\Auth->sso()
+#2 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Auth\Auth))
+#3 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\ekinerja\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}

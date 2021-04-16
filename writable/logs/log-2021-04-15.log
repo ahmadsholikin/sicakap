@@ -1,0 +1,76 @@
+CRITICAL - 2021-04-15 08:17:12 --> Undefined variable: link
+#0 G:\xampp\htdocs\ekinerja\app\Views\backend\entrian-data\periode-skp\page-add.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\xampp\\htdocs...', 26, Array)
+#1 G:\xampp\htdocs\ekinerja\system\View\View.php(220): include('G:\\xampp\\htdocs...')
+#2 G:\xampp\htdocs\ekinerja\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\xampp\htdocs\ekinerja\system\Common.php(1217): CodeIgniter\View\View->render('backend/entrian...', Array, true)
+#4 G:\xampp\htdocs\ekinerja\app\Controllers\Backend\EntrianData\PeriodeSKP.php(42): view('backend/entrian...')
+#5 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(936): App\Controllers\Backend\EntrianData\PeriodeSKP->add()
+#6 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\EntrianData\PeriodeSKP))
+#7 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\ekinerja\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-04-15 08:32:24 --> Argument 1 passed to CodeIgniter\Database\BaseBuilder::get() must be of the type int or null, array given, called in G:\xampp\htdocs\ekinerja\system\Model.php on line 836
+#0 G:\xampp\htdocs\ekinerja\system\Model.php(836): CodeIgniter\Database\BaseBuilder->get(Array)
+#1 G:\xampp\htdocs\ekinerja\app\Controllers\Backend\EntrianData\PeriodeSKP.php(112): CodeIgniter\Model->__call('get', Array)
+#2 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(936): App\Controllers\Backend\EntrianData\PeriodeSKP->update()
+#3 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\EntrianData\PeriodeSKP))
+#4 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\xampp\htdocs\ekinerja\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-04-15 08:33:13 --> Undefined variable: nip
+#0 G:\xampp\htdocs\ekinerja\app\Controllers\Backend\EntrianData\PeriodeSKP.php(125): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\xampp\\htdocs...', 125, Array)
+#1 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(936): App\Controllers\Backend\EntrianData\PeriodeSKP->update()
+#2 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\EntrianData\PeriodeSKP))
+#3 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\ekinerja\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-04-15 09:31:00 --> entry filter must have a matching alias defined.
+#0 G:\xampp\htdocs\ekinerja\system\Filters\Filters.php(354): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('entry')
+#1 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(394): CodeIgniter\Filters\Filters->enableFilter('entry', 'before')
+#2 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 G:\xampp\htdocs\ekinerja\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-04-15 13:26:30 --> Trying to get property 'status' of non-object
+#0 G:\xampp\htdocs\ekinerja\app\Controllers\Backend\EntrianData\SusunanSKP.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\xampp\\htdocs...', 65, Array)
+#1 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(936): App\Controllers\Backend\EntrianData\SusunanSKP->add()
+#2 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\EntrianData\SusunanSKP))
+#3 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\ekinerja\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-04-15 13:33:45 --> Undefined variable: curl
+#0 G:\xampp\htdocs\ekinerja\app\Helpers\Api_helper.php(97): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\xampp\\htdocs...', 97, Array)
+#1 G:\xampp\htdocs\ekinerja\app\Controllers\Backend\EntrianData\SusunanSKP.php(63): get_api('https://sipgan....')
+#2 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(936): App\Controllers\Backend\EntrianData\SusunanSKP->add()
+#3 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\EntrianData\SusunanSKP))
+#4 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\xampp\htdocs\ekinerja\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-04-15 13:56:09 --> Invalid argument supplied for foreach()
+#0 G:\xampp\htdocs\ekinerja\app\Views\backend\entrian-data\susunan-skp\page-add.php(125): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Invalid argumen...', 'G:\\xampp\\htdocs...', 125, Array)
+#1 G:\xampp\htdocs\ekinerja\system\View\View.php(220): include('G:\\xampp\\htdocs...')
+#2 G:\xampp\htdocs\ekinerja\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\xampp\htdocs\ekinerja\system\Common.php(1217): CodeIgniter\View\View->render('backend/entrian...', Array, true)
+#4 G:\xampp\htdocs\ekinerja\app\Controllers\Backend\EntrianData\SusunanSKP.php(76): view('backend/entrian...', Array)
+#5 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(936): App\Controllers\Backend\EntrianData\SusunanSKP->add()
+#6 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\EntrianData\SusunanSKP))
+#7 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\ekinerja\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-04-15 14:00:06 --> Undefined variable: default_periode_id
+#0 G:\xampp\htdocs\ekinerja\app\Controllers\Backend\EntrianData\SusunanSKP.php(48): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\xampp\\htdocs...', 48, Array)
+#1 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(936): App\Controllers\Backend\EntrianData\SusunanSKP->index()
+#2 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\EntrianData\SusunanSKP))
+#3 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\ekinerja\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-04-15 14:01:26 --> Undefined offset: 0
+#0 G:\xampp\htdocs\ekinerja\app\Views\backend\output\print_skp.php(62): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\xampp\\htdocs...', 62, Array)
+#1 G:\xampp\htdocs\ekinerja\system\View\View.php(220): include('G:\\xampp\\htdocs...')
+#2 G:\xampp\htdocs\ekinerja\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\xampp\htdocs\ekinerja\system\Common.php(1217): CodeIgniter\View\View->render('backend/output/...', Array, true)
+#4 G:\xampp\htdocs\ekinerja\app\Controllers\Output\Cetak.php(21): view('backend/output/...', Array)
+#5 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(936): App\Controllers\Output\Cetak->print_skp()
+#6 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Output\Cetak))
+#7 G:\xampp\htdocs\ekinerja\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\ekinerja\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}

@@ -1,0 +1,59 @@
+CRITICAL - 2021-01-06 04:50:46 --> form_login is not a validation rules group.
+#0 C:\xampp\htdocs\lorem\system\Validation\Validation.php(619): CodeIgniter\Validation\Exceptions\ValidationException::forGroupNotFound('form_login')
+#1 C:\xampp\htdocs\lorem\system\Validation\Validation.php(149): CodeIgniter\Validation\Validation->loadRuleGroup('form_login')
+#2 C:\xampp\htdocs\lorem\app\Controllers\Pages\Auth\Login.php(30): CodeIgniter\Validation\Validation->run(Array, 'form_login')
+#3 C:\xampp\htdocs\lorem\system\CodeIgniter.php(918): App\Controllers\Pages\Auth\Login->signin()
+#4 C:\xampp\htdocs\lorem\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Auth\Login))
+#5 C:\xampp\htdocs\lorem\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\lorem\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-01-06 04:52:02 --> Unable to connect to the database.
+#0 C:\xampp\htdocs\lorem\system\Database\MySQLi\Connection.php(396): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\lorem\system\Database\BaseConnection.php(1430): CodeIgniter\Database\MySQLi\Connection->_escapeString('nci.ahmad@gmail...')
+#2 C:\xampp\htdocs\lorem\system\Model.php(1814): CodeIgniter\Database\BaseConnection->escapeString('nci.ahmad@gmail...')
+#3 C:\xampp\htdocs\lorem\app\Models\Auth\LoginModel.php(31): CodeIgniter\Model->__call('escapeString', Array)
+#4 C:\xampp\htdocs\lorem\app\Controllers\Pages\Auth\Login.php(42): App\Models\Auth\LoginModel->cek('nci.ahmad@gmail...', 'admin')
+#5 C:\xampp\htdocs\lorem\system\CodeIgniter.php(918): App\Controllers\Pages\Auth\Login->signin()
+#6 C:\xampp\htdocs\lorem\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Auth\Login))
+#7 C:\xampp\htdocs\lorem\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lorem\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-01-06 05:03:05 --> Class 'App\Filters\Auth' not found
+#0 C:\xampp\htdocs\lorem\system\CodeIgniter.php(382): CodeIgniter\Filters\Filters->run('/backend/berand...', 'before')
+#1 C:\xampp\htdocs\lorem\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#2 C:\xampp\htdocs\lorem\index.php(45): CodeIgniter\CodeIgniter->run()
+#3 {main}
+CRITICAL - 2021-01-06 05:05:51 --> Call to undefined function App\Controllers\Pages\Auth\backend_url()
+#0 C:\xampp\htdocs\lorem\system\CodeIgniter.php(918): App\Controllers\Pages\Auth\Auth->signin()
+#1 C:\xampp\htdocs\lorem\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Pages\Auth\Auth))
+#2 C:\xampp\htdocs\lorem\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\lorem\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-01-06 05:07:41 --> Undefined variable: menu
+#0 C:\xampp\htdocs\lorem\app\Views\pages\theme-backend\partials\sidebar.php(9): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 9, Array)
+#1 C:\xampp\htdocs\lorem\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lorem\system\View\View.php(525): CodeIgniter\View\View->render('pages/theme-bac...', NULL, true)
+#3 C:\xampp\htdocs\lorem\app\Views\pages\theme-backend\layout.php(135): CodeIgniter\View\View->include('pages/theme-bac...')
+#4 C:\xampp\htdocs\lorem\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\lorem\system\View\View.php(257): CodeIgniter\View\View->render('pages/theme-bac...', Array, true)
+#6 C:\xampp\htdocs\lorem\system\Common.php(1119): CodeIgniter\View\View->render('pages/theme-bac...', Array, true)
+#7 C:\xampp\htdocs\lorem\app\Controllers\Backend\Dashboard\Main.php(12): view('pages/theme-bac...', Array)
+#8 C:\xampp\htdocs\lorem\system\CodeIgniter.php(918): App\Controllers\Backend\Dashboard\Main->index()
+#9 C:\xampp\htdocs\lorem\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Dashboard\Main))
+#10 C:\xampp\htdocs\lorem\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\lorem\index.php(45): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2021-01-06 05:07:52 --> Undefined variable: menu
+#0 C:\xampp\htdocs\lorem\app\Views\pages\theme-backend\partials\sidebar.php(9): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 9, Array)
+#1 C:\xampp\htdocs\lorem\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lorem\system\View\View.php(525): CodeIgniter\View\View->render('pages/theme-bac...', NULL, true)
+#3 C:\xampp\htdocs\lorem\app\Views\pages\theme-backend\layout.php(135): CodeIgniter\View\View->include('pages/theme-bac...')
+#4 C:\xampp\htdocs\lorem\system\View\View.php(246): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\lorem\system\View\View.php(257): CodeIgniter\View\View->render('pages/theme-bac...', Array, true)
+#6 C:\xampp\htdocs\lorem\system\Common.php(1119): CodeIgniter\View\View->render('pages/theme-bac...', Array, true)
+#7 C:\xampp\htdocs\lorem\app\Controllers\Backend\Dashboard\Main.php(12): view('pages/theme-bac...', Array)
+#8 C:\xampp\htdocs\lorem\system\CodeIgniter.php(918): App\Controllers\Backend\Dashboard\Main->index()
+#9 C:\xampp\htdocs\lorem\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Dashboard\Main))
+#10 C:\xampp\htdocs\lorem\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\lorem\index.php(45): CodeIgniter\CodeIgniter->run()
+#12 {main}
