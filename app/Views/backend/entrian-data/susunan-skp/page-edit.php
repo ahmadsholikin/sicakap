@@ -5,7 +5,20 @@
                 <div class="tx-14 tx-color-04">Form Entri Susunan SKP</div>
             </div>
             <div class="d-none d-lg-flex">
-                <a href="" data-toggle="modal" data-target=".bd-example-modal-lg" title="klik untuk melihat referensi" ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></a>
+                <span data-toggle="modal" data-target=".bd-example-modal-lg">
+                    <a title="klik untuk melihat referensi" data-toggle="tooltip" data-placement="top" >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+                            <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </a>
+                </span>
+                <span data-toggle="modal" data-target=".jbtn-example-modal-lg" class="ml-2">
+                    <a title="klik untuk melihat SKP pegawai lain berdasarkan jabatan yang sama" data-toggle="tooltip" data-placement="top">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-share-2 svg-14">
+                            <circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                        </svg>
+                    </a>
+                </span>
             </div>
         </div>
     </div>
@@ -73,8 +86,11 @@
                 </div>
                 <div class="col-sm-12 col-md-3 form-group">
                     <label>Satuan Waktu</label>
-                    <input class="form-control form-control-sm" name="target_satuan_waktu" type="text" required value="<?=$row[0]['target_satuan_waktu'];?>">
-                    <div class="help-block with-errors"></div>
+                    <select class="form-control form-control-sm" name="target_satuan_waktu"  required>
+                        <option <?=selected($row[0]['target_satuan_waktu'],"Bulan");?> value="Bulan">Bulan</option>
+                        <option <?=selected($row[0]['target_satuan_waktu'],"Hari");?> value="Hari">Hari</option>
+                        <option <?=selected($row[0]['target_satuan_waktu'],"Tahun");?> value="Tahun">Tahun</option>
+                    </select>
                 </div>
                 <div class="col-sm-12 col-md-3 form-group">
                     <label>Biaya</label>
@@ -97,7 +113,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <table class="table table-striped table-bordered table-hover" style="width: 100%" id="dt10">
+                <table class="table table-striped table-bordered table-hover dt10" style="width: 100%" >
                     <thead>
                         <tr>
                             <th>No.</th>
@@ -119,10 +135,51 @@
         </div>
     </div>
 </div>
+<div class="modal fade jbtn-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title">Daftar Referensi Entrian SKP dari Pegawai Lain</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped table-bordered table-hover dt10" style="width: 100%" >
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Uraian Kegiatan</th>
+                            <th>Angka Kredit</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php $no=1; foreach($list_uraian_jabatan as $luj):?>
+                        <tr>
+                            <td><?=$no++;?></td>
+                            <td class="kegiatan"><?=$luj['kegiatan'];?></td>
+                            <td class="angka_kredit"><?php if(($_SESSION['jenis_jabatan']=='11')||($_SESSION['jenis_jabatan']=='90')){ echo '-'; }else{ echo number_format((float)$luj['angka_kredit'], 3, '.', '');} ?></td>
+                            <td><a class="pilih_jab" data-dismiss="modal" style="cursor:pointer">Pilih</a></td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     $('.pilih').click(function() {
         var uraian = $(this).closest('td').prev('.kegiatan').text();
         $("#uraian_kegiatan").html(uraian);
+    });
 
+    $('.pilih_jab').click(function() {
+        var uraian = $(this).closest('tr').children('.kegiatan').text();
+        $("#uraian_kegiatan").html(uraian);
+
+        var angka_kredit = $(this).closest('tr').children('.angka_kredit').text();
+        $("#angka_kredit").val(angka_kredit);
     });
 </script>

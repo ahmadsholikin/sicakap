@@ -159,7 +159,7 @@
                         <tr>
                             <td><?=$no++;?></td>
                             <td class="kegiatan"><?=$luj['kegiatan'];?></td>
-                            <td class="angka_kredit"><?=$luj['angka_kredit'];?></td>
+                            <td class="angka_kredit"><?php if(($_SESSION['jenis_jabatan']=='11')||($_SESSION['jenis_jabatan']=='90')){ echo '-'; }else{ echo number_format((float)$luj['angka_kredit'], 3, '.', '');} ?></td>
                             <td><a class="pilih_jab" data-dismiss="modal" style="cursor:pointer">Pilih</a></td>
                         </tr>
                         <?php endforeach; ?>
