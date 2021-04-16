@@ -72,10 +72,13 @@ class SusunanSKP extends BackendController
             }
         }
 
-        $data['list_uraian']= $list_uraian;
-        $data['periode']    = $this->PeriodeSKPModel->get(['nip'=>$_SESSION['id_user']]);
-        $data['link']       = $this->db->table('link_skp')->get()->getResult();
-        $param['page']      = view($this->path_view . 'page-add',$data);
+        $list_uraian_jabatan = $this->SusunanSKPModel->skpJabatan();
+        
+        $data['list_uraian_jabatan'] = $list_uraian_jabatan;
+        $data['list_uraian']         = $list_uraian;
+        $data['periode']             = $this->PeriodeSKPModel->get(['nip' => $_SESSION['id_user']]);
+        $data['link']                = $this->db->table('link_skp')->get()->getResult();
+        $param['page']               = view($this->path_view . 'page-add',$data);
         return view($this->theme, $param);
     }
 

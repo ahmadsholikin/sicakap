@@ -47,4 +47,25 @@ class SusunanSKPModel extends Model
             return $this->where($id)->find();
         } 
     }
+
+    public function skpJabatan()
+    {
+        $kueri = "SELECT ps.kegiatan,ps.angka_kredit 
+                    FROM susunan_skp ps
+                    INNER JOIN pegawai peg
+                    ON ps.nip=peg.nip
+                    WHERE peg.jabatan='".$_SESSION['jabatan']."'
+                    GROUP BY LOWER(ps.kegiatan)";
+
+        $kueri = $this->db->query($kueri)->getResultArray();
+
+        if(empty($kueri))
+        {
+            return array();
+        }
+        else
+        {
+            return $kueri;
+        }
+    }
 }

@@ -11,7 +11,7 @@ $(document).ready(function () {
 		pageLength: 25,
 	});
 
-	$("#dt10").DataTable({
+	$(".dt10").DataTable({
 		pageLength: 10,
 	});
 
