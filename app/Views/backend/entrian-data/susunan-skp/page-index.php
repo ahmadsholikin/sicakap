@@ -37,6 +37,7 @@
                         <th style="width:5%">Target<br>Waktu</th>
                         <th style="width:5%">Satuan<br>Waktu</th>
                         <th style="width:8%">Biaya</th>
+						<th style="width:3%">Status<br>ACC</th>
                         <th style="width:3%">Aksi</th>
 					</tr>
 				</thead>
@@ -51,7 +52,8 @@
                         <td><?=$row['target_kualitas_mutu'];?></td>
                         <td><?=$row['target_waktu'];?></td>
                         <td><?=ucfirst($row['target_satuan_waktu']);?></td>
-                        <td><?=$row['target_biaya']==0?'-':$row['target_biaya'];?></td>
+                        <td><?=$row['target_biaya']==0?'-':rp($row['target_biaya']);?></td>
+						<td><?=status_skp($row['target_acc']);?></td>
 						<td>
 							<div class="btn-group" role="group">
 								<?=btn_edit('./susunan-skp/edit?id='.$row['skp_id']);?>

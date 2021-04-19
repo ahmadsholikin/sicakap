@@ -22,12 +22,12 @@ function enc($str, $kunci)
         $karakter = chr(ord($karakter) + ord($kuncikarakter));
         $hasil .= $karakter;
     }
-    return str_replace("%", "4iR", urlencode(base64_encode($hasil)));
+    return str_replace("%", "SiCAKAP.MAGELANGKOTA.GO.ID", urlencode(base64_encode($hasil)));
 }
 
 function dec($str, $kunci)
 {
-    $str = str_replace("4iR", "%", $str);
+    $str = str_replace("SiCAKAP.MAGELANGKOTA.GO.ID", "%", $str);
     $str = base64_decode(urldecode($str));
     $hasil = '';
     for ($i = 0; $i < strlen($str); $i++) {

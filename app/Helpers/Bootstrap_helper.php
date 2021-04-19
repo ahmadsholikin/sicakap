@@ -63,3 +63,20 @@ function yt($obj)
         return "-";
     }
 }
+
+
+function status_skp($obj)
+{
+    if ($obj == 'Ya')
+    {
+        return "<span class='badge badge-success badge-pill'>Ya</span>";
+    }
+    else if ($obj == 'Tidak')
+    {
+        return "<span class='badge badge-danger badge-pill'>Tidak</span>";
+    } 
+    else
+    {
+        return "<span class='badge badge-info badge-pill'>Belum</span>";
+    }
+}
