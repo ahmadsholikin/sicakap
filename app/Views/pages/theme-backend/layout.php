@@ -116,6 +116,8 @@
         <link href="<?= base_url('public/backend'); ?>/lib/quill/quill.snow.css" rel="stylesheet">
         <link href="<?= base_url('public/backend'); ?>/lib/quill/quill.bubble.css" rel="stylesheet">
         <script src="<?= base_url('public/backend'); ?>/lib/quill/quill.min.js"></script>
+
+        <script src="<?= base_url('public/backend'); ?>/lib/cleave.js/cleave.min.js"></script>
         <script src="<?= base_url(); ?>/public/assets/js/require.js"></script>
         
 

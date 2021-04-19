@@ -80,3 +80,19 @@ function status_skp($obj)
         return "<span class='badge badge-info badge-pill'>Belum</span>";
     }
 }
+
+function status_bl($obj)
+{
+    if ($obj == 'Ya')
+    {
+        return "bl-success";
+    }
+    else if ($obj == 'Tidak')
+    {
+        return "bl-danger";
+    } 
+    else
+    {
+        return "bl-info";
+    }
+}

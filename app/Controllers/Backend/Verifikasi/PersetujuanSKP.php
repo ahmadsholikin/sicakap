@@ -42,9 +42,28 @@ class PersetujuanSKP extends BackendController
         }
         
         $data['periode_terpilih']   = $default_periode_rentang;
-        $data['data']               = $this->SusunanSKPModel->get(['nip'=>$_SESSION['id_user'],'periode_id'=>$default_periode_id]);
+        $data['data']               = $this->PersetujuanSKPModel->daftarSKPLink();
 		$param['page']              = view($this->path_view . 'page-index',$data);
         return view($this->theme, $param);
 	}
 
+    public function accAll()
+    {
+        $list = $this->PersetujuanSKPModel->detailSKPLink();
+        
+        foreach ($list as $key)
+        {
+            $data['target_acc'] = "Ya";
+            $this->SusunanSKPModel->update($key['skp_id'],$data);
+        }
+
+        return redirect()->to(backend_url().'/persetujuan-skp');
+    }
+
+    public function setStatus()
+    {
+        $id = $this->request->getPost('id');
+        $data['target_acc'] = $this->request->getPost('status');
+        echo $this->SusunanSKPModel->update($id,$data);
+    }
 }

@@ -61,7 +61,7 @@
             <div class="form-row">
                 <div class="col-sm-12 col-md-4 form-group">
                     <label>Angka Kredit</label>
-                    <input class="form-control form-control-sm" name="angka_kredit" id="angka_kredit" type="text" placeholder="Isikan 0 jika AK tidak ada" required>
+                    <input class="form-control form-control-sm" name="angka_kredit" id="angka_kredit" type="text" placeholder="Isikan 0 jika AK tidak ada">
                     <div class="help-block with-errors"></div>
                 </div>
                 <div class="col-sm-12 col-md-4  form-group">
@@ -97,7 +97,7 @@
                 </div>
                 <div class="col-sm-12 col-md-3 form-group">
                     <label>Biaya</label>
-                    <input class="form-control form-control-sm" name="target_biaya" type="text" required value="0">
+                    <input class="form-control form-control-sm thousand" name="target_biaya" type="text">
                     <div class="help-block with-errors"></div>
                 </div>
             </div>

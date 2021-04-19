@@ -1,12 +1,3 @@
-<style>
-.bd-highlight
-{
-	background-color:#71706350;
-	padding: 2px 6px;
-	border-radius: 2px;
-	cursor: pointer;
-}
-</style>
 <div class="card">
 	<div class="card-header bg-transparent">
 		<div class="mail-navbar">

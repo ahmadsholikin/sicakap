@@ -190,6 +190,8 @@ $routes->group('backend', function ($routes) {
         $root_groups = "Backend\Verifikasi\PersetujuanSKP";
         //pages
         $routes->add('/', $root_groups . '::index', ['filter' => 'auth']);
+        $routes->add('acc-all', $root_groups . '::accAll', ['filter' => 'auth']);
+        $routes->post('set-status', $root_groups . '::setStatus', ['filter' => 'auth']);
     });
 
 });

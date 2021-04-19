@@ -26,7 +26,7 @@ class PersetujuanSKPModel extends Model
                     ON sskp.nip = link.nip
                     INNER JOIN periode_skp prd
                     ON prd.periode_id = sskp.periode_id
-                    WHERE link.link_atasan_id = '".$_SESSION['id_user']."'
+                    WHERE link.link_atasan_id = '".$_SESSION['id_user']."' AND prd.is_default='Ya'
                     GROUP BY prd.periode_awal, prd.periode_akhir
                     ORDER BY prd.periode_akhir DESC;";
 
@@ -44,25 +44,64 @@ class PersetujuanSKPModel extends Model
 
     public function daftarSKPLink()
     {
-        $kueri = "SELECT sskp.periode_id, prd.periode_awal, prd.periode_akhir
-                    FROM susunan_skp sskp
-                    INNER JOIN link_hirarki link
-                    ON sskp.nip = link.nip
-                    INNER JOIN periode_skp prd
-                    ON prd.periode_id = sskp.periode_id
-                    WHERE link.link_atasan_id = '".$_SESSION['id_user']."'
-                    GROUP BY sskp.periode_id
-                    ORDER BY prd.periode_akhir DESC;";
-
+        $kueri = "SELECT periode.nip,periode.nama FROM susunan_skp skp
+                    INNER JOIN periode_skp periode
+                    ON skp.periode_id = periode.periode_id
+                    WHERE periode.is_default='Ya' AND skp.nip IN
+                    (SELECT link.nip
+                    FROM link_hirarki link
+                    WHERE link.link_atasan_id='".$_SESSION['id_user']."' AND deleted_at IS NULL)
+                    GROUP BY periode.nip";
         $kueri = $this->db->query($kueri)->getResultArray();
-
         if(empty($kueri))
         {
-        return array();
+            return array();
         }
         else
         {
-        return $kueri;
+            $data = array();
+            foreach ($kueri as $key)
+            {
+                $kueri_sub = "SELECT skp.* FROM susunan_skp skp
+                                INNER JOIN periode_skp periode
+                                ON skp.periode_id = periode.periode_id
+                                WHERE periode.nip='".$key['nip']."' AND periode.is_default='Ya' AND skp.nip IN
+                                (SELECT link.nip
+                                FROM link_hirarki link
+                                WHERE link.link_atasan_id='".$_SESSION['id_user']."' 
+                                AND deleted_at IS NULL) ;";
+
+                $kueri_sub  = $this->db->query($kueri_sub)->getResultArray();
+                $dump = array(
+                    "nip"   => $key['nip'],
+                    "nama"  => $key['nama'],
+                    "skp"   => $kueri_sub
+                );
+                
+                array_push($data,$dump);
+            }
+            return $data;
+        }
+    }
+
+    public function detailSKPLink()
+    {
+        $kueri = "SELECT skp.* FROM susunan_skp skp
+                    INNER JOIN periode_skp periode
+                    ON skp.periode_id = periode.periode_id
+                    WHERE periode.is_default='Ya' AND skp.nip IN
+                    (SELECT link.nip
+                    FROM link_hirarki link
+                    WHERE link.link_atasan_id='".$_SESSION['id_user']."' 
+                    AND deleted_at IS NULL) ";
+        $kueri = $this->db->query($kueri)->getResultArray();
+        if(empty($kueri))
+        {
+            return array();
+        }
+        else
+        {
+            return $kueri;
         }
     }
 }

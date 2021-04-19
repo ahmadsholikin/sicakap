@@ -58,6 +58,13 @@ $(document).ready(function () {
 		donetext: 'Pilih'
 	});
 
+	var cleave = new Cleave('.thousand', {
+		numeral: true,
+		numeralThousandsGroupStyle: 'thousand',
+		numeralDecimalMark: ',', 
+		delimiter: '.'
+	});
+
 	$('.summernote').summernote({
         placeholder: '',
         tabsize: 2,

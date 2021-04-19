@@ -71,3 +71,60 @@ CRITICAL - 2021-04-19 09:35:06 --> Trying to get property 'skp_id' of non-object
 #7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
 #9 {main}
+CRITICAL - 2021-04-19 10:54:26 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'periode.is_default='Ya' AND skp.nip IN
+                (SELECT link.nip
+   ...' at line 4
+#0 G:\xampp\htdocs\sicakap\system\Database\MySQLi\Connection.php(314): mysqli->query('SELECT skp.* FR...')
+#1 G:\xampp\htdocs\sicakap\system\Database\BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT skp.* FR...')
+#2 G:\xampp\htdocs\sicakap\system\Database\BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT skp.* FR...')
+#3 G:\xampp\htdocs\sicakap\app\Models\Verifikasi\PersetujuanSKPModel.php(73): CodeIgniter\Database\BaseConnection->query('SELECT skp.* FR...')
+#4 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Verifikasi\PersetujuanSKP.php(45): App\Models\Verifikasi\PersetujuanSKPModel->daftarSKPLink()
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Verifikasi\PersetujuanSKP->index()
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Verifikasi\PersetujuanSKP))
+#7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-04-19 10:55:24 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'periode.is_default='Ya' AND skp.nip IN
+                                (SELE...' at line 4
+#0 G:\xampp\htdocs\sicakap\system\Database\MySQLi\Connection.php(314): mysqli->query('SELECT skp.* FR...')
+#1 G:\xampp\htdocs\sicakap\system\Database\BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT skp.* FR...')
+#2 G:\xampp\htdocs\sicakap\system\Database\BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT skp.* FR...')
+#3 G:\xampp\htdocs\sicakap\app\Models\Verifikasi\PersetujuanSKPModel.php(74): CodeIgniter\Database\BaseConnection->query('SELECT skp.* FR...')
+#4 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Verifikasi\PersetujuanSKP.php(45): App\Models\Verifikasi\PersetujuanSKPModel->daftarSKPLink()
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Verifikasi\PersetujuanSKP->index()
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Verifikasi\PersetujuanSKP))
+#7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-04-19 10:58:17 --> Undefined index: skp
+#0 G:\xampp\htdocs\sicakap\app\Views\backend\verifikasi\persetujuan-skp\page-index.php(44): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'G:\\xampp\\htdocs...', 44, Array)
+#1 G:\xampp\htdocs\sicakap\system\View\View.php(220): include('G:\\xampp\\htdocs...')
+#2 G:\xampp\htdocs\sicakap\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\xampp\htdocs\sicakap\system\Common.php(1217): CodeIgniter\View\View->render('backend/verifik...', Array, true)
+#4 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Verifikasi\PersetujuanSKP.php(46): view('backend/verifik...', Array)
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Verifikasi\PersetujuanSKP->index()
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Verifikasi\PersetujuanSKP))
+#7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-04-19 13:27:51 --> Undefined index: skp_id
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Verifikasi\PersetujuanSKP.php(57): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'G:\\xampp\\htdocs...', 57, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Verifikasi\PersetujuanSKP->accAll()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Verifikasi\PersetujuanSKP))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-04-19 13:39:23 --> Undefined variable: key
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Verifikasi\PersetujuanSKP.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\xampp\\htdocs...', 67, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Verifikasi\PersetujuanSKP->setStatus()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Verifikasi\PersetujuanSKP))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-04-19 13:40:07 --> Undefined variable: key
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Verifikasi\PersetujuanSKP.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\xampp\\htdocs...', 67, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Verifikasi\PersetujuanSKP->setStatus()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Verifikasi\PersetujuanSKP))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}

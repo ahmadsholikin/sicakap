@@ -97,7 +97,7 @@
                 </div>
                 <div class="col-sm-12 col-md-3 form-group">
                     <label>Biaya</label>
-                    <input class="form-control form-control-sm" name="target_biaya" type="text" required  value="<?=$row[0]['target_biaya'];?>">
+                    <input class="form-control form-control-sm thousand" name="target_biaya" type="text" required  value="<?=$row[0]['target_biaya'];?>">
                     <div class="help-block with-errors"></div>
                 </div>
             </div>

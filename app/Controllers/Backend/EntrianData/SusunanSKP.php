@@ -106,7 +106,7 @@ class SusunanSKP extends BackendController
         $data['target_kualitas_mutu'] = entitiestag($this->request->getPost('target_kualitas_mutu'));
         $data['target_waktu']  	      = entitiestag($this->request->getPost('target_waktu'));
         $data['target_satuan_waktu']  = entitiestag($this->request->getPost('target_satuan_waktu'));
-        $data['target_biaya']  	      = entitiestag($this->request->getPost('target_biaya'));
+        $data['target_biaya']  	      = entitiestag(str_replace(".","",$this->request->getPost('target_biaya')));
 
 		$this->SusunanSKPModel->insert($data);
 		return redirect()->to(backend_url().'/susunan-skp');
@@ -176,7 +176,7 @@ class SusunanSKP extends BackendController
         $data['target_kualitas_mutu'] = entitiestag($this->request->getPost('target_kualitas_mutu'));
         $data['target_waktu']  	      = entitiestag($this->request->getPost('target_waktu'));
         $data['target_satuan_waktu']  = entitiestag($this->request->getPost('target_satuan_waktu'));
-        $data['target_biaya']  	      = entitiestag($this->request->getPost('target_biaya'));
+        $data['target_biaya']  	      = entitiestag(str_replace(".","",$this->request->getPost('target_biaya')));
 
 		$this->SusunanSKPModel->update($id,$data);
 		return redirect()->to(backend_url().'/susunan-skp');
