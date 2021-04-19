@@ -11,8 +11,8 @@ class SusunanSKPModel extends Model
     protected $allowedFields      = [
                                         'nip',
                                         'periode_id',
-                                        'link_atasan_id',
-                                        'link_atasan_nama',
+                                        'link_skp_id',
+                                        'link_skp_kegiatan',
                                         'kegiatan',
                                         'angka_kredit',
                                         'target_kuantitas',
@@ -57,6 +57,28 @@ class SusunanSKPModel extends Model
                     WHERE peg.jabatan='".$_SESSION['jabatan']."'
                     GROUP BY LOWER(ps.kegiatan)";
 
+        $kueri = $this->db->query($kueri)->getResultArray();
+
+        if(empty($kueri))
+        {
+            return array();
+        }
+        else
+        {
+            return $kueri;
+        }
+    }
+
+    public function skpLink()
+    {
+        $kueri = "SELECT skp.* FROM susunan_skp skp
+                    INNER JOIN periode_skp periode
+                    ON skp.periode_id = periode.periode_id
+                    WHERE periode.is_default='Ya' AND skp.nip IN
+                    (SELECT link.link_atasan_id
+                    FROM link_hirarki link
+                    WHERE link.nip='".$_SESSION['id_user']."' AND deleted_at IS NULL)";
+        
         $kueri = $this->db->query($kueri)->getResultArray();
 
         if(empty($kueri))

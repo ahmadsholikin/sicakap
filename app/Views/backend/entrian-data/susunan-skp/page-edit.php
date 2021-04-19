@@ -43,8 +43,11 @@
             <div class="form-row">
                 <div class="col form-group">
                     <label>Link ke SKP Atasan</label>
-                    <select class="form-control form-control-sm" name="link_atasan_id" type="text">
-                        <option value="-">Tidak dihubungkan</option>
+                    <select class="form-control form-control-sm" name="link_skp_id" type="text">
+                        <option <?=selected('-',$row[0]['link_skp_id']);?> value="-">Tidak dihubungkan</option>
+                        <?php foreach($link as $row_link):?>
+                            <option <?=selected($row_link['skp_id'],$row[0]['link_skp_id']);?> value="<?=$row_link['skp_id'];?>"><?=$row_link['kegiatan'];?></option>
+                        <?php endforeach; ?>
                     </select>
                     <div class="help-block with-errors"></div>
                 </div>

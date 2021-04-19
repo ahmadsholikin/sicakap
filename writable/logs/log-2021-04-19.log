@@ -1,0 +1,73 @@
+CRITICAL - 2021-04-19 08:14:33 --> Undefined variable: periode_terpilih
+#0 G:\xampp\htdocs\sicakap\app\Views\backend\verifikasi\persetujuan-skp\page-index.php(10): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\xampp\\htdocs...', 10, Array)
+#1 G:\xampp\htdocs\sicakap\system\View\View.php(220): include('G:\\xampp\\htdocs...')
+#2 G:\xampp\htdocs\sicakap\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\xampp\htdocs\sicakap\system\Common.php(1217): CodeIgniter\View\View->render('backend/verifik...', Array, true)
+#4 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Verifikasi\PersetujuanSKP.php(30): view('backend/verifik...', Array)
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Verifikasi\PersetujuanSKP->index()
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Verifikasi\PersetujuanSKP))
+#7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-04-19 08:15:56 --> Undefined index: periode_awal
+#0 G:\xampp\htdocs\sicakap\app\Views\backend\verifikasi\persetujuan-skp\page-index.php(43): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'G:\\xampp\\htdocs...', 43, Array)
+#1 G:\xampp\htdocs\sicakap\system\View\View.php(220): include('G:\\xampp\\htdocs...')
+#2 G:\xampp\htdocs\sicakap\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\xampp\htdocs\sicakap\system\Common.php(1217): CodeIgniter\View\View->render('backend/verifik...', Array, true)
+#4 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Verifikasi\PersetujuanSKP.php(50): view('backend/verifik...', Array)
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Verifikasi\PersetujuanSKP->index()
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Verifikasi\PersetujuanSKP))
+#7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-04-19 08:52:17 --> Undefined index: user_id
+#0 G:\xampp\htdocs\sicakap\app\Models\Verifikasi\PersetujuanSKPModel.php(29): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'G:\\xampp\\htdocs...', 29, Array)
+#1 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Verifikasi\PersetujuanSKP.php(31): App\Models\Verifikasi\PersetujuanSKPModel->periodeSKPLink()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Verifikasi\PersetujuanSKP->index()
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Verifikasi\PersetujuanSKP))
+#4 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-04-19 09:23:37 --> Cannot use object of type stdClass as array
+#0 G:\xampp\htdocs\sicakap\system\View\View.php(220): include()
+#1 G:\xampp\htdocs\sicakap\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 G:\xampp\htdocs\sicakap\system\Common.php(1217): CodeIgniter\View\View->render('backend/entrian...', Array, true)
+#3 G:\xampp\htdocs\sicakap\app\Controllers\Backend\EntrianData\SusunanSKP.php(81): view('backend/entrian...', Array)
+#4 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\EntrianData\SusunanSKP->add()
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\EntrianData\SusunanSKP))
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2021-04-19 09:29:39 --> View 'ekinerja.link_skp' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them
+#0 G:\xampp\htdocs\sicakap\system\Database\MySQLi\Connection.php(314): mysqli->query('SELECT *\nFROM `...')
+#1 G:\xampp\htdocs\sicakap\system\Database\BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 G:\xampp\htdocs\sicakap\system\Database\BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 G:\xampp\htdocs\sicakap\system\Database\BaseBuilder.php(1866): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 G:\xampp\htdocs\sicakap\app\Controllers\Backend\EntrianData\SusunanSKP.php(80): CodeIgniter\Database\BaseBuilder->get()
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\EntrianData\SusunanSKP->add()
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\EntrianData\SusunanSKP))
+#7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-04-19 09:31:42 --> Trying to get property 'skp_id' of non-object
+#0 G:\xampp\htdocs\sicakap\app\Views\backend\entrian-data\susunan-skp\page-add.php(48): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\xampp\\htdocs...', 48, Array)
+#1 G:\xampp\htdocs\sicakap\system\View\View.php(220): include('G:\\xampp\\htdocs...')
+#2 G:\xampp\htdocs\sicakap\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\xampp\htdocs\sicakap\system\Common.php(1217): CodeIgniter\View\View->render('backend/entrian...', Array, true)
+#4 G:\xampp\htdocs\sicakap\app\Controllers\Backend\EntrianData\SusunanSKP.php(81): view('backend/entrian...', Array)
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\EntrianData\SusunanSKP->add()
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\EntrianData\SusunanSKP))
+#7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-04-19 09:35:06 --> Trying to get property 'skp_id' of non-object
+#0 G:\xampp\htdocs\sicakap\app\Views\backend\entrian-data\susunan-skp\page-edit.php(49): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to get p...', 'G:\\xampp\\htdocs...', 49, Array)
+#1 G:\xampp\htdocs\sicakap\system\View\View.php(220): include('G:\\xampp\\htdocs...')
+#2 G:\xampp\htdocs\sicakap\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\xampp\htdocs\sicakap\system\Common.php(1217): CodeIgniter\View\View->render('backend/entrian...', Array, true)
+#4 G:\xampp\htdocs\sicakap\app\Controllers\Backend\EntrianData\SusunanSKP.php(150): view('backend/entrian...', Array)
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\EntrianData\SusunanSKP->edit()
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\EntrianData\SusunanSKP))
+#7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}

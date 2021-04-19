@@ -1,20 +1,8 @@
-<style>
-.bd-highlight
-{
-	background-color:#71706350;
-	padding: 2px 6px;
-	border-radius: 2px;
-	cursor: pointer;
-}
-</style>
 <div class="card">
 	<div class="card-header bg-transparent">
 		<div class="mail-navbar">
 			<div class="d-flex align-items-center">
-				<div class="custom-control custom-checkbox pl-0 d-none d-lg-block">
-					<a class="flex-fill" href="<?=backend_url();?>/susunan-skp/add" role="button" data-toggle="tooltip" title="klik untuk menambah data baru" ><i class="mdi mdi-plus-circle"></i> Data Baru</a>
-				</div>
-				<div class="tx-14 tx-color-04 mg-lg-l-15">
+				<div class="tx-14 tx-color-04">
 					<span>Tampilkan Periode : </span>
 					<a href="" class="link-01 dropdown-toggle" type="button" id="dropdown-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?=$periode_terpilih;?></a>
 					<div class="dropdown-menu">
@@ -27,16 +15,14 @@
 			</div>
 			<div class="d-none d-lg-flex">
 				<a href="" data-toggle="tooltip" title="klik untuk memuat ulang data"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rotate-cw"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg></a>
-				<a data-toggle="modal" data-target="#cetakModal" data-toggle="tooltip" title="klik untuk mencetak data SKP"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></a>
-				<a href="" data-toggle="tooltip" title="klik untuk mengunduh data SKP" ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
 			</div>
 		</div>
 	</div>
 	<div class="card-body">
 		<div class="table-responsive">
-			<table class="table table-striped table-hover table-bordered table-sm" style="width: 100%" id="datatable">
+			<table class="table table-hover table-bordered table-sm" style="width: 100%">
 				<thead>
-					<tr>
+					<tr class="bg-light">
 						<th style="width:3%">No.</th>
 						<th>Kegiatan Tugas Jabatan</th>
 						<th style="width:5%">AK</th>
@@ -51,12 +37,15 @@
 					</tr>
 				</thead>
 				<tbody>
+                    <tr>
+                        <td colspan="11"><a data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><span class="mdi mdi-chevron-down"></span><b>AHMAD - 199202062020121004</b></a></td>
+                    </tr>
 					<?php $no=1; foreach ($data as $row): ?>
-					<tr>
+					<tr class="collapse multi-collapse" id="multiCollapseExample1">
 						<td><?=$no++;?></td>
-						<td><?=ucfirst($row['kegiatan']);?> <?php if($row['link_skp_kegiatan']<>'-'){ ?> <span class="mdi mdi-link-variant bd-highlight" data-toggle="tooltip" data-placement="bottom" title="Link : <?=$row['link_skp_kegiatan'];?>"> Link</span><?php } ?></td>
+						<td><?=ucfirst($row['kegiatan']);?></td>
                         <td><?php if(($_SESSION['jenis_jabatan']=='11')||($_SESSION['jenis_jabatan']=='90')){ echo '-'; }else{ echo number_format((float)$row['angka_kredit'], 3, '.', '');} ?></td>
-                        <td><?=rp($row['target_kuantitas']);?></td>
+                        <td><?=$row['target_kuantitas'];?></td>
                         <td><?=ucfirst($row['target_output']);?></td>
                         <td><?=$row['target_kualitas_mutu'];?></td>
                         <td><?=$row['target_waktu'];?></td>
@@ -65,8 +54,29 @@
 						<td><?=status_skp($row['target_acc']);?></td>
 						<td>
 							<div class="btn-group" role="group">
-								<?=btn_edit('./susunan-skp/edit?id='.$row['skp_id']);?>
-								<?=btn_delete('./susunan-skp/delete?id='.$row['skp_id']);?>
+								
+							</div>
+						</td>
+					</tr>
+                    <?php endforeach ?>
+                    <tr>
+                        <td colspan="11"><a data-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample2"><span class="mdi mdi-chevron-down"></span><b>SHOLIKIN - 199202062020121004</b></a></td>
+                    </tr>
+					<?php $no=1; foreach ($data as $row): ?>
+					<tr class="collapse multi-collapse" id="multiCollapseExample2">
+						<td><?=$no++;?></td>
+						<td><?=ucfirst($row['kegiatan']);?></td>
+                        <td><?php if(($_SESSION['jenis_jabatan']=='11')||($_SESSION['jenis_jabatan']=='90')){ echo '-'; }else{ echo number_format((float)$row['angka_kredit'], 3, '.', '');} ?></td>
+                        <td><?=$row['target_kuantitas'];?></td>
+                        <td><?=ucfirst($row['target_output']);?></td>
+                        <td><?=$row['target_kualitas_mutu'];?></td>
+                        <td><?=$row['target_waktu'];?></td>
+                        <td><?=ucfirst($row['target_satuan_waktu']);?></td>
+                        <td><?=$row['target_biaya']==0?'-':rp($row['target_biaya']);?></td>
+						<td><?=status_skp($row['target_acc']);?></td>
+						<td>
+							<div class="btn-group" role="group">
+								
 							</div>
 						</td>
 					</tr>	

@@ -77,7 +77,16 @@ class Auth extends FrontendController
             $pegawai['email']         = $usr->email;
             $pegawai['kontak']        = $usr->kontak;
 
-            $this->PegawaiModel->save($pegawai);
+            $exist = $this->PegawaiModel->get(['nip'=>$usr->nip_baru]);
+            if(empty($exist))
+            {
+                $this->PegawaiModel->insert($pegawai);
+            }
+            else
+            {
+                $this->PegawaiModel->update($usr->nip_baru, $pegawai);
+            }
+
         
             return redirect()->to(backend_url().'/beranda');
         }

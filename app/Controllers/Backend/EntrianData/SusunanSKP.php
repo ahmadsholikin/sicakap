@@ -77,28 +77,28 @@ class SusunanSKP extends BackendController
         $data['list_uraian_jabatan'] = $list_uraian_jabatan;
         $data['list_uraian']         = $list_uraian;
         $data['periode']             = $this->PeriodeSKPModel->get(['nip' => $_SESSION['id_user']]);
-        $data['link']                = $this->db->table('link_skp')->get()->getResult();
+        $data['link']                = $this->SusunanSKPModel->skpLink();
         $param['page']               = view($this->path_view . 'page-add',$data);
         return view($this->theme, $param);
     }
 
 	public function insert()
 	{
-        $link               = entitiestag($this->request->getPost('link_atasan_id'));
-        $link_atasan_id     = '-';
-        $link_atasan_nama   = '-';
+        $link               = entitiestag($this->request->getPost('link_skp_id'));
+        $link_skp_id        = '-';
+        $link_skp_kegiatan  = '-';
 
         if($link<>'-')
         {
-            $link               = explode(" - ",$link);
-            $link_atasan_id     = $link[0];
-            $link_atasan_nama   = $link[1];
+            $link_skp_id        = $link;
+            $skp                = $this->SusunanSKPModel->get(['skp_id'=>$link]);
+            $link_skp_kegiatan  = $skp[0]['kegiatan'];
         }
         
 		$data['nip']			      = $_SESSION['id_user'];
 		$data['periode_id']  	      = entitiestag($this->request->getPost('periode_id'));
-        $data['link_atasan_id']  	  = $link_atasan_id;
-        $data['link_atasan_nama']  	  = $link_atasan_nama;
+        $data['link_skp_id']      	  = $link_skp_id;
+        $data['link_skp_kegiatan'] 	  = $link_skp_kegiatan;
         $data['kegiatan']  	          = entitiestag($this->request->getPost('kegiatan'));
         $data['angka_kredit']  	      = entitiestag($this->request->getPost('angka_kredit'));
         $data['target_kuantitas']  	  = entitiestag($this->request->getPost('target_kuantitas'));
@@ -145,7 +145,7 @@ class SusunanSKP extends BackendController
         $data['list_uraian_jabatan'] = $list_uraian_jabatan;
         $data['list_uraian']= $list_uraian;
         $data['periode']    = $this->PeriodeSKPModel->get(['nip'=>$_SESSION['id_user']]);
-        $data['link']       = $this->db->table('link_skp')->get()->getResult();
+        $data['link']       = $this->SusunanSKPModel->skpLink();
 
         $param['page'] = view($this->path_view . 'page-edit',$data);
         return view($this->theme, $param);
@@ -154,21 +154,21 @@ class SusunanSKP extends BackendController
     public function update()
 	{
         $id                 = entitiestag($this->request->getPost('id'));
-        $link               = entitiestag($this->request->getPost('link_atasan_id'));
-        $link_atasan_id     = '-';
-        $link_atasan_nama   = '-';
+        $link               = entitiestag($this->request->getPost('link_skp_id'));
+        $link_skp_id        = '-';
+        $link_skp_kegiatan  = '-';
 
         if($link<>'-')
         {
-            $link               = explode(" - ",$link);
-            $link_atasan_id     = $link[0];
-            $link_atasan_nama   = $link[1];
+            $link_skp_id        = $link;
+            $skp                = $this->SusunanSKPModel->get(['skp_id'=>$link]);
+            $link_skp_kegiatan  = $skp[0]['kegiatan'];
         }
         
 		$data['nip']			      = $_SESSION['id_user'];
 		$data['periode_id']  	      = entitiestag($this->request->getPost('periode_id'));
-        $data['link_atasan_id']  	  = $link_atasan_id;
-        $data['link_atasan_nama']  	  = $link_atasan_nama;
+        $data['link_skp_id']      	  = $link_skp_id;
+        $data['link_skp_kegiatan'] 	  = $link_skp_kegiatan;
         $data['kegiatan']  	          = entitiestag($this->request->getPost('kegiatan'));
         $data['angka_kredit']  	      = entitiestag($this->request->getPost('angka_kredit'));
         $data['target_kuantitas']  	  = entitiestag($this->request->getPost('target_kuantitas'));

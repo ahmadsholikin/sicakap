@@ -185,6 +185,13 @@ $routes->group('backend', function ($routes) {
         $routes->get('delete', $root_groups . '::delete', ['filter' => 'auth']);
     });
 
+    //verifikasi - persetujuan skp
+    $routes->group('persetujuan-skp', function ($routes) {
+        $root_groups = "Backend\Verifikasi\PersetujuanSKP";
+        //pages
+        $routes->add('/', $root_groups . '::index', ['filter' => 'auth']);
+    });
+
 });
 //output - print_skp
 $routes->group('output', function ($routes) {
