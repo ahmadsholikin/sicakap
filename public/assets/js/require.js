@@ -23,7 +23,7 @@ $(document).ready(function () {
 		theme: "bootstrap",
 	});
 
-	$(".dropify").dropify();
+	// $(".dropify").dropify();
 
 	$(".tanggal").datepicker({
 		format: "dd M yyyy",
@@ -50,20 +50,15 @@ $(document).ready(function () {
 		autoclose: "true",
 	});
 
-	$('.clock').clockpicker({
-		placement: 'bottom',
-		align: 'left',
-		autoclose: true,
-		'default': 'now',
-		donetext: 'Pilih'
-	});
+	// $('.clock').clockpicker({
+	// 	placement: 'bottom',
+	// 	align: 'left',
+	// 	autoclose: true,
+	// 	'default': 'now',
+	// 	donetext: 'Pilih'
+	// });
 
-	var cleave = new Cleave('.thousand', {
-		numeral: true,
-		numeralThousandsGroupStyle: 'thousand',
-		numeralDecimalMark: ',', 
-		delimiter: '.'
-	});
+	
 
 	$('.summernote').summernote({
         placeholder: '',
@@ -99,7 +94,7 @@ $(document).ready(function () {
 
 
 
-	AOS.init();
+	// AOS.init();
 
 
 	// setInterval(function () {

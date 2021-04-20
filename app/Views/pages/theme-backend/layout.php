@@ -7,119 +7,40 @@
         <link rel="apple-touch-icon" sizes="180x180" href="<?=base_url('favicon');?>/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="<?=base_url('favicon');?>/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="<?=base_url('favicon');?>/favicon-16x16.png">
-        <link rel="manifest" href="<?=base_url('favicon');?>/site.webmanifest">
         <!-- Meta -->
         <meta name="description" content="<?=session('nama');?>">
         <meta name="author" content="<?=session('pengembang');?>">
         <script>
-            const base_url      = "<?= base_url(); ?>";
+            const base_url      = "<?=base_url();?>";
             const backend_url   = "<?=backend_url();?>";
         </script>
         <title><?=session('nama');?></title>
         <!-- vendor css -->
         <link href="<?=base_url('public/backend');?>/lib/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
         <link href="<?=base_url('public/backend');?>/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-        <!-- <link href="<?=base_url('public/backend');?>/lib/jqvmap/jqvmap.min.css" rel="stylesheet"> -->
         <link href="<?=base_url('public/backend');?>/lib/datatables.net-responsive-dt/css/responsive.dataTables.min.css" rel="stylesheet">
-        
-        <!-- thirdparty css -->
         <link href="<?= base_url(); ?>/public/assets/font/mdi/css/materialdesignicons.min.css" rel="stylesheet">
         <link href="<?= base_url(); ?>/public/assets/font/ti-icons/css/themify-icons.css" rel="stylesheet">
         <link href="<?= base_url(); ?>/public/assets/font/simple-line-icon/css/simple-line-icons.css" rel="stylesheet">
-        
-        <!-- thirdparty css -->
-    
-        <!-- plugin third party -->
-        <script src="<?=base_url('public/backend');?>/lib/jquery/jquery.min.js"></script>
-        <!-- datatables -->
-        <script src="<?= base_url(); ?>/public/plugins/datatables.net/jquery.dataTables.js"></script>
-        <script src="<?= base_url(); ?>/public/plugins/datatables.net-bs4/dataTables.bootstrap4.js"></script>
         <link href="<?= base_url(); ?>/public/plugins/datatables.net-bs4/dataTables.bootstrap4.css" rel="stylesheet">
-        <!-- datatables -->
-
-        <!-- toast -->
         <link href="<?= base_url(); ?>/public/plugins/toast/src/jquery.toast.css" rel="stylesheet">
-        <script src="<?= base_url(); ?>/public/plugins/toast/src/jquery.toast.js"></script>
-        <!-- toast -->
-
-        <!-- alertify -->
-        <script src="<?= base_url(); ?>/public/plugins/alertify/notify.js"></script>
-        <!-- alertify -->
-
-        <!-- jconfirm -->
         <link href="<?= base_url(); ?>/public/plugins/jconfirm/css/jquery-confirm.css" rel="stylesheet">
-        <script src="<?= base_url(); ?>/public/plugins/jconfirm/js/jquery-confirm.js"></script>
-        <!-- jconfirm -->
-
-        <!-- dropify -->
-        <link href="<?= base_url(); ?>/public/plugins/dropify/dist/css/dropify.min.css" rel="stylesheet">
-        <script src="<?= base_url(); ?>/public/plugins/dropify/dist/js/dropify.min.js"></script>
-        <!-- dropify -->
-
-        <!-- select2 -->
         <link href="<?= base_url(); ?>/public/plugins/select2/dist/css/select2.min.css" rel="stylesheet">
         <link href="<?= base_url(); ?>/public/plugins/select2/dist/select2-bootstrap.min.css" rel="stylesheet">
-        <script src="<?= base_url(); ?>/public/plugins/select2/dist/js/select2.min.js"></script>
-        <!-- select2 -->
-
-        <!-- validator.js-->
-        <script src="<?= base_url(); ?>/public/plugins/validator/validator.js"></script>
-        <!-- validator.js-->
-
-        <!-- clockpicker -->
-        <link href="<?= base_url(); ?>/public/plugins/clockpicker/bootstrap-clockpicker.min.css" rel="stylesheet">
-        <script src="<?= base_url(); ?>/public/plugins/clockpicker/bootstrap-clockpicker.min.js"></script>
-        <!-- datepicker -->
-
-        <!-- datepicker -->
         <link href="<?= base_url(); ?>/public/plugins/datepicker/css/bootstrap-datepicker-min.css" rel="stylesheet">
-        <script src="<?= base_url(); ?>/public/plugins/datepicker/js/bootstrap-datepicker-min.js"></script>
-        <!-- datepicker -->
-
-        <!-- tags -->
-        <link href="<?= base_url(); ?>/public/plugins/taginput/tagsinput.css" rel="stylesheet">
-        <script src="<?= base_url(); ?>/public/plugins/taginput/tagsinput.js"></script>
-        <!-- tags -->
-        
-        <!-- animate.style -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
-
-        <!-- AOS -->
-        <link href="<?= base_url(); ?>/public/plugins/aos/aos.css" rel="stylesheet">
-        <script src="<?= base_url(); ?>/public/plugins/aos/aos.js"></script>
-        <!-- AOS -->
-
-        <!-- summer note-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet"  />
         <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-        <!-- summer note -->
-
-        <!-- EAS -->
         <link href="<?= base_url(); ?>/public/plugins/eas/easy-autocomplete.css" rel="stylesheet">
-        <script src="<?= base_url(); ?>/public/plugins/eas/jquery.easy-autocomplete.js"></script>
-        <!-- EAS -->
-        
-        <!-- template css -->
-        <link rel="stylesheet" href="<?=base_url('public/backend');?>/assets/css/cassie.css">
-        
-         
-        <script src="<?=base_url('public/backend');?>/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="<?=base_url('public/backend');?>/lib/feather-icons/feather.min.js"></script>
-        <script src="<?=base_url('public/backend');?>/lib/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-        <script src="<?=base_url('public/backend');?>/lib/js-cookie/js.cookie.js"></script>
-        <script src="<?=base_url('public/backend');?>/lib/chart.js/Chart.bundle.min.js"></script>
-        <script src="<?=base_url('public/backend');?>/lib/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
-        <script src="<?=base_url('public/backend');?>/assets/js/cassie.js"></script>
-        <script src="<?=base_url('public/backend');?>/assets/js/parsley.min.js"></script>
-        
-        <link href="<?= base_url('public/backend'); ?>/lib/quill/quill.core.css" rel="stylesheet">
-        <link href="<?= base_url('public/backend'); ?>/lib/quill/quill.snow.css" rel="stylesheet">
-        <link href="<?= base_url('public/backend'); ?>/lib/quill/quill.bubble.css" rel="stylesheet">
-        <script src="<?= base_url('public/backend'); ?>/lib/quill/quill.min.js"></script>
+        <link href="<?=base_url('public/backend');?>/assets/css/cassie.min.css" rel="stylesheet" >
+        <script src="<?=base_url('public/backend');?>/lib/jquery/jquery.min.js"></script>
 
-        <script src="<?= base_url('public/backend'); ?>/lib/cleave.js/cleave.min.js"></script>
-        <script src="<?= base_url(); ?>/public/assets/js/require.js"></script>
-        
+        <!-- <link href="<?= base_url('public/backend'); ?>/lib/quill/quill.core.css" rel="stylesheet"> -->
+        <!-- <link href="<?= base_url('public/backend'); ?>/lib/quill/quill.snow.css" rel="stylesheet"> -->
+        <!-- <link href="<?= base_url('public/backend'); ?>/lib/quill/quill.bubble.css" rel="stylesheet"> -->
+        <!-- <link href="<?= base_url(); ?>/public/plugins/clockpicker/bootstrap-clockpicker.min.css" rel="stylesheet"> -->
+        <!-- <link href="<?= base_url(); ?>/public/plugins/taginput/tagsinput.css" rel="stylesheet"> -->
+        <!-- <link href="<?= base_url(); ?>/public/plugins/aos/aos.css" rel="stylesheet"> -->
+        <!-- <link href="<?= base_url(); ?>/public/plugins/dropify/dist/css/dropify.min.css" rel="stylesheet"> -->
 
     </head>
     <body>
@@ -328,5 +249,36 @@
             </div>
         </div>    
     </body>
+
+    <!-- script -->
+    <!-- <script src="<?= base_url(); ?>/public/backend/lib/quill/quill.min.js"></script> -->
+    <!-- <script src="<?= base_url(); ?>/public/plugins/dropify/dist/js/dropify.min.js"></script> -->
+    <!-- <script src="<?= base_url(); ?>/public/plugins/taginput/tagsinput.js"></script> -->
+    <!-- <script src="<?= base_url(); ?>/public/plugins/aos/aos.js"></script> -->
+    <!-- <script src="<?= base_url(); ?>/public/plugins/clockpicker/bootstrap-clockpicker.min.js"></script> -->
+    <!-- <script src="<?=base_url('public/backend');?>/assets/js/parsley.min.js"></script> -->
+    <!-- <script src="<?=base_url('public/backend');?>/lib/perfect-scrollbar/perfect-scrollbar.min.js"></script> -->
+
+    <script src="<?= base_url(); ?>/public/plugins/datatables.net/jquery.dataTables.js"></script>
+    <script src="<?= base_url(); ?>/public/plugins/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+    <script src="<?=base_url('public/backend');?>/lib/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
+
+    <script src="<?= base_url(); ?>/public/plugins/toast/src/jquery.toast.js"></script>
+    <script src="<?= base_url(); ?>/public/plugins/alertify/notify.js"></script>
+    <script src="<?= base_url(); ?>/public/plugins/jconfirm/js/jquery-confirm.js"></script>
+    <script src="<?= base_url(); ?>/public/plugins/select2/dist/js/select2.min.js"></script>
+    <script src="<?= base_url(); ?>/public/plugins/validator/validator.js"></script>
+    <script src="<?= base_url(); ?>/public/plugins/datepicker/js/bootstrap-datepicker-min.js"></script>
+    <script src="<?= base_url(); ?>/public/plugins/eas/jquery.easy-autocomplete.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+    <script src="<?=base_url('public/backend');?>/lib/feather-icons/feather.min.js"></script>
+    <script src="<?=base_url('public/backend');?>/lib/js-cookie/js.cookie.js"></script>
+    <script src="<?=base_url('public/backend');?>/lib/chart.js/Chart.bundle.min.js"></script>
+    <script src="<?=base_url();?>/public/plugins/highchart/code/highcharts.js"></script>    
+    <script src="<?=base_url();?>/public/plugins/highchart/code/highcharts-more.js"></script>
+    <script src="<?= base_url('public/backend'); ?>/lib/cleave.js/cleave.min.js"></script>
+    <script src="<?=base_url('public/backend');?>/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?=base_url('public/backend');?>/assets/js/cassie.js"></script>
+    <script src="<?= base_url(); ?>/public/assets/js/require.js"></script>
     <script src="<?= base_url(); ?>/public/assets/js/page-layout.js"></script>
 </html>

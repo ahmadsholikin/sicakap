@@ -127,10 +127,8 @@
         </div>
     </div>
 </div>
-
-<script src="<?=base_url();?>/public/plugins/highchart/code/highcharts.js"></script>    
-<script src="<?=base_url();?>/public/plugins/highchart/code/highcharts-more.js"></script>
-<script type="text/javascript">
+<script>
+$(function() {
     var ctxLabel  = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     var ctxData1  = [0,0,0,0,0,0,0,0,0,0,0,0];
     var ctxData2  = [0,0,0,0,0,0,0,0,0,0,0,0];
@@ -301,4 +299,5 @@
         //     }, 3000);
         // }
     });
+});
 </script>

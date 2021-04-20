@@ -3,9 +3,9 @@ $(function(){
 
   feather.replace();
 
-  const psSidebarBody = new PerfectScrollbar('#dpSidebarBody', {
-    suppressScrollX: true
-  });
+  // const psSidebarBody = new PerfectScrollbar('#dpSidebarBody', {
+  //   suppressScrollX: true
+  // });
 
   $('.nav-sidebar .with-sub').on('click', function(e){
     e.preventDefault()
@@ -13,7 +13,7 @@ $(function(){
     $(this).parent().toggleClass('show');
     $(this).parent().siblings().removeClass('show');
 
-    psSidebarBody.update();
+    // psSidebarBody.update();
   })
 
   $('.burger-menu:first-child').on('click', function(e){

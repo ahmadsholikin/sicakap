@@ -7,14 +7,9 @@
         <link rel="apple-touch-icon" sizes="180x180" href="<?=base_url('favicon');?>/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="<?=base_url('favicon');?>/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="<?=base_url('favicon');?>/favicon-16x16.png">
-        <link rel="manifest" href="<?=base_url('favicon');?>/site.webmanifest">
         <!-- Meta -->
         <title>SiCAKAP - PEMKAB MAGELANG</title>
-        <!-- vendor css -->
-        <link href="<?=base_url();?>/public/backend/lib/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
-        <link href="<?=base_url();?>/public/backend/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-        <!-- template css -->
-        <link rel="stylesheet" href="<?=base_url();?>/public/backend/assets/css/cassie.css">
+        <link rel="stylesheet" href="<?=base_url();?>/public/backend/assets/css/cassie.min.css">
     </head>
     <body>
         <div class="signin-panel">
@@ -52,24 +47,7 @@
                         <br>Rilis Versi Beta 1.0
                     </p>
                 </div>
-                        <!-- signin-sidebar-body -->
             </div>
-                    <!-- signin-sidebar -->
         </div>
-        <!-- signin-panel -->
-        <script src="<?=base_url();?>/public/backend/lib/jquery/jquery.min.js"></script>
-        <script src="<?=base_url();?>/public/backend/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="<?=base_url();?>/public/backend/lib/feather-icons/feather.min.js"></script>
-        <script src="<?=base_url();?>/public/backend/lib/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-        <script>
-            $(function(){
-                'use strict'
-                feather.replace();
-                new PerfectScrollbar('.signin-sidebar', {
-                    suppressScrollX: true
-                });
-            })
-        </script>
-        <script src="<?=base_url();?>/public/backend/assets/js/svg-inline.js"></script>
     </body>
 </html>

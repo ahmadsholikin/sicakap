@@ -185,4 +185,11 @@
         var angka_kredit = $(this).closest('tr').children('.angka_kredit').text();
         $("#angka_kredit").val(angka_kredit);
     });
+
+    var cleave = new Cleave('.thousand', {
+		numeral: true,
+		numeralThousandsGroupStyle: 'thousand',
+		numeralDecimalMark: ',', 
+		delimiter: '.'
+	});
 </script>
