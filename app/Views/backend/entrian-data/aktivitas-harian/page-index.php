@@ -123,14 +123,35 @@
             <ul class="mail-list ps">
                 <?php foreach ($data as $row) : ?>
                 <li class="mail-item unread">
-                    <div class="avatar"><span class="avatar-initial rounded-circle bg-primary">50</span></div>
+                    <?php 
+                        switch ($row['is_approve']) {
+                            case 'Ya':
+                                $status = "bg-success";
+                                break;
+                            case 'Tidak':
+                                $status = "bg-danger";
+                                break;
+                            default:
+                                $status = "bg-primary";
+                                break;
+                        }
+                    ?>
+                    <div class="avatar">
+                        <span class="avatar-initial rounded-circle <?=$status;?>"><?=$row['poin'];?></span>
+                        
+                    </div>
                     <div class="mail-item-body">
                         <div>
-                            <span>19 April 2021</span>
-                            <span>14:00</span>
+                            <span><?=tanggal_dMY($row['tanggal_kegiatan']);?> 
+                            <?php if($row['is_submit']=='Ya'):?>
+                                <span class="mdi mdi-check-circle ml-3 text-warning"></span>&nbsp;1 Qty Realisasi
+                            <?php endif;?></span>
+                            <span><span class="mdi mdi-clock-outline"></span>&nbsp;<?=jam_Hi($row['tanggal_entrian']);?>&nbsp;&nbsp;<span class="mdi mdi-calendar-today"></span>&nbsp;<?=tanggal_dMY($row['tanggal_entrian']);?></span>
                         </div>
-                        <p class="text-black">Membuat program</p>
-                        <small>Link SKP : -</small>
+                        <p class="text-black"><?=$row['uraian_kegiatan'];?></p>
+                        <?php if($row['link_skp_id']<>0):?>
+                        <small><span class="mdi mdi-link-variant"></span> <?=$row['link_skp_kegiatan'];?></small>
+                        <?php endif;?>
                     </div>
                 </li>
                 <?php endforeach;?>
@@ -234,7 +255,7 @@
                     </select>
                     
                     <div class="tx-14 mg-t-15 mg-sm-t-0 float-right">
-                        <button class="btn btn-brand-01 btn-sm" type="submit">Kirim Laporan</button>
+                        <button class="btn btn-danger btn-sm" type="submit">Kirim Laporan</button>
                         <button class="btn btn-white mg-r-5 btn-sm mailComposeClose" type="button">Batal</button>
                     </div>
                 </div>

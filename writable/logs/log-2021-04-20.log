@@ -23,3 +23,36 @@ CRITICAL - 2021-04-20 11:25:09 --> Undefined index: foto
 #3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
 #5 {main}
+CRITICAL - 2021-04-20 13:01:49 --> Undefined index: uraian_kegiatan
+#0 G:\xampp\htdocs\sicakap\app\Views\backend\entrian-data\aktivitas-harian\page-index.php(132): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'G:\\xampp\\htdocs...', 132, Array)
+#1 G:\xampp\htdocs\sicakap\system\View\View.php(220): include('G:\\xampp\\htdocs...')
+#2 G:\xampp\htdocs\sicakap\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\xampp\htdocs\sicakap\system\Common.php(1217): CodeIgniter\View\View->render('backend/entrian...', Array, true)
+#4 G:\xampp\htdocs\sicakap\app\Controllers\Backend\EntrianData\AktivitasHarian.php(32): view('backend/entrian...', Array)
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\EntrianData\AktivitasHarian->index()
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\EntrianData\AktivitasHarian))
+#7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-04-20 13:03:02 --> Undefined index: jam_Hi
+#0 G:\xampp\htdocs\sicakap\app\Views\backend\entrian-data\aktivitas-harian\page-index.php(130): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'G:\\xampp\\htdocs...', 130, Array)
+#1 G:\xampp\htdocs\sicakap\system\View\View.php(220): include('G:\\xampp\\htdocs...')
+#2 G:\xampp\htdocs\sicakap\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\xampp\htdocs\sicakap\system\Common.php(1217): CodeIgniter\View\View->render('backend/entrian...', Array, true)
+#4 G:\xampp\htdocs\sicakap\app\Controllers\Backend\EntrianData\AktivitasHarian.php(32): view('backend/entrian...', Array)
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\EntrianData\AktivitasHarian->index()
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\EntrianData\AktivitasHarian))
+#7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-04-20 13:03:14 --> Undefined index: tanggl_entrian
+#0 G:\xampp\htdocs\sicakap\app\Views\backend\entrian-data\aktivitas-harian\page-index.php(130): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'G:\\xampp\\htdocs...', 130, Array)
+#1 G:\xampp\htdocs\sicakap\system\View\View.php(220): include('G:\\xampp\\htdocs...')
+#2 G:\xampp\htdocs\sicakap\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\xampp\htdocs\sicakap\system\Common.php(1217): CodeIgniter\View\View->render('backend/entrian...', Array, true)
+#4 G:\xampp\htdocs\sicakap\app\Controllers\Backend\EntrianData\AktivitasHarian.php(32): view('backend/entrian...', Array)
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\EntrianData\AktivitasHarian->index()
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\EntrianData\AktivitasHarian))
+#7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
