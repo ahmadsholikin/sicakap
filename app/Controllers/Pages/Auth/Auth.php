@@ -49,6 +49,7 @@ class Auth extends FrontendController
             $this->session->set('eselon', $usr->eselon);
             $this->session->set('email', $usr->email);
             $this->session->set('kontak', $usr->kontak);
+            $this->session->set('foto', $usr->foto_link);
 
             if($usr->nip_baru=='199202062020121004')
             {

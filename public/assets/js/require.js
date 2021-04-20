@@ -50,6 +50,7 @@ $(document).ready(function () {
 		autoclose: "true",
 	});
 
+
 	// $('.clock').clockpicker({
 	// 	placement: 'bottom',
 	// 	align: 'left',

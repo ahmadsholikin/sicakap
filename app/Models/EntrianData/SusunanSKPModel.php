@@ -48,6 +48,28 @@ class SusunanSKPModel extends Model
         } 
     }
 
+    public function skpAktif()
+    {
+        $kueri = "SELECT skp.*
+                    FROM susunan_skp skp
+                    INNER JOIN periode_skp periode
+                    ON periode.periode_id= skp.periode_id
+                    WHERE periode.is_default='Ya' 
+                    AND skp.nip='".$_SESSION['id_user']."'
+                    AND skp.target_acc='Ya'";
+
+        $kueri = $this->db->query($kueri)->getResultArray();
+
+        if(empty($kueri))
+        {
+            return array();
+        }
+        else
+        {
+            return $kueri;
+        }
+    }
+
     public function skpJabatan()
     {
         $kueri = "SELECT ps.kegiatan,ps.angka_kredit 

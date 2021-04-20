@@ -171,10 +171,22 @@ $routes->group('backend', function ($routes) {
         $routes->get('default', $root_groups . '::default', ['filter' => 'auth']);
     });
 
-
     //entrian data - susunan skp
     $routes->group('susunan-skp', function ($routes) {
         $root_groups = "Backend\EntrianData\SusunanSKP";
+        //pages
+        $routes->add('/', $root_groups . '::index', ['filter' => 'auth']);
+        $routes->add('add', $root_groups . '::add', ['filter' => 'auth']);
+        $routes->get('edit', $root_groups . '::edit', ['filter' => 'auth']);
+        //process
+        $routes->post('insert', $root_groups . '::insert', ['filter' => 'auth']);
+        $routes->post('update', $root_groups . '::update', ['filter' => 'auth']);
+        $routes->get('delete', $root_groups . '::delete', ['filter' => 'auth']);
+    });
+
+     //entrian data - aktivitas harian
+     $routes->group('aktivitas-harian', function ($routes) {
+        $root_groups = "Backend\EntrianData\AktivitasHarian";
         //pages
         $routes->add('/', $root_groups . '::index', ['filter' => 'auth']);
         $routes->add('add', $root_groups . '::add', ['filter' => 'auth']);
