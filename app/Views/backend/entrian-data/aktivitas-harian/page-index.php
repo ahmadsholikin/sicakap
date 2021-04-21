@@ -122,7 +122,7 @@
             <!-- mail-navbar -->
             <ul class="mail-list ps">
                 <?php foreach ($data as $row) : ?>
-                <li class="mail-item unread">
+                <li class="mail-item unread" onclick="getConfirm('<?=$row['id'];?>')">
                     <?php 
                         switch ($row['is_approve']) {
                             case 'Ya':
@@ -138,7 +138,6 @@
                     ?>
                     <div class="avatar">
                         <span class="avatar-initial rounded-circle <?=$status;?>"><?=$row['poin'];?></span>
-                        
                     </div>
                     <div class="mail-item-body">
                         <div>
@@ -159,7 +158,7 @@
         </div>
     </div>
 </div>
-<form action="<?=backend_url();?>/aktivitas-harian/insert" method="post">
+<form action="<?=backend_url();?>/aktivitas-harian/insert" method="post" class="form">
     <?=csrf_field();?>
     <div id="mailCompose" class="mail-compose">
         <div class="mail-compose-dialog">
@@ -244,10 +243,10 @@
                     </div>
                 </div>
                 <div class="form-row align-items-center px-1 mt-3">
-                    <textarea class="form-control" name="uraian_kegiatan" id="uraian_kegiatan" cols="30" rows="10" placeholder="Tuliskan kegiatan aktivitas harian Anda disini...."></textarea>
+                    <textarea class="form-control" name="uraian_kegiatan" id="uraian_kegiatan" cols="30" rows="10" placeholder="Tuliskan kegiatan aktivitas harian Anda disini...." required></textarea>
                 </div>
                 <div class="d-sm-flex align-items-center justify-content-between mg-t-25">
-                    <select class="custom-select custom-select-sm tx-12" style="width: 150px;" name="poin">
+                    <select class="custom-select custom-select-sm tx-12" style="width: 150px;border:1px solid #dc3545" name="poin" id="poin" required>
                         <option selected="" value="0" disabled>Durasi Waktu</option>
                         <?php for ($i=1; $i < 41; $i++) : ?> 
                         <option value="<?=$i*5;?>"><?=$i*5;?> Menit</option>
@@ -296,4 +295,35 @@
         e.preventDefault()
         $('#mailCompose').toggleClass('minimize')
     })
+
+    $('.form').submit(function () {
+        var poin = $.trim($('#poin').val());
+        if ((poin  == '0')||(poin  === '')){
+            alert('Silakan pilih durasi waktu terlebih dahulu.');
+            $( "#poin" ).focus();
+            return false;
+        }
+    });
+
+
+    function getConfirm(id)
+    {
+        $.confirm({
+            title: 'konfirmasi',
+            content: 'Apakah yang Anda ingin lakukan dengan konten entrian aktivitas kegiatan ini ?',
+            type: 'red',
+            typeAnimated: true,
+            icon:'mdi mdi-alert',
+            buttons: {
+                edit: function () {
+                    $.alert('Uupppss saat ini, fitur masih belum tersedia ;) ');
+                },
+                hapus: function () {
+                    window.location="<?=backend_url('/aktivitas-harian/delete?id=');?>"+id;
+                },
+                batal: function () {
+                },
+            }
+        });
+    }
 </script>
