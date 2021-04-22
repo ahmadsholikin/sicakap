@@ -1,6 +1,6 @@
 <div class="card">
-	<div class="card-header">
-		<a class="" href="<?=backend_url();?>/periode-skp/add" role="button" data-toggle="tooltip" title="klik untuk menambah data baru" ><i class="mdi mdi-plus-circle"></i> Data Baru</a>
+	<div class="card-header bg-transparent">
+		<a class="text-danger" href="<?=backend_url();?>/periode-skp/add" role="button" data-toggle="tooltip" title="klik untuk menambah data baru" ><i class="mdi mdi-plus-circle"></i> Data Baru</a>
 	</div>
 	<div class="card-body">
 		<div class="table-responsive">
@@ -22,7 +22,7 @@
 						<td><?=tanggal_dMY($row['periode_awal']);?></td>
 						<td><?=tanggal_dMY($row['periode_akhir']);?></td>
 						<td><?=$row['pejabat_penilai_nama'];?></td>
-                        <td><a style="cursor:pointer" href="<?=backend_url();?>/periode-skp/default?id=<?=$row['periode_id'];?>"><?=$row['is_default'];?></a></td>
+                        <td><a style="cursor:pointer" href="<?=backend_url();?>/periode-skp/default?id=<?=$row['periode_id'];?>"><?=status_skp($row['is_default']);?></a></td>
 						<td>
 							<div class="btn-group" role="group">
 								<?=btn_edit('./periode-skp/edit?id='.$row['periode_id']);?>

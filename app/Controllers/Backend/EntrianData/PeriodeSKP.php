@@ -62,12 +62,12 @@ class PeriodeSKP extends BackendController
 
         if(!empty($cek))
         {
-            $data['pejabat_penilai_nip']        = $cek[0]['nip_baru'];
+            $data['pejabat_penilai_nip']        = $cek[0]['nip'];
             $data['pejabat_penilai_nama']       = $cek[0]['nama'];
             $data['pejabat_penilai_pangkat']    = $cek[0]['pangkat'];
             $data['pejabat_penilai_gol']        = $cek[0]['gol'];
-            $data['pejabat_penilai_jabatan']    = $cek[0]['jabatan_nm'];
-            $data['pejabat_penilai_unit_kerja'] = $cek[0]['skpd_nm'];
+            $data['pejabat_penilai_jabatan']    = $cek[0]['jabatan'];
+            $data['pejabat_penilai_unit_kerja'] = $cek[0]['unit_kerja'];
         }
         else
         {
@@ -113,12 +113,12 @@ class PeriodeSKP extends BackendController
 
         if(!empty($cek))
         {
-            $data['pejabat_penilai_nip']        = $cek[0]['nip_baru'];
+            $data['pejabat_penilai_nip']        = $cek[0]['nip'];
             $data['pejabat_penilai_nama']       = $cek[0]['nama'];
             $data['pejabat_penilai_pangkat']    = $cek[0]['pangkat'];
             $data['pejabat_penilai_gol']        = $cek[0]['gol'];
-            $data['pejabat_penilai_jabatan']    = $cek[0]['jabatan_nm'];
-            $data['pejabat_penilai_unit_kerja'] = $cek[0]['skpd_nm'];
+            $data['pejabat_penilai_jabatan']    = $cek[0]['jabatan'];
+            $data['pejabat_penilai_unit_kerja'] = $cek[0]['unit_kerja'];
         }
         else
         {

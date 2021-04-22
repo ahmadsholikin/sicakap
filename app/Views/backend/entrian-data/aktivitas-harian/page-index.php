@@ -2,43 +2,43 @@
     <div class="mail-sidebar">
         <button onclick="entrianShow()" class="btn btn-block btn-outline-danger" >Entri Aktivitas</button>
         <nav class="nav nav-classic flex-column tx-13 mg-t-20">
-            <a href="" class="nav-link active">
+            <a href="?status=linkSemua" class="nav-link <?=$linkSemua;?>">
                 <svg
                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-inbox">
                     <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
                     <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
                 </svg>
                 <span>Semua</span>
-                <span class="badge">0</span>
+                <span class="badge"><?=count($statusSemua);?></span>
             </a>
-            <a href="" class="nav-link">
+            <a href="?status=linkBelum" class="nav-link <?=$linkBelum;?>">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
                     <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
                 </svg>
-                <span>Proses</span> <span class="badge">0</span>
+                <span>Proses</span> <span class="badge"><?=$statusBelum;?></span>
             </a>
-            <a href="" class="nav-link">
+            <a href="?status=linkYa" class="nav-link <?=$linkYa;?>">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                 </svg>
-                <span>Diterima</span> <span class="badge">0</span>
+                <span>Diterima</span> <span class="badge"><?=$statusYa;?></span>
             </a>
-            <a href="" class="nav-link">
+            <a href="?status=linkTidak" class="nav-link <?=$linkTidak;?>">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-slash">
                     <circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
                 </svg>
-                <span>Ditolak</span> <span class="badge">0</span>
+                <span>Ditolak</span> <span class="badge"><?=$statusTidak;?></span>
             </a>
         </nav>
         <hr>
         <label class="tx-sans tx-uppercase tx-10 tx-spacing-1 tx-color-04">Label</label>
         <nav class="nav nav-classic flex-column">
-            <a href="" class="nav-link">
+            <a href="?status=linkSKP" class="nav-link <?=$linkSKP;?>">
                 <svg
                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder">
                     <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
                 </svg>
-                <span>Tersambung SKP</span>
+                <span>Tersambung SKP</span>  <span class="badge"><?=$statusLink;?></span>
             </a>
         </nav>
     </div>
@@ -47,10 +47,10 @@
         <div class="mail-body-header">
             <button  onclick="entrianShow()" class="btn d-md-none d-lg-none d-sm-inline btn-outline-danger" >Entri Aktivitas</button>
             <h5 class="d-none d-lg-inline" style="font-size: 20px;"><?=date('F Y');?>
-                <span >Total poin 0 dari target 6.000</span>
+                <span >Total poin <?=rp($poinYa);?> dari target 6.000</span>
             </h5>
             <div>
-                <span class="text-muted tx-13 mg-r-10 d-none d-lg-inline">0 dari 0</span>
+                <span class="text-muted tx-13 mg-r-10 d-none d-lg-inline"><?=count($statusSemua);?> dari <?=count($statusSemua);?></span>
                 <button class="btn btn-icon btn-xs btn-white" disabled="">
                     <svg
                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left">
@@ -121,10 +121,17 @@
             </div>
             <!-- mail-navbar -->
             <ul class="mail-list ps">
-                <?php foreach ($data as $row) : ?>
-                <li class="mail-item unread" onclick="getConfirm('<?=$row['id'];?>')">
+                <?php $list=1;foreach ($data as $row) : ?>
+                <li class="mail-item unread" onclick="getConfirm('<?=$row['id'];?>','<?=$row['is_approve'];?>','<?=$list;?>')">
+                    <input type="hidden" id="tb-tanggal_kegiatan<?=$list;?>" value="<?=tanggal_dMY($row['tanggal_kegiatan']);?>">
+                    <input type="hidden" id="tb-link_skp_id<?=$list;?>" value="<?=$row['link_skp_id'];?>">
+                    <input type="hidden" id="tb-poin<?=$list;?>" value="<?=$row['poin'];?>">
+                    <input type="hidden" id="tb-penilai_nip<?=$list;?>" value="<?=$row['penilai_nip'];?>">
+                    <input type="hidden" id="tb-is_submit<?=$list;?>" value="<?=$row['is_submit'];?>">
+                    <input type="hidden" id="tb-uraian_kegiatan<?=$list;?>" value="<?=$row['uraian_kegiatan'];?>">
                     <?php 
-                        switch ($row['is_approve']) {
+                        switch ($row['is_approve'])
+                        {
                             case 'Ya':
                                 $status = "bg-success";
                                 break;
@@ -140,7 +147,7 @@
                         <span class="avatar-initial rounded-circle <?=$status;?>"><?=$row['poin'];?></span>
                     </div>
                     <div class="mail-item-body">
-                        <div>
+                        <div class="pr-2">
                             <span><?=tanggal_dMY($row['tanggal_kegiatan']);?> 
                             <?php if($row['is_submit']=='Ya'):?>
                                 <span class="mdi mdi-check-circle ml-3 text-warning"></span>&nbsp;1 Qty Realisasi
@@ -153,13 +160,15 @@
                         <?php endif;?>
                     </div>
                 </li>
-                <?php endforeach;?>
+                <?php $list++; endforeach;?>
             </ul>
         </div>
     </div>
 </div>
 <form action="<?=backend_url();?>/aktivitas-harian/insert" method="post" class="form">
     <?=csrf_field();?>
+    <input type="hidden" name="proses" id="proses" value="insert">
+    <input type="hidden" name="id" id="id" value="0">
     <div id="mailCompose" class="mail-compose">
         <div class="mail-compose-dialog">
             <div class="mail-compose-header">
@@ -200,19 +209,18 @@
                     </a>
                 </nav>
             </div>
-            <!-- mail-compose-header -->
             <div class="mail-compose-body">
                 <div class="form-row align-items-center">
                     <div class="col-sm">Tanggal</div>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control tanggal bd-0 pd-x-0" name="tanggal_kegiatan" value="<?=date('d M Y');?>">
+                        <input type="text" class="form-control tanggal bd-0 pd-x-0" name="tanggal_kegiatan" value="<?=date('d M Y');?>" id="entrian-tanggal">
                     </div>
                 </div>
                 <hr class="mg-y-10">
                 <div class="form-row align-items-center">
                     <div class="col-sm">Kepada</div>
                     <div class="col-sm-10">
-                        <select class="form-control bd-0 pd-x-0" name="penilai_nip" >
+                        <select class="form-control bd-0 pd-x-0" name="penilai_nip" id="entrian-penilai_nip">
                             <?php foreach ($link as $r_link) : ?>
                             <option value="<?=$r_link['link_atasan_id'];?>"><?=$r_link['link_atasan_nama'];?> - <?=$r_link['link_atasan_id'];?></option>
                             <?php endforeach; ?>
@@ -223,7 +231,7 @@
                 <div class="form-row align-items-center">
                     <div class="col-sm">Link SKP</div>
                     <div class="col-sm-10">
-                        <select class="form-control bd-0 pd-x-0" name="link_skp_id">
+                        <select class="form-control bd-0 pd-x-0" name="link_skp_id" id="entrian-link_skp_id">
                             <option value="-">Tidak berkaitan dengan kegiatan SKP</option>
                             <?php foreach ($skp as $r_skp) : ?>
                             <option value="<?=$r_skp['skp_id'];?>"><?=$r_skp['kegiatan'];?></option>
@@ -235,7 +243,7 @@
                 <div class="form-row align-items-center">
                     <div class="col-sm">Status</div>
                     <div class="col-sm-10">
-                        <select class="form-control bd-0 pd-x-0" name="is_submit">
+                        <select class="form-control bd-0 pd-x-0" name="is_submit" id="entrian-is_submit">
                             <option value="Tidak">Tidak berkaitan dengan kegiatan SKP</option>
                             <option value="Tidak">Masih dalam proses</option>
                             <option value="Ya">Sudah selesai, tambahkan dalam kuantitas realisasi SKP</option>
@@ -247,7 +255,7 @@
                 </div>
                 <div class="d-sm-flex align-items-center justify-content-between mg-t-25">
                     <select class="custom-select custom-select-sm tx-12" style="width: 150px;border:1px solid #dc3545" name="poin" id="poin" required>
-                        <option selected="" value="0" disabled>Durasi Waktu</option>
+                        <option value="0">Durasi Waktu</option>
                         <?php for ($i=1; $i < 41; $i++) : ?> 
                         <option value="<?=$i*5;?>"><?=$i*5;?> Menit</option>
                         <?php endfor; ?>
@@ -259,71 +267,7 @@
                     </div>
                 </div>
             </div>
-            <!-- mail-compose-body -->
         </div>
-        <!-- mail-compose-dialog -->
     </div>
 </form>
-<script>
-    function entrianShow()
-    {
-        $('#mailCompose').addClass('show');
-    }
-
-    $('.mailComposeClose').on('click', function(e){
-        e.preventDefault()
-
-        if($('#mailCompose').hasClass('minimize') || $('#mailCompose').hasClass('shrink')) {
-        $('#mailCompose').addClass('d-none');
-
-        setTimeout(function(){
-            $('#mailCompose').attr('class', 'mail-compose');
-        },500);
-
-        } else {
-            $('#mailCompose').removeClass('show');
-        }
-    })
-
-    $('#mailComposeShrink').on('click', function(e){
-        e.preventDefault()
-        $('#mailCompose').toggleClass('shrink')
-        $('#mailCompose').removeClass('minimize')
-    })
-
-    $('#mailComposeMinimize').on('click', function(e){
-        e.preventDefault()
-        $('#mailCompose').toggleClass('minimize')
-    })
-
-    $('.form').submit(function () {
-        var poin = $.trim($('#poin').val());
-        if ((poin  == '0')||(poin  === '')){
-            alert('Silakan pilih durasi waktu terlebih dahulu.');
-            $( "#poin" ).focus();
-            return false;
-        }
-    });
-
-
-    function getConfirm(id)
-    {
-        $.confirm({
-            title: 'konfirmasi',
-            content: 'Apakah yang Anda ingin lakukan dengan konten entrian aktivitas kegiatan ini ?',
-            type: 'red',
-            typeAnimated: true,
-            icon:'mdi mdi-alert',
-            buttons: {
-                edit: function () {
-                    $.alert('Uupppss saat ini, fitur masih belum tersedia ;) ');
-                },
-                hapus: function () {
-                    window.location="<?=backend_url('/aktivitas-harian/delete?id=');?>"+id;
-                },
-                batal: function () {
-                },
-            }
-        });
-    }
-</script>
+<script src="<?= base_url(); ?>/public/assets/js/page-entrian-aktivitas-harian.js"></script>

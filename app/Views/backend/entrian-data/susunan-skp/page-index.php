@@ -3,7 +3,7 @@
 		<div class="mail-navbar">
 			<div class="d-flex align-items-center">
 				<div class="custom-control custom-checkbox pl-0 d-none d-lg-block">
-					<a class="flex-fill" href="<?=backend_url();?>/susunan-skp/add" role="button" data-toggle="tooltip" title="klik untuk menambah data baru" ><i class="mdi mdi-plus-circle"></i> Data Baru</a>
+					<a class="flex-fill text-danger" href="<?=backend_url();?>/susunan-skp/add" role="button" data-toggle="tooltip" title="klik untuk menambah data baru" ><i class="mdi mdi-plus-circle"></i> Data Baru</a>
 				</div>
 				<div class="tx-14 tx-color-04 mg-lg-l-15">
 					<span>Tampilkan Periode : </span>

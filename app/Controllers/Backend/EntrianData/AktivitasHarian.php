@@ -25,10 +25,55 @@ class AktivitasHarian extends BackendController
 		{
 			return redirect()->to('denied');	
 		}
+        // link aktif
+        $data['linkSemua']  = "";
+        $data['linkYa']     = "";
+        $data['linkBelum']  = "";
+        $data['linkTidak']  = "";
+        $data['linkSKP']    = "";
+
+        if(!empty($this->request->getGet('status')))
+        {
+            $data[$this->request->getGet('status')] = "active";
+            $status = $this->request->getGet('status');
+
+            switch ($status)
+            {
+                case 'linkBelum':
+                    $data['data']   = $this->AktivitasHarianModel->get(['nip'=>$_SESSION['id_user'],'is_approve'=>'Belum','MONTH(tanggal_kegiatan)'=>date('m'),'YEAR(tanggal_kegiatan)'=>date('Y')]);
+                    break;
+                case 'linkYa':
+                    $data['data']   = $this->AktivitasHarianModel->get(['nip'=>$_SESSION['id_user'],'is_approve'=>'Ya','MONTH(tanggal_kegiatan)'=>date('m'),'YEAR(tanggal_kegiatan)'=>date('Y')]);
+                    break;
+                case 'linkTidak':
+                    $data['data']   = $this->AktivitasHarianModel->get(['nip'=>$_SESSION['id_user'],'is_approve'=>'Tidak','MONTH(tanggal_kegiatan)'=>date('m'),'YEAR(tanggal_kegiatan)'=>date('Y')]);
+                    break;
+                case 'linkSKP':
+                    $data['data']   = $this->AktivitasHarianModel->get(['nip'=>$_SESSION['id_user'],'link_skp_id!='=>'0','MONTH(tanggal_kegiatan)'=>date('m'),'YEAR(tanggal_kegiatan)'=>date('Y')]);
+                    break;
+                default:
+                    $data['data']   = $this->AktivitasHarianModel->get(['nip'=>$_SESSION['id_user'],'MONTH(tanggal_kegiatan)'=>date('m'),'YEAR(tanggal_kegiatan)'=>date('Y')]);
+                    break;
+            }
+        }
+        else
+        {
+            $data['linkSemua']  = "active";
+            $data['data']       = $this->AktivitasHarianModel->get(['nip'=>$_SESSION['id_user'],'MONTH(tanggal_kegiatan)'=>date('m'),'YEAR(tanggal_kegiatan)'=>date('Y')]);
+        }
+
+        //perhitungan poin dan jumlah entrian
+        $data['statusSemua']    = $this->AktivitasHarianModel->get(['nip'=>$_SESSION['id_user'],'MONTH(tanggal_kegiatan)'=>date('m'),'YEAR(tanggal_kegiatan)'=>date('Y')]);
+        $data['statusBelum']    = $this->AktivitasHarianModel->jumlahBarisPerStatus('Belum');
+        $data['statusYa']       = $this->AktivitasHarianModel->jumlahBarisPerStatus('Ya');
+        $data['statusTidak']    = $this->AktivitasHarianModel->jumlahBarisPerStatus('Tidak');
+        $data['statusLink']     = $this->AktivitasHarianModel->jumlahBarisLinkSKP();
+        $data['poinYa']         = $this->AktivitasHarianModel->jumlahPoinPerStatus('Ya');
+        $data['poinBelum']      = $this->AktivitasHarianModel->jumlahPoinPerStatus('Belum');
 
 		$data['link']   = $this->LinkHirarkiModel->get(['nip'=>$_SESSION['id_user']]);
         $data['skp']    = $this->SusunanSKPModel->skpAktif();
-		$data['data']   = $this->AktivitasHarianModel->get(['nip'=>$_SESSION['id_user']]);
+	
 		$param['page']  = view($this->path_view . 'page-index',$data);
         return view($this->theme, $param);
 	}
@@ -41,6 +86,9 @@ class AktivitasHarian extends BackendController
         $is_submit          = entitiestag($this->request->getPost('is_submit'));
         $uraian_kegiatan    = entitiestag($this->request->getPost('uraian_kegiatan'));
         $poin               = entitiestag($this->request->getPost('poin'));
+        $id                 = entitiestag($this->request->getPost('id'));
+        $proses             = entitiestag($this->request->getPost('proses'));
+        
 
         // mengambil referensi data
         $penilai            = $this->LinkHirarkiModel->get(['nip'=>$_SESSION['id_user'],'link_atasan_id'=>$penilai_nip]);
@@ -69,8 +117,7 @@ class AktivitasHarian extends BackendController
             }
         }
 
-        $data['tanggal_entrian']  = date('Y-m-d H: i: s');
-        $data['tanggal_kegiatan'] = tanggal_Ymd($tanggal_kegiatan);
+        $data['tanggal_kegiatan'] = tanggal_Ymd($tanggal_kegiatan).' '.date('H:i:s');
         $data['nip']              = $_SESSION['nip'];
         $data['nama']             = $_SESSION['username'];
         $data['pangkat']          = $_SESSION['pangkat'];
@@ -87,8 +134,17 @@ class AktivitasHarian extends BackendController
         $data['uraian_kegiatan']  = $uraian_kegiatan;
         $data['poin']             = $poin;
         $data['is_submit']        = $is_submit;
-
-        $this->AktivitasHarianModel->insert($data);
+        
+        if($proses=="insert")
+        {
+            $data['tanggal_entrian']  = date('Y-m-d H:i:s');
+            $this->AktivitasHarianModel->insert($data);
+        }
+        else
+        {
+            $this->AktivitasHarianModel->update($id,$data);
+        }
+        
         return redirect()->to(backend_url('aktivitas-harian'));
     }
 

@@ -51,8 +51,73 @@ class AktivitasHarianModel extends Model
         }
         else
         {
-            return $this->where($id)->find();
+            return $this->where($id)->orderBy('tanggal_kegiatan','DESC')->find();
         } 
-    }                              
+    }
+    
+    
+    public function jumlahBarisPerStatus($status="")
+    {
+        $kueri = "SELECT id 
+                    FROM aktivitas_harian ah
+                    WHERE MONTH(ah.tanggal_kegiatan)='".date('m')."'
+                    AND YEAR(ah.tanggal_kegiatan)='".date('Y')."'
+                    AND ah.nip='".$_SESSION['id_user']."'
+                    AND ah.is_approve='".$status."'";
+
+        $kueri = $this->db->query($kueri)->getResultArray();
+
+        if(empty($kueri))
+        {
+            return 0;
+        }
+        else
+        {
+            return count($kueri);
+        }
+    }
+
+    public function jumlahBarisLinkSKP()
+    {
+        $kueri = "SELECT id 
+                    FROM aktivitas_harian ah
+                    WHERE MONTH(ah.tanggal_kegiatan)='".date('m')."'
+                    AND YEAR(ah.tanggal_kegiatan)='".date('Y')."'
+                    AND ah.nip='".$_SESSION['id_user']."'
+                    AND ah.link_skp_id > 0 ";
+
+        $kueri = $this->db->query($kueri)->getResultArray();
+
+        if(empty($kueri))
+        {
+            return 0;
+        }
+        else
+        {
+            return count($kueri);
+        }
+    }
+
+    public function jumlahPoinPerStatus($status="")
+    {
+        $kueri = "SELECT SUM(ah.poin) as total
+                    FROM aktivitas_harian ah
+                    WHERE MONTH(ah.tanggal_kegiatan)='".date('m')."'
+                    AND YEAR(ah.tanggal_kegiatan)='".date('Y')."'
+                    AND ah.nip='".$_SESSION['id_user']."'
+                    AND ah.is_approve='".$status."'
+                    GROUP BY ah.nip";
+
+        $kueri = $this->db->query($kueri)->getResultArray();
+
+        if(empty($kueri))
+        {
+            return 0;
+        }
+        else
+        {
+            return (int)$kueri[0]['total'];
+        }
+    }
 
 }

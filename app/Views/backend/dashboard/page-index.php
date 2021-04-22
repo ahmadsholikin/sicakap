@@ -42,7 +42,7 @@
     }
 </style>
 <div class="row">
-    <div class="col-8">
+    <div class="col-md-8 col-lg-8 col-sm-12 mb-4">
         <div class="card card-hover card-project-pink">
             <div class="card-body">
                 <div class="media">
@@ -58,7 +58,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4 col-lg-4 col-xl-4">
+    <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 mb-4">
         <div class="card card-hover card-profile-one">
             <div class="card-body">
                 <div class="media">
@@ -92,8 +92,8 @@
         </div><!-- card -->
     </div>
 </div>
-<div class="row mt-4">
-    <div class="col-4">
+<div class="row">
+    <div class="col-md-4 col-lg-4 col-sm-12 mb-sm-4 mb-4">
         <div class="card card-hover card card-project-three card-project-pink">
             <div class="card-body">
                 <div class="marker marker-ribbon marker-danger marker-top-right pos-absolute t-10 r-0">Predikat Kinerja Anda "Kurang"</div>
@@ -106,7 +106,7 @@
             </div>
         </div>
     </div>
-    <div class="col-8">
+    <div class="col-md-8 col-lg-8 col-sm-12 mb-4">
         <div class="card card-hover card-chart-three">
             <div class="card-header bg-transparent pd-lg-y-15">
                 <h6 class="card-title mg-b-0">Progress Aktivitas Bulanan</h6>
