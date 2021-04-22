@@ -128,7 +128,7 @@ class AktivitasHarian extends BackendController
 
         $data['tanggal_kegiatan'] = tanggal_Ymd($tanggal_kegiatan).' '.date('H:i:s');
         $data['nip']              = $_SESSION['nip'];
-        $data['nama']             = $_SESSION['username'];
+        $data['nama']             = $_SESSION['nama_pegawai'];
         $data['pangkat']          = $_SESSION['pangkat'];
         $data['gol']              = $_SESSION['gol'];
         $data['jabatan']          = $_SESSION['jabatan'];
