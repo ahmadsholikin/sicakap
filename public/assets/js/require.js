@@ -51,13 +51,13 @@ $(document).ready(function () {
 	});
 
 
-	// $('.clock').clockpicker({
-	// 	placement: 'bottom',
-	// 	align: 'left',
-	// 	autoclose: true,
-	// 	'default': 'now',
-	// 	donetext: 'Pilih'
-	// });
+	$('.clock').clockpicker({
+		placement: 'top',
+		align: 'left',
+		autoclose: true,
+		'default': 'now',
+		donetext: 'Pilih'
+	});
 
 	
 

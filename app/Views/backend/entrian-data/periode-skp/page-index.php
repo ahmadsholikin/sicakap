@@ -10,7 +10,9 @@
 						<th>No.</th>
 						<th>Periode Awal</th>
 						<th>Periode Akhir</th>
+						<th>Atasan Langsung</th>
 						<th>Pejabat Penilai</th>
+						<th>Atasan Pejabat Penilai</th>
 						<th>Default</th>
                         <th>Aksi</th>
 					</tr>
@@ -21,7 +23,9 @@
 						<td><?=$no++;?></td>
 						<td><?=tanggal_dMY($row['periode_awal']);?></td>
 						<td><?=tanggal_dMY($row['periode_akhir']);?></td>
+						<td><?=$row['atasan_nama'];?></td>
 						<td><?=$row['pejabat_penilai_nama'];?></td>
+						<td><?=$row['atasan_pejabat_penilai_nama'];?></td>
                         <td><a style="cursor:pointer" href="<?=backend_url();?>/periode-skp/default?id=<?=$row['periode_id'];?>"><?=status_skp($row['is_default']);?></a></td>
 						<td>
 							<div class="btn-group" role="group">

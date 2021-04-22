@@ -14101,7 +14101,7 @@ body {
     background-color: #fff;
 }
 .mail-item.unread:hover, .mail-item.unread:focus {
-    background-color: #fff;
+    background-color: #eaeaea;
 }
 .mail-item.unread .mail-item-body > div:first-child span:first-child {
     color: #373857;
@@ -54667,4 +54667,8 @@ td > .btn-sm, td > .btn-group > .btn, td > .ui-datepicker-buttonpane .btn-group-
 
 .bl-info{
     border-left:3px solid #03a9f4;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: #ffffff;
 }

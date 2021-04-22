@@ -17,12 +17,28 @@ class PeriodeSKPModel extends Model
                                         'jabatan_kd',
                                         'jenis_jabatan',
                                         'unit_kerja',
+
+                                        'atasan_nip',
+                                        'atasan_nama',
+                                        'atasan_pangkat',
+                                        'atasan_gol',
+                                        'atasan_jabatan',
+                                        'atasan_kerja',
+
                                         'pejabat_penilai_nip',
                                         'pejabat_penilai_nama',
                                         'pejabat_penilai_pangkat',
                                         'pejabat_penilai_gol',
                                         'pejabat_penilai_jabatan',
                                         'pejabat_penilai_unit_kerja',
+
+                                        'atasan_pejabat_penilai_nip',
+                                        'atasan_pejabat_penilai_nama',
+                                        'atasan_pejabat_penilai_pangkat',
+                                        'atasan_pejabat_penilai_gol',
+                                        'atasan_pejabat_penilai_jabatan',
+                                        'atasan_pejabat_penilai_unit_kerja',
+
                                         'periode_awal',
                                         'periode_akhir',
                                         'is_default',

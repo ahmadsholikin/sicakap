@@ -85,10 +85,19 @@ class AktivitasHarian extends BackendController
         $link_skp_id        = entitiestag($this->request->getPost('link_skp_id'));
         $is_submit          = entitiestag($this->request->getPost('is_submit'));
         $uraian_kegiatan    = entitiestag($this->request->getPost('uraian_kegiatan'));
-        $poin               = entitiestag($this->request->getPost('poin'));
         $id                 = entitiestag($this->request->getPost('id'));
         $proses             = entitiestag($this->request->getPost('proses'));
-        
+        $jam_mulai          = entitiestag($this->request->getPost('jam_mulai'));
+        $jam_selesai        = entitiestag($this->request->getPost('jam_selesai'));
+
+        $start              = strtotime($jam_mulai.':00');
+        $end                = strtotime($jam_selesai.':00');
+        $poin               = ($end - $start) / 60;
+
+        if($poin>360)
+        {
+            $poin=360;
+        }
 
         // mengambil referensi data
         $penilai            = $this->LinkHirarkiModel->get(['nip'=>$_SESSION['id_user'],'link_atasan_id'=>$penilai_nip]);
@@ -108,7 +117,7 @@ class AktivitasHarian extends BackendController
             }
         }
 
-        if($link_skp_id<>'')
+        if($link_skp_id!=0)
         {
             if(!empty($skp))
             {
@@ -132,6 +141,8 @@ class AktivitasHarian extends BackendController
         $data['link_skp_id']      = $skp_id;
         $data['link_skp_kegiatan']= $skp_kegiatan;
         $data['uraian_kegiatan']  = $uraian_kegiatan;
+        $data['jam_mulai']        = $jam_mulai;
+        $data['jam_selesai']      = $jam_selesai;
         $data['poin']             = $poin;
         $data['is_submit']        = $is_submit;
         

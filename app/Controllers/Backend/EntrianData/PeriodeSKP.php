@@ -57,19 +57,113 @@ class PeriodeSKP extends BackendController
         $data['jabatan_kd']		= $_SESSION['jabatan_kd'];
         $data['unit_kerja']		= $_SESSION['unit_kerja'];
 
-        $pejabat_penilai        = entitiestag($this->request->getPost('pejabat_penilai'));
-        $cek                    = $this->PegawaiModel->get(['nip'=>$pejabat_penilai]);
+        //atasan
+        $atasan     = entitiestag($this->request->getPost('atasan'));
+        $response   = api_post("https://sipgan.magelangkab.go.id/sipgan/api/sso/akun","nip=".$atasan."&token=3k1n%23RJ4&id_app=EKINERJA");
 
-        if(!empty($cek))
+        if ($response->status == "false")
         {
-            $data['pejabat_penilai_nip']        = $cek[0]['nip'];
-            $data['pejabat_penilai_nama']       = $cek[0]['nama'];
-            $data['pejabat_penilai_pangkat']    = $cek[0]['pangkat'];
-            $data['pejabat_penilai_gol']        = $cek[0]['gol'];
-            $data['pejabat_penilai_jabatan']    = $cek[0]['jabatan'];
-            $data['pejabat_penilai_unit_kerja'] = $cek[0]['unit_kerja'];
-        }
+            $this->session->setFlashdata('flash_info', 'Akun tidak ditemukan');
+            return redirect()->back();
+        } 
         else
+        {
+            $rest = $response->data[0];
+
+            $data['atasan_nip']        = $rest->nip_baru;
+            $data['atasan_nama']       = $rest->nama;
+            $data['atasan_pangkat']    = $rest->pangkat;
+            $data['atasan_gol']        = $rest->gol;
+            $data['atasan_jabatan']    = $rest->jabatan_nm;
+            $data['atasan_unit_kerja'] = $rest->skpd_nm;
+        }
+        //pejabat penilai
+        $pejabat_penilai        = entitiestag($this->request->getPost('pejabat_penilai'));
+        $response   = api_post("https://sipgan.magelangkab.go.id/sipgan/api/sso/akun","nip=".$pejabat_penilai."&token=3k1n%23RJ4&id_app=EKINERJA");
+
+        if ($response->status == "false")
+        {
+            $this->session->setFlashdata('flash_info', 'Akun tidak ditemukan');
+            return redirect()->back();
+        } 
+        else
+        {
+            $rest = $response->data[0];
+
+            $data['pejabat_penilai_nip']        = $rest->nip_baru;
+            $data['pejabat_penilai_nama']       = $rest->nama;
+            $data['pejabat_penilai_pangkat']    = $rest->pangkat;
+            $data['pejabat_penilai_gol']        = $rest->gol;
+            $data['pejabat_penilai_jabatan']    = $rest->jabatan_nm;
+            $data['pejabat_penilai_unit_kerja'] = $rest->skpd_nm;
+        }
+        //atasan pejabat penilai
+        $atasan_pejabat_penilai        = entitiestag($this->request->getPost('atasan_pejabat_penilai'));
+        $response   = api_post("https://sipgan.magelangkab.go.id/sipgan/api/sso/akun","nip=".$atasan_pejabat_penilai."&token=3k1n%23RJ4&id_app=EKINERJA");
+
+        if ($response->status == "false")
+        {
+            $this->session->setFlashdata('flash_info', 'Akun tidak ditemukan');
+            return redirect()->back();
+        } 
+        else
+        {
+            $rest = $response->data[0];
+
+            $data['atasan_pejabat_penilai_nip']        = $rest->nip_baru;
+            $data['atasan_pejabat_penilai_nama']       = $rest->nama;
+            $data['atasan_pejabat_penilai_pangkat']    = $rest->pangkat;
+            $data['atasan_pejabat_penilai_gol']        = $rest->gol;
+            $data['atasan_pejabat_penilai_jabatan']    = $rest->jabatan_nm;
+            $data['atasan_pejabat_penilai_unit_kerja'] = $rest->skpd_nm;
+        }
+
+		$this->PeriodeSKPModel->insert($data);
+		return redirect()->to(backend_url().'/periode-skp');
+	}
+
+    public function update()
+	{
+        $id                     = $this->request->getPost('id');
+		$data['periode_awal']  	= tanggal_Ymd($this->request->getPost('periode_awal'));
+		$data['periode_akhir'] 	= tanggal_Ymd($this->request->getPost('periode_akhir'));
+		$data['nip']			= $_SESSION['id_user'];
+        $data['nama']			= $_SESSION['nama_pegawai'];
+        $data['pangkat']		= $_SESSION['pangkat'];
+        $data['gol']			= $_SESSION['gol'];
+        $data['jabatan']		= $_SESSION['jabatan'];
+        $data['jabatan_kd']		= $_SESSION['jabatan_kd'];
+        $data['unit_kerja']		= $_SESSION['unit_kerja'];
+
+        $cek = $this->PeriodeSKPModel->get(['periode_id'=>$id]);
+        //atasan
+        $atasan     = entitiestag($this->request->getPost('atasan'));
+        if($cek[0]['atasan_nip']<>$atasan)
+        {
+            $response   = api_post("https://sipgan.magelangkab.go.id/sipgan/api/sso/akun","nip=".$atasan."&token=3k1n%23RJ4&id_app=EKINERJA");
+
+            if ($response->status == "false")
+            {
+                $this->session->setFlashdata('flash_info', 'Akun tidak ditemukan');
+                return redirect()->back();
+            } 
+            else
+            {
+                $rest = $response->data[0];
+
+                $data['atasan_nip']        = $rest->nip_baru;
+                $data['atasan_nama']       = $rest->nama;
+                $data['atasan_pangkat']    = $rest->pangkat;
+                $data['atasan_gol']        = $rest->gol;
+                $data['atasan_jabatan']    = $rest->jabatan_nm;
+                $data['atasan_unit_kerja'] = $rest->skpd_nm;
+            }
+        }
+       
+        
+        //pejabat penilai
+        $pejabat_penilai        = entitiestag($this->request->getPost('pejabat_penilai'));
+        if($cek[0]['pejabat_penilai_nip']<>$pejabat_penilai)
         {
             $response   = api_post("https://sipgan.magelangkab.go.id/sipgan/api/sso/akun","nip=".$pejabat_penilai."&token=3k1n%23RJ4&id_app=EKINERJA");
 
@@ -90,39 +184,11 @@ class PeriodeSKP extends BackendController
                 $data['pejabat_penilai_unit_kerja'] = $rest->skpd_nm;
             }
         }
-
-		$this->PeriodeSKPModel->insert($data);
-		return redirect()->to(backend_url().'/periode-skp');
-	}
-
-    public function update()
-	{
-        $id                     = $this->request->getPost('id');
-		$data['periode_awal']  	= tanggal_Ymd($this->request->getPost('periode_awal'));
-		$data['periode_akhir'] 	= tanggal_Ymd($this->request->getPost('periode_akhir'));
-		$data['nip']			= $_SESSION['id_user'];
-        $data['nama']			= $_SESSION['nama_pegawai'];
-        $data['pangkat']		= $_SESSION['pangkat'];
-        $data['gol']			= $_SESSION['gol'];
-        $data['jabatan']		= $_SESSION['jabatan'];
-        $data['jabatan_kd']		= $_SESSION['jabatan_kd'];
-        $data['unit_kerja']		= $_SESSION['unit_kerja'];
-
-        $pejabat_penilai        = entitiestag($this->request->getPost('pejabat_penilai'));
-        $cek                    = $this->PegawaiModel->get(['nip'=>$pejabat_penilai]);
-
-        if(!empty($cek))
+        //atasan pejabat penilai
+        $atasan_pejabat_penilai        = entitiestag($this->request->getPost('atasan_pejabat_penilai'));
+        if($cek[0]['atasan_pejabat_penilai_nip']<>$atasan_pejabat_penilai)
         {
-            $data['pejabat_penilai_nip']        = $cek[0]['nip'];
-            $data['pejabat_penilai_nama']       = $cek[0]['nama'];
-            $data['pejabat_penilai_pangkat']    = $cek[0]['pangkat'];
-            $data['pejabat_penilai_gol']        = $cek[0]['gol'];
-            $data['pejabat_penilai_jabatan']    = $cek[0]['jabatan'];
-            $data['pejabat_penilai_unit_kerja'] = $cek[0]['unit_kerja'];
-        }
-        else
-        {
-            $response   = api_post("https://sipgan.magelangkab.go.id/sipgan/api/sso/akun","nip=".$pejabat_penilai."&token=3k1n%23RJ4&id_app=EKINERJA");
+            $response   = api_post("https://sipgan.magelangkab.go.id/sipgan/api/sso/akun","nip=".$atasan_pejabat_penilai."&token=3k1n%23RJ4&id_app=EKINERJA");
 
             if ($response->status == "false")
             {
@@ -133,12 +199,12 @@ class PeriodeSKP extends BackendController
             {
                 $rest = $response->data[0];
 
-                $data['pejabat_penilai_nip']        = $rest->nip_baru;
-                $data['pejabat_penilai_nama']       = $rest->nama;
-                $data['pejabat_penilai_pangkat']    = $rest->pangkat;
-                $data['pejabat_penilai_gol']        = $rest->gol;
-                $data['pejabat_penilai_jabatan']    = $rest->jabatan_nm;
-                $data['pejabat_penilai_unit_kerja'] = $rest->skpd_nm;
+                $data['atasan_pejabat_penilai_nip']        = $rest->nip_baru;
+                $data['atasan_pejabat_penilai_nama']       = $rest->nama;
+                $data['atasan_pejabat_penilai_pangkat']    = $rest->pangkat;
+                $data['atasan_pejabat_penilai_gol']        = $rest->gol;
+                $data['atasan_pejabat_penilai_jabatan']    = $rest->jabatan_nm;
+                $data['atasan_pejabat_penilai_unit_kerja'] = $rest->skpd_nm;
             }
         }
 

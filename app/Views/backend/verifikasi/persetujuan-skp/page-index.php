@@ -71,7 +71,6 @@
 <script>
 	function setStatus(id,obj,row)
 	{
-		console.log(obj.value+'-'+row);
 		$.ajax(
 		{
 			url 	: '<?=backend_url();?>/persetujuan-skp/set-status',

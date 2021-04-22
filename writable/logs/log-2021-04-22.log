@@ -1,0 +1,106 @@
+CRITICAL - 2021-04-22 09:27:48 --> Undefined index: pejabat_atasan
+#0 G:\xampp\htdocs\sicakap\app\Views\backend\entrian-data\periode-skp\page-index.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'G:\\xampp\\htdocs...', 26, Array)
+#1 G:\xampp\htdocs\sicakap\system\View\View.php(220): include('G:\\xampp\\htdocs...')
+#2 G:\xampp\htdocs\sicakap\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\xampp\htdocs\sicakap\system\Common.php(1217): CodeIgniter\View\View->render('backend/entrian...', Array, true)
+#4 G:\xampp\htdocs\sicakap\app\Controllers\Backend\EntrianData\PeriodeSKP.php(30): view('backend/entrian...', Array)
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\EntrianData\PeriodeSKP->index()
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\EntrianData\PeriodeSKP))
+#7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-04-22 09:29:12 --> Undefined index: atasan
+#0 G:\xampp\htdocs\sicakap\app\Views\backend\entrian-data\periode-skp\page-edit.php(28): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'G:\\xampp\\htdocs...', 28, Array)
+#1 G:\xampp\htdocs\sicakap\system\View\View.php(220): include('G:\\xampp\\htdocs...')
+#2 G:\xampp\htdocs\sicakap\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\xampp\htdocs\sicakap\system\Common.php(1217): CodeIgniter\View\View->render('backend/entrian...', Array, true)
+#4 G:\xampp\htdocs\sicakap\app\Controllers\Backend\EntrianData\PeriodeSKP.php(233): view('backend/entrian...', Array)
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\EntrianData\PeriodeSKP->edit()
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\EntrianData\PeriodeSKP))
+#7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-04-22 09:29:58 --> Unknown column 'id' in 'where clause'
+#0 G:\xampp\htdocs\sicakap\system\Database\MySQLi\Connection.php(314): mysqli->query('SELECT *\nFROM `...')
+#1 G:\xampp\htdocs\sicakap\system\Database\BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 G:\xampp\htdocs\sicakap\system\Database\BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 G:\xampp\htdocs\sicakap\system\Database\BaseBuilder.php(1866): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 G:\xampp\htdocs\sicakap\system\Model.php(174): CodeIgniter\Database\BaseBuilder->get()
+#5 G:\xampp\htdocs\sicakap\system\BaseModel.php(518): CodeIgniter\Model->doFind(false, NULL)
+#6 G:\xampp\htdocs\sicakap\app\Models\EntrianData\PeriodeSKPModel.php(67): CodeIgniter\BaseModel->find()
+#7 G:\xampp\htdocs\sicakap\app\Controllers\Backend\EntrianData\PeriodeSKP.php(138): App\Models\EntrianData\PeriodeSKPModel->get(Array)
+#8 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\EntrianData\PeriodeSKP->update()
+#9 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\EntrianData\PeriodeSKP))
+#10 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2021-04-22 09:30:46 --> Undefined index: atasan_id
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\EntrianData\PeriodeSKP.php(141): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'G:\\xampp\\htdocs...', 141, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\EntrianData\PeriodeSKP->update()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\EntrianData\PeriodeSKP))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-04-22 10:04:49 --> Undefined variable: poin
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\EntrianData\AktivitasHarian.php(136): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\xampp\\htdocs...', 136, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\EntrianData\AktivitasHarian->insert()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\EntrianData\AktivitasHarian))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-04-22 10:10:33 --> Undefined variable: selesai
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\EntrianData\AktivitasHarian.php(94): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\xampp\\htdocs...', 94, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\EntrianData\AktivitasHarian->insert()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\EntrianData\AktivitasHarian))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-04-22 10:31:44 --> Call to undefined function jam()
+#0 G:\xampp\htdocs\sicakap\system\View\View.php(220): include()
+#1 G:\xampp\htdocs\sicakap\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 G:\xampp\htdocs\sicakap\system\Common.php(1217): CodeIgniter\View\View->render('backend/entrian...', Array, true)
+#3 G:\xampp\htdocs\sicakap\app\Controllers\Backend\EntrianData\AktivitasHarian.php(77): view('backend/entrian...', Array)
+#4 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\EntrianData\AktivitasHarian->index()
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\EntrianData\AktivitasHarian))
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2021-04-22 11:20:22 --> Trying to access array offset on value of type null
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Verifikasi\VerifAktivitasHarian.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'G:\\xampp\\htdocs...', 19, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Verifikasi\verifAktivitasHarian->index()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Verifikasi\verifAktivitasHarian))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-04-22 11:20:48 --> Trying to access array offset on value of type null
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Verifikasi\VerifAktivitasHarian.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'G:\\xampp\\htdocs...', 19, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Verifikasi\verifAktivitasHarian->index()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Verifikasi\verifAktivitasHarian))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-04-22 11:21:07 --> Undefined variable: poinYa
+#0 G:\xampp\htdocs\sicakap\app\Views\backend\verifikasi\verif-aktivitas-harian\page-index.php(7): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\xampp\\htdocs...', 7, Array)
+#1 G:\xampp\htdocs\sicakap\system\View\View.php(220): include('G:\\xampp\\htdocs...')
+#2 G:\xampp\htdocs\sicakap\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\xampp\htdocs\sicakap\system\Common.php(1217): CodeIgniter\View\View->render('backend/verifik...', Array, true)
+#4 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Verifikasi\VerifAktivitasHarian.php(26): view('backend/verifik...', Array)
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Verifikasi\verifAktivitasHarian->index()
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Verifikasi\verifAktivitasHarian))
+#7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-04-22 11:29:47 --> Unknown column 'pejabat_penilai' in 'where clause'
+#0 G:\xampp\htdocs\sicakap\system\Database\MySQLi\Connection.php(314): mysqli->query('SELECT *\nFROM `...')
+#1 G:\xampp\htdocs\sicakap\system\Database\BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 G:\xampp\htdocs\sicakap\system\Database\BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 G:\xampp\htdocs\sicakap\system\Database\BaseBuilder.php(1866): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 G:\xampp\htdocs\sicakap\system\Model.php(174): CodeIgniter\Database\BaseBuilder->get()
+#5 G:\xampp\htdocs\sicakap\system\BaseModel.php(518): CodeIgniter\Model->doFind(false, NULL)
+#6 G:\xampp\htdocs\sicakap\app\Models\EntrianData\AktivitasHarianModel.php(56): CodeIgniter\BaseModel->find()
+#7 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Verifikasi\VerifAktivitasHarian.php(26): App\Models\EntrianData\AktivitasHarianModel->get(Array)
+#8 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Verifikasi\verifAktivitasHarian->index()
+#9 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Verifikasi\verifAktivitasHarian))
+#10 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#12 {main}

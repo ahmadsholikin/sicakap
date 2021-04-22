@@ -47,7 +47,7 @@
         <div class="mail-body-header">
             <button  onclick="entrianShow()" class="btn d-md-none d-lg-none d-sm-inline btn-outline-danger" >Entri Aktivitas</button>
             <h5 class="d-none d-lg-inline" style="font-size: 20px;"><?=date('F Y');?>
-                <span >Total poin <?=rp($poinYa);?> dari target 6.000</span>
+                <span >Total poin <?=rp($poinYa);?> dari target 6.150</span>
             </h5>
             <div>
                 <span class="text-muted tx-13 mg-r-10 d-none d-lg-inline"><?=count($statusSemua);?> dari <?=count($statusSemua);?></span>
@@ -129,6 +129,8 @@
                     <input type="hidden" id="tb-penilai_nip<?=$list;?>" value="<?=$row['penilai_nip'];?>">
                     <input type="hidden" id="tb-is_submit<?=$list;?>" value="<?=$row['is_submit'];?>">
                     <input type="hidden" id="tb-uraian_kegiatan<?=$list;?>" value="<?=$row['uraian_kegiatan'];?>">
+                    <input type="hidden" id="tb-jam_mulai<?=$list;?>" value="<?=substr($row['jam_mulai'], 0, 5);?>">
+                    <input type="hidden" id="tb-jam_selesai<?=$list;?>" value="<?=substr($row['jam_selesai'], 0, 5);?>">
                     <?php 
                         switch ($row['is_approve'])
                         {
@@ -148,7 +150,7 @@
                     </div>
                     <div class="mail-item-body">
                         <div class="pr-2">
-                            <span><?=tanggal_dMY($row['tanggal_kegiatan']);?> 
+                            <span><?=tanggal_dMY($row['tanggal_kegiatan']);?> @ <?=jam_Hi($row['jam_mulai']);?> - <?=jam_Hi($row['jam_selesai']);?>
                             <?php if($row['is_submit']=='Ya'):?>
                                 <span class="mdi mdi-check-circle ml-3 text-warning"></span>&nbsp;1 Qty Realisasi
                             <?php endif;?></span>
@@ -213,7 +215,18 @@
                 <div class="form-row align-items-center">
                     <div class="col-sm">Tanggal</div>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control tanggal bd-0 pd-x-0" name="tanggal_kegiatan" value="<?=date('d M Y');?>" id="entrian-tanggal">
+                        <input type="text" class="form-control tanggal bd-0 pd-x-0" name="tanggal_kegiatan" value="<?=date('d M Y');?>" id="entrian-tanggal" readonly>
+                    </div>
+                </div>
+                <hr class="mg-y-10">
+                <div class="form-row align-items-center">
+                    <div class="col-sm">Mulai</div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control bd-0 pd-x-0 clock" name="jam_mulai"  id="entrian-mulai" readonly value="<?=date('H:i');?>">
+                    </div>
+                    <div class="col-sm">Selesai</div>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control bd-0 pd-x-0 clock" name="jam_selesai"  id="entrian-selesai" readonly value="<?=date('H:i');?>">
                     </div>
                 </div>
                 <hr class="mg-y-10">
@@ -232,7 +245,7 @@
                     <div class="col-sm">Link SKP</div>
                     <div class="col-sm-10">
                         <select class="form-control bd-0 pd-x-0" name="link_skp_id" id="entrian-link_skp_id">
-                            <option value="-">Tidak berkaitan dengan kegiatan SKP</option>
+                            <option value="0">Tidak berkaitan dengan kegiatan SKP</option>
                             <?php foreach ($skp as $r_skp) : ?>
                             <option value="<?=$r_skp['skp_id'];?>"><?=$r_skp['kegiatan'];?></option>
                             <?php endforeach; ?>
@@ -254,13 +267,6 @@
                     <textarea class="form-control" name="uraian_kegiatan" id="uraian_kegiatan" cols="30" rows="10" placeholder="Tuliskan kegiatan aktivitas harian Anda disini...." required></textarea>
                 </div>
                 <div class="d-sm-flex align-items-center justify-content-between mg-t-25">
-                    <select class="custom-select custom-select-sm tx-12" style="width: 150px;border:1px solid #dc3545" name="poin" id="poin" required>
-                        <option value="0">Durasi Waktu</option>
-                        <?php for ($i=1; $i < 41; $i++) : ?> 
-                        <option value="<?=$i*5;?>"><?=$i*5;?> Menit</option>
-                        <?php endfor; ?>
-                    </select>
-                    
                     <div class="tx-14 mg-t-15 mg-sm-t-0 float-right">
                         <button class="btn btn-danger btn-sm" type="submit">Kirim Laporan</button>
                         <button class="btn btn-white mg-r-5 btn-sm mailComposeClose" type="button">Batal</button>

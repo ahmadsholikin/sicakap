@@ -31,13 +31,13 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" rel="stylesheet"  />
         <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
         <link href="<?= base_url(); ?>/public/plugins/eas/easy-autocomplete.css" rel="stylesheet">
-        <link href="<?=base_url('public/backend');?>/assets/css/cassie.min.css" rel="stylesheet" >
+        <link href="<?=base_url('public/backend');?>/assets/css/cassie.css" rel="stylesheet" >
+        <link href="<?= base_url(); ?>/public/plugins/clockpicker/bootstrap-clockpicker.min.css" rel="stylesheet">
         <script src="<?=base_url('public/backend');?>/lib/jquery/jquery.min.js"></script>
 
         <!-- <link href="<?= base_url('public/backend'); ?>/lib/quill/quill.core.css" rel="stylesheet"> -->
         <!-- <link href="<?= base_url('public/backend'); ?>/lib/quill/quill.snow.css" rel="stylesheet"> -->
         <!-- <link href="<?= base_url('public/backend'); ?>/lib/quill/quill.bubble.css" rel="stylesheet"> -->
-        <!-- <link href="<?= base_url(); ?>/public/plugins/clockpicker/bootstrap-clockpicker.min.css" rel="stylesheet"> -->
         <!-- <link href="<?= base_url(); ?>/public/plugins/taginput/tagsinput.css" rel="stylesheet"> -->
         <!-- <link href="<?= base_url(); ?>/public/plugins/aos/aos.css" rel="stylesheet"> -->
         <!-- <link href="<?= base_url(); ?>/public/plugins/dropify/dist/css/dropify.min.css" rel="stylesheet"> -->
@@ -255,10 +255,10 @@
     <!-- <script src="<?= base_url(); ?>/public/plugins/dropify/dist/js/dropify.min.js"></script> -->
     <!-- <script src="<?= base_url(); ?>/public/plugins/taginput/tagsinput.js"></script> -->
     <!-- <script src="<?= base_url(); ?>/public/plugins/aos/aos.js"></script> -->
-    <!-- <script src="<?= base_url(); ?>/public/plugins/clockpicker/bootstrap-clockpicker.min.js"></script> -->
     <!-- <script src="<?=base_url('public/backend');?>/assets/js/parsley.min.js"></script> -->
     <!-- <script src="<?=base_url('public/backend');?>/lib/perfect-scrollbar/perfect-scrollbar.min.js"></script> -->
 
+    <script src="<?= base_url(); ?>/public/plugins/clockpicker/bootstrap-clockpicker.min.js"></script>
     <script src="<?= base_url(); ?>/public/plugins/datatables.net/jquery.dataTables.js"></script>
     <script src="<?= base_url(); ?>/public/plugins/datatables.net-bs4/dataTables.bootstrap4.js"></script>
     <script src="<?=base_url('public/backend');?>/lib/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>

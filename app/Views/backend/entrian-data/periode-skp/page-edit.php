@@ -22,10 +22,32 @@
             </div>
             <div class="form-row">
                 <div class="col form-group">
+                    <label>Pilihan Link Atasan Langsung</label>
+                    <select class="form-control form-control-sm" name="atasan" required>
+                        <?php foreach($link as $l): ?>
+                        <option <?=selected($l['link_atasan_id'],$row[0]['atasan_nip']);?> value="<?=$l['link_atasan_id'];?>"><?=$l['link_atasan_nama'];?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col form-group">
                     <label>Pilihan Link Pejabat Penilai</label>
                     <select class="form-control form-control-sm" name="pejabat_penilai" required>
                         <?php foreach($link as $l): ?>
                         <option <?=selected($l['link_atasan_id'],$row[0]['pejabat_penilai_nip']);?> value="<?=$l['link_atasan_id'];?>"><?=$l['link_atasan_nama'];?></option>
+                        <?php endforeach; ?>
+                    </select>
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col form-group">
+                    <label>Pilihan Link Atasan Pejabat Penilai</label>
+                    <select class="form-control form-control-sm" name="atasan_pejabat_penilai" required>
+                        <?php foreach($link as $l): ?>
+                        <option <?=selected($l['link_atasan_id'],$row[0]['atasan_pejabat_penilai_nip']);?> value="<?=$l['link_atasan_id'];?>"><?=$l['link_atasan_nama'];?></option>
                         <?php endforeach; ?>
                     </select>
                     <div class="help-block with-errors"></div>

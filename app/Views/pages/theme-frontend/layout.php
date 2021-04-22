@@ -15,7 +15,7 @@
         <div class="signin-panel">
             <div class="signin-sidebar">
                 <div class="signin-sidebar-body">
-                    <a href="#" class="sidebar-logo mg-b-40 mt-5">
+                    <a href="#" class="sidebar-logo mg-b-40 mt-md-5 mt-lg-5">
                         <span>SiCAKAP Pemkab Magelang</span>
                     </a>
                     <h5 >Selamat Datang!</h5>

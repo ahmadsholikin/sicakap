@@ -25,6 +25,8 @@ class AktivitasHarianModel extends Model
                                         'link_skp_id',
                                         'link_skp_kegiatan',
                                         'uraian_kegiatan',
+                                        'jam_mulai',
+                                        'jam_selesai',
                                         'poin',
                                         'is_approve',
                                         'tanggal_verifikasi',

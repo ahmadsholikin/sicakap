@@ -206,6 +206,14 @@ $routes->group('backend', function ($routes) {
         $routes->post('set-status', $root_groups . '::setStatus', ['filter' => 'auth']);
     });
 
+    //verifikasi - persetujuan skp
+    $routes->group('verif-aktivitas-harian', function ($routes) {
+        $root_groups = "Backend\Verifikasi\VerifAktivitasHarian";
+        //pages
+        $routes->add('/', $root_groups . '::index', ['filter' => 'auth']);
+        $routes->post('set-status', $root_groups . '::setStatus', ['filter' => 'auth']);
+    });
+
 });
 //output - print_skp
 $routes->group('output', function ($routes) {
