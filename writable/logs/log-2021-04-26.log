@@ -1,0 +1,67 @@
+CRITICAL - 2021-04-26 08:45:03 --> Undefined variable: periode_terpilih
+#0 G:\xampp\htdocs\sicakap\app\Views\backend\penilaian\penyesuaian-skp\page-index.php(7): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\xampp\\htdocs...', 7, Array)
+#1 G:\xampp\htdocs\sicakap\system\View\View.php(220): include('G:\\xampp\\htdocs...')
+#2 G:\xampp\htdocs\sicakap\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\xampp\htdocs\sicakap\system\Common.php(1217): CodeIgniter\View\View->render('backend/penilai...', Array, true)
+#4 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PenyesuaianSKP.php(28): view('backend/penilai...', Array)
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PenyesuaianSKP->index()
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PenyesuaianSKP))
+#7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-04-26 08:51:44 --> Undefined property: App\Controllers\Backend\Penilaian\PenyesuaianSKP::$PeriodeSKP
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PenyesuaianSKP.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'G:\\xampp\\htdocs...', 27, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PenyesuaianSKP->index()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PenyesuaianSKP))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-04-26 10:33:12 --> Undefined index: realisasi_biaya
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PenyesuaianSKP.php(75): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'G:\\xampp\\htdocs...', 75, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PenyesuaianSKP->getSKP()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PenyesuaianSKP))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-04-26 10:33:17 --> Undefined index: realisasi_biaya
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PenyesuaianSKP.php(75): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'G:\\xampp\\htdocs...', 75, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PenyesuaianSKP->getSKP()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PenyesuaianSKP))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-04-26 10:57:45 --> json_decode() expects parameter 1 to be string, array given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'json_decode() e...', 'G:\\xampp\\htdocs...', 101, Array)
+#1 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PenyesuaianSKP.php(101): json_decode(Array)
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PenyesuaianSKP->setSKP()
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PenyesuaianSKP))
+#4 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2021-04-26 11:00:51 --> There is no data to update.
+#0 G:\xampp\htdocs\sicakap\system\BaseModel.php(880): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 G:\xampp\htdocs\sicakap\system\Model.php(737): CodeIgniter\BaseModel->update(Array, Array)
+#2 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PenyesuaianSKP.php(105): CodeIgniter\Model->update('66', Array)
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PenyesuaianSKP->setSKP()
+#4 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PenyesuaianSKP))
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-04-26 11:02:26 --> There is no data to update.
+#0 G:\xampp\htdocs\sicakap\system\BaseModel.php(880): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 G:\xampp\htdocs\sicakap\system\Model.php(737): CodeIgniter\BaseModel->update(Array, Array)
+#2 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PenyesuaianSKP.php(105): CodeIgniter\Model->update('66', Array)
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PenyesuaianSKP->setSKP()
+#4 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PenyesuaianSKP))
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-04-26 11:03:29 --> There is no data to update.
+#0 G:\xampp\htdocs\sicakap\system\BaseModel.php(880): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 G:\xampp\htdocs\sicakap\system\Model.php(737): CodeIgniter\BaseModel->update(Array, Array)
+#2 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PenyesuaianSKP.php(105): CodeIgniter\Model->update('66', Array)
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PenyesuaianSKP->setSKP()
+#4 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PenyesuaianSKP))
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}

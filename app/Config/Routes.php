@@ -214,6 +214,16 @@ $routes->group('backend', function ($routes) {
         $routes->post('set-status', $root_groups . '::setStatus', ['filter' => 'auth']);
     });
 
+
+    //Penilaian - penyesuaian skp
+    $routes->group('penyesuaian-skp', function ($routes) {
+        $root_groups = "Backend\Penilaian\PenyesuaianSKP";
+        //pages
+        $routes->add('/', $root_groups . '::index', ['filter' => 'auth']);
+        $routes->get('get-skp', $root_groups . '::getSKP', ['filter' => 'auth']);
+        $routes->post('set-skp', $root_groups . '::setSKP', ['filter' => 'auth']);
+    });
+
 });
 //output - print_skp
 $routes->group('output', function ($routes) {

@@ -15,6 +15,7 @@ class SusunanSKPModel extends Model
                                         'link_skp_kegiatan',
                                         'kegiatan',
                                         'angka_kredit',
+
                                         'target_kuantitas',
                                         'target_output',
                                         'target_kualitas_mutu',
@@ -22,6 +23,21 @@ class SusunanSKPModel extends Model
                                         'target_satuan_waktu',
                                         'target_biaya',
                                         'target_acc',
+
+                                        'fix_kuantitas',
+                                        'fix_output',
+                                        'fix_kualitas_mutu',
+                                        'fix_waktu',
+                                        'fix_satuan_waktu',
+                                        'fix_biaya',
+
+                                        'realisasi_kuantitas',
+                                        'realisasi_output',
+                                        'realisasi_kualitas_mutu',
+                                        'realisasi_waktu',
+                                        'realisasi_satuan_waktu',
+                                        'realisasi_biaya',
+
                                         'created_at',
                                         'updated_at',
                                         'deleted_at'
