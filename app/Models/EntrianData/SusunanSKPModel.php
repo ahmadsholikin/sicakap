@@ -38,6 +38,9 @@ class SusunanSKPModel extends Model
                                         'realisasi_satuan_waktu',
                                         'realisasi_biaya',
 
+                                        'penghitungan',
+                                        'nilai',
+
                                         'created_at',
                                         'updated_at',
                                         'deleted_at'

@@ -224,6 +224,14 @@ $routes->group('backend', function ($routes) {
         $routes->post('set-skp', $root_groups . '::setSKP', ['filter' => 'auth']);
     });
 
+    //Penilaian - capaian skp
+    $routes->group('capaian-skp', function ($routes) {
+        $root_groups = "Backend\Penilaian\CapaianSKP";
+        //pages
+        $routes->add('/', $root_groups . '::index', ['filter' => 'auth']);
+        $routes->post('set-skp', $root_groups . '::setSKP', ['filter' => 'auth']);
+    });
+
 });
 //output - print_skp
 $routes->group('output', function ($routes) {
