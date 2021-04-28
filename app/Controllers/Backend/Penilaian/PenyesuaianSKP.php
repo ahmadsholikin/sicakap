@@ -2,6 +2,7 @@
 use App\Controllers\BackendController;
 use App\Models\EntrianData\SusunanSKPModel;
 use App\Models\EntrianData\PeriodeSKPModel;
+use App\Models\Penyesuaian\TambahanKreativitasModel;
 
 class PenyesuaianSKP extends BackendController
 {
@@ -10,8 +11,9 @@ class PenyesuaianSKP extends BackendController
 	
 	public function __construct()
 	{
-        $this->SusunanSKPModel  = new SusunanSKPModel();
-        $this->PeriodeSKPModel  = new PeriodeSKPModel();
+        $this->SusunanSKPModel          = new SusunanSKPModel();
+        $this->PeriodeSKPModel          = new PeriodeSKPModel();
+        $this->TambahanKreativitasModel = new TambahanKreativitasModel();
 	}
 
     public function index()
@@ -51,7 +53,8 @@ class PenyesuaianSKP extends BackendController
         $data['periode_id']     = $periode_terpilih;
         $data['periode_range']  = $periode_range;
 
-        $data['skp']            = $this->SusunanSKPModel->get(['nip'=>$_SESSION['id_user'],"periode_id"=>$periode_terpilih]);
+        $data['skp']                    = $this->SusunanSKPModel->get(['nip'=>$_SESSION['id_user'],"periode_id"=>$periode_terpilih]);
+        $data['tambahan_kreativitas']   = $this->TambahanKreativitasModel->get(['nip'=>$_SESSION['id_user'],"periode_id"=>$periode_terpilih]);
 		$param['page'] = view($this->path_view . 'page-index',$data);
         return view($this->theme, $param);
 	}
@@ -105,5 +108,37 @@ class PenyesuaianSKP extends BackendController
             $this->SusunanSKPModel->update($id, $data);
             echo "Berhasil";
         }
+    }
+
+
+    public function addTambahanKreativitas()
+    {
+        $data['nip']        = $_SESSION['id_user'];
+        $id                 = entitiestag($this->request->getPost('id'));
+        $data['periode_id'] = entitiestag($this->request->getPost('periode_id'));
+        $data['deskripsi']  = entitiestag($this->request->getPost('deskripsi'));
+        $data['kategori']   = entitiestag($this->request->getPost('kategori'));
+
+        if(empty($id)||$id=='-')
+        {
+            $this->TambahanKreativitasModel->insert($data);
+        }
+        else
+        {
+            $this->TambahanKreativitasModel->update($id,$data);
+        }
+        return redirect()->to(backend_url().'/penyesuaian-skp');
+    }
+
+    public function deleteTambahanKreativitas()
+    {
+        $id     = $this->request->getGet('id');
+        $this->TambahanKreativitasModel->delete($id);
+        return redirect()->to(backend_url().'/penyesuaian-skp');
+    }
+
+    public function approveTambahanKreativitas()
+    {
+        $id     = $this->request->getGet('id');
     }
 }

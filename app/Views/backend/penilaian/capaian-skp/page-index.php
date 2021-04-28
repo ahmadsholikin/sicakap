@@ -75,6 +75,7 @@
 							<td colspan="14"><a data-toggle="collapse" href="#col<?=$index;?>" role="button" aria-expanded="false" aria-controls="col<?=$index;?>"><span class="mdi mdi-chevron-down"></span><b><?=$main['nama'];?> - <?=$main['nip'];?></b></a>. &nbsp;&nbsp; Terdapat <?=count($main['skp']);?> Baris Kegiatan</td>
 						</tr>
 						<?php $no=1; foreach ($main['skp'] as $row): ?>
+                        <div>
 						<tr class="collapse multi-collapse <?=status_bl($row['target_acc']);?> row<?=$index;?><?=$no;?>" id="col<?=$index;?>">
                             <td><?=$no;?></td>
                             <td><?=ucfirst($row['kegiatan']);?> <?php if($row['link_skp_kegiatan']<>'-'){ ?> <span class="mdi mdi-link-variant bd-highlight" data-toggle="tooltip" data-placement="bottom" title="Link : <?=$row['link_skp_kegiatan'];?>"> Link</span><?php } ?></td>
@@ -101,8 +102,60 @@
                             <td><span id="ph<?=$index;?><?=$no;?>"><?=$row['penghitungan'];?></span></td>
                             <td><span id="ncs<?=$index;?><?=$no;?>"><?=$row['nilai'];?></span></td>
 						</tr>
-						<?php $no++;endforeach ?>
-                    <?php $index++; endforeach ?>
+                        <?php if(!empty($main['tambahan_kreativitas'])):?>
+                            <tr class="collapse multi-collapse row<?=$index;?><?=$no;?>" id="col<?=$index;?>">
+                                <th></th>
+                                <th>II. TUGAS TAMBAHAN DAN KREATIVITAS :</th>
+                                <th></th>
+                                <th colspan="4"></th>
+                                <th></th>
+                                <th colspan="4"></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            <?php $itt=1;$ik=2;$ind=1;foreach($main['tambahan_kreativitas'] as $row): ?>
+                                <?php if($row['kategori']=='Tugas Tambahan'):?>
+                                <tr class="collapse multi-collapse row<?=$index;?><?=$no;?>" id="col<?=$index;?>">
+                                    <td><?=($itt==1)?$itt:'';?></td>
+                                    <td><?=$row['deskripsi'];?>
+                                        <?php if($row['is_approve']=="Belum"):?>
+                                        <nav class="nav nav-card-icon float-right">
+                                            <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square svg-14"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg> Acc</a>
+                                            <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-slash svg-14"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg> Tolak</a>
+                                        </nav>
+                                        <?php endif;?>
+                                    </td>
+                                    <td></td>
+                                    <td colspan="4"></td>
+                                    <td></td>
+                                    <td colspan="4"></td>
+                                    <td></td>
+                                    <?=($itt==1)?"<td rowspan='3'>1</td>":'';?>
+                                </tr>
+                                <?php $itt++;endif;?>
+                                <?php if($row['kategori']=='Kreativitas'):?>
+                                <tr class="collapse multi-collapse row<?=$index;?><?=$no;?>" id="col<?=$index;?>">
+                                    <td><?=($ik==2)?$ik:'';?></td>
+                                    <td><?=$row['deskripsi'];?>
+                                        <?php if($row['is_approve']=="Belum"):?>
+                                        <nav class="nav nav-card-icon float-right">
+                                            <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square svg-14"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg> Acc</a>
+                                            <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-slash svg-14"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg> Tolak</a>
+                                        </nav>
+                                        <?php endif;?>
+                                    </td>
+                                    <td></td>
+                                    <td colspan="4"></td>
+                                    <td></td>
+                                    <td colspan="4"></td>
+                                    <td></td>
+                                    <?=($ik==2)?"<td rowspan='4'>1</td>":'';?>
+                                </tr>
+                                <?php $ik++; endif;?>
+                            <?php $ind++;endforeach;?>
+                        <?php endif;?>
+                        <?php $index++; endforeach ?>
+					<?php $no++;endforeach ?>
 				</tbody>
 			</table>
 		</div>

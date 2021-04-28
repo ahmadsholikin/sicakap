@@ -222,6 +222,10 @@ $routes->group('backend', function ($routes) {
         $routes->add('/', $root_groups . '::index', ['filter' => 'auth']);
         $routes->get('get-skp', $root_groups . '::getSKP', ['filter' => 'auth']);
         $routes->post('set-skp', $root_groups . '::setSKP', ['filter' => 'auth']);
+
+        $routes->post('add-tambahan-kreativitas', $root_groups . '::addTambahanKreativitas', ['filter' => 'auth']);
+        $routes->get('delete-tambahan-kreativitas', $root_groups . '::deleteTambahanKreativitas', ['filter' => 'auth']);
+        $routes->get('approve-tambahan-kreativitas', $root_groups . '::approveTambahanKreativitas', ['filter' => 'auth']);
     });
 
     //Penilaian - capaian skp

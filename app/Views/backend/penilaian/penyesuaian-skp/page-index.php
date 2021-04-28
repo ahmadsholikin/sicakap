@@ -15,6 +15,7 @@
 			</div>
 			<div class="d-none d-lg-flex">
 				<a href="" data-toggle="tooltip" title="klik untuk memuat ulang data"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rotate-cw"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg></a>
+                <a onclick="modalTK('-','-')" data-toggle="tooltip" title="klik untuk menambahkan tugas tambahan dan kreativitas" href="#" class="tx-medium"><i class="icon ion-plus-circled"></i> Tugas Tambahan dan Kreativitas </a>
 			</div>
 		</div>
 	</div>
@@ -25,7 +26,7 @@
 				<thead>
 					<tr>
 						<th rowspan="2" style="width:3%">NO</th>
-						<th rowspan="2">KEGIATAN TUGAS</th>
+						<th rowspan="2">I. KEGIATAN TUGAS JABATAN</th>
                         <th style="width:3%" rowspan="2">AK</th>
                         <th colspan="4" class="text-center">TARGET</th>
                         <th style="width:3%" rowspan="2">AK</th>
@@ -74,12 +75,100 @@
                             </td>
                         </tr>
                     <?php endforeach;?>
+                    <?php if(!empty($tambahan_kreativitas)):?>
+                        <tr>
+                            <th></th>
+                            <th>II. TUGAS TAMBAHAN DAN KREATIVITAS :</th>
+                            <th></th>
+                            <th colspan="4"></th>
+                            <th></th>
+                            <th colspan="4"></th>
+                            <th></th>
+                        </tr>
+                        <?php $itt=1;$ik=2;$index=1;foreach($tambahan_kreativitas as $row): ?>
+                            <?php if($row['kategori']=='Tugas Tambahan'):?>
+                            <tr>
+                                <td><?=($itt==1)?$itt:'';?></td>
+                                <td><?=$row['deskripsi'];?> <code class="float-right"><?=$row['is_approve'];?> Disetujui</code></td>
+                                <td></td>
+                                <td colspan="4"></td>
+                                <td></td>
+                                <td colspan="4"></td>
+                                <td>
+                                    <input type="hidden" name="" id="kategori-index<?=$itt;?><?=$index;?>" value="<?=$row['kategori'];?>">
+                                    <input type="hidden" name="" id="deskripsi-index<?=$itt;?><?=$index;?>" value="<?=$row['deskripsi'];?>">
+                                    <div class="btn-group">
+                                        <a onclick="modalTK('<?=$row['id'];?>','index<?=$itt;?><?=$index;?>')" data-toggle="tooltip" title="Klik untuk melakukan perubahan entrian" class="btn btn-outline-secondary btn-sm btn-icon"  data-original-title="Klik untuk melakukan perubahan entrian"><i class="fas fa-edit"></i></a>
+                                        <?=btn_delete('./penyesuaian-skp/delete-tambahan-kreativitas?id='.$row['id']);?>
+                                    </div>
+                                </td>
+                            </tr>
+                            <?php $itt++;endif;?>
+                            <?php if($row['kategori']=='Kreativitas'):?>
+                            <tr>
+                                <td><?=($ik==2)?$ik:'';?></td>
+                                <td><?=$row['deskripsi'];?> <code class="float-right"><?=$row['is_approve'];?> Disetujui</code></td>
+                                <td></td>
+                                <td colspan="4"></td>
+                                <td></td>
+                                <td colspan="4"></td>
+                                <td>
+                                    <input type="hidden" name="" id="kategori-index<?=$ik;?><?=$index;?>" value="<?=$row['kategori'];?>">
+                                    <input type="hidden" name="" id="deskripsi-index<?=$ik;?><?=$index;?>" value="<?=$row['deskripsi'];?>">
+                                    <div class="btn-group">
+                                        <a onclick="modalTK('<?=$row['id'];?>','index<?=$ik;?><?=$index;?>')" data-toggle="tooltip" title="Klik untuk melakukan perubahan entrian" class="btn btn-outline-secondary btn-sm btn-icon"  data-original-title="Klik untuk melakukan perubahan entrian"><i class="fas fa-edit"></i></a>
+                                        <?=btn_delete('./penyesuaian-skp/delete-tambahan-kreativitas?id='.$row['id']);?>
+                                    </div>
+                                </td>
+                            </tr>
+                            <?php $ik++; endif;?>
+                        <?php $index++;endforeach;?>
+                    <?php endif;?>
 				</tbody>
 			</table>
 		</div>
 	</div>
 </div>
 <!-- Modal -->
+<div class="modal fade" id="modal-tk" tabindex="-1" role="dialog" aria-labelledby="tk" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Form Entrian Tugas Tambahan Dan Kreativitas</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="POST" action="<?=backend_url();?>/penyesuaian-skp/add-tambahan-kreativitas">
+                 <?=csrf_field();?>
+                 <input type="hidden" name="periode_id" value="<?=$periode_id;?>">
+                 <input type="hidden" name="id" id="id">
+                <div class="modal-body">
+                    <div class="form-row">
+                        <div class="col-sm-12 form-group">
+                            <label>Pilihan Kategori</label>
+                            <select class="form-control form-control-sm" id="kategori" name="kategori" required>
+                                <option value="Tugas Tambahan">Tugas Tambahan</option>
+                                <option value="Kreativitas">Kreativitas</option>
+                            </select>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="col-sm-12 form-group">
+                            <label>Deskripsi Keterangan</label>
+                            <input class="form-control form-control-sm" id="deskripsi" name="deskripsi" type="text" required>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-sm btn-danger" >Simpan</button>
+                    <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Batal</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Modal Penyesuaian -->
 <div class="modal fade" id="modal-pskp" tabindex="-1" role="dialog" aria-labelledby="pskp" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
@@ -93,69 +182,73 @@
                 <form id="form-pskp">
                     <?=csrf_field();?>
                     <input type="hidden" id="skp_id" name="skp_id">
-                    <div class="form-row">
-                        <div class="col-sm-12 col-md-6 form-group">
-                            <label>Fix Target Kuantitas</label>
-                            <input class="form-control form-control-sm" id="fix_kuantitas" name="fix_kuantitas" type="text" required>
-                            <div class="help-block with-errors"></div>
+                    <div class="row">
+                        <div class="col-6 py-3 px-1">
+                            <div class="col-sm-12 form-group">
+                                <label>Fix Target Kuantitas</label>
+                                <input class="form-control form-control-sm" id="fix_kuantitas" name="fix_kuantitas" type="text" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="col-sm-12 form-group">
+                                <label>Fix Target Output</label>
+                                <input class="form-control form-control-sm" id="fix_output"  name="fix_output" type="text" placeholder="Dokumen, Laporan, Layanan, Kegiatan" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="col-sm-12 form-group">
+                                <label>Fix Target Durasi Waktu</label>
+                                <input class="form-control form-control-sm" id="fix_waktu" name="fix_waktu" type="text" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="col-sm-12 form-group">
+                                <label>Fix Target Satuan Waktu</label>
+                                <select class="form-control form-control-sm" id="fix_satuan_waktu" name="fix_satuan_waktu"  required>
+                                    <option value="Bulan">Bulan</option>
+                                    <option value="Hari">Hari</option>
+                                    <option value="Tahun">Tahun</option>
+                                </select>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="col-sm-12 form-group">
+                                <label>Fix Target Biaya</label>
+                                <input class="form-control form-control-sm thousand" id="fix_biaya" name="fix_biaya" type="text">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="col-sm-12 form-group">
+                                <label>Fix Target Kualitas / Mutu</label>
+                                <input class="form-control form-control-sm" id="fix_kualitas_mutu" name="fix_kualitas_mutu" type="text" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
                         </div>
-                        <div class="col-sm-12 col-md-6 form-group">
-                            <label>Realisasi Kuantitas</label>
-                            <input class="form-control form-control-sm" id="realisasi_kuantitas" name="realisasi_kuantitas" type="text" required>
-                            <div class="help-block with-errors"></div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 form-group">
-                            <label>Fix Target Output</label>
-                            <input class="form-control form-control-sm" id="fix_output"  name="fix_output" type="text" placeholder="Dokumen, Laporan, Layanan, Kegiatan" required>
-                            <div class="help-block with-errors"></div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 form-group">
-                            <label>Realisasi Output</label>
-                            <input class="form-control form-control-sm" id="realisasi_output" name="realisasi_output" type="text" placeholder="Dokumen, Laporan, Layanan, Kegiatan" required>
-                            <div class="help-block with-errors"></div>
-                        </div>
-                        <div class="col-sm-12 col-md-12 form-group">
-                            <label>Fix Target Kualitas / Mutu</label>
-                            <input class="form-control form-control-sm" id="fix_kualitas_mutu" name="fix_kualitas_mutu" type="text" required>
-                            <div class="help-block with-errors"></div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 form-group">
-                            <label>Fix Target Durasi Waktu</label>
-                            <input class="form-control form-control-sm" id="fix_waktu" name="fix_waktu" type="text" required>
-                            <div class="help-block with-errors"></div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 form-group">
-                            <label>Realisasi Durasi Waktu</label>
-                            <input class="form-control form-control-sm" id="realisasi_waktu" name="realisasi_waktu" type="text" required>
-                            <div class="help-block with-errors"></div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 form-group">
-                            <label>Fix Target Satuan Waktu</label>
-                            <select class="form-control form-control-sm" id="fix_satuan_waktu" name="fix_satuan_waktu"  required>
-                                <option value="Bulan">Bulan</option>
-                                <option value="Hari">Hari</option>
-                                <option value="Tahun">Tahun</option>
-                            </select>
-                            <div class="help-block with-errors"></div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 form-group">
-                            <label>Realisasi Satuan Waktu</label>
-                            <select class="form-control form-control-sm" id="realisasi_satuan_waktu" name="realisasi_satuan_waktu"  required>
-                                <option value="Bulan">Bulan</option>
-                                <option value="Hari">Hari</option>
-                                <option value="Tahun">Tahun</option>
-                            </select>
-                            <div class="help-block with-errors"></div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 form-group">
-                            <label>Fix Target Biaya</label>
-                            <input class="form-control form-control-sm thousand" id="fix_biaya" name="fix_biaya" type="text">
-                            <div class="help-block with-errors"></div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 form-group">
-                            <label>Realisasi Biaya</label>
-                            <input class="form-control form-control-sm thousand" id="realisasi_biaya" name="realisasi_biaya" type="text">
-                            <div class="help-block with-errors"></div>
+                        <div class="col-6 py-3 px-1" style="background-color:#e8f0fe;">
+                            <div class="col-sm-12 form-group" >
+                                <label>Realisasi Kuantitas</label>
+                                <input class="form-control form-control-sm" id="realisasi_kuantitas" name="realisasi_kuantitas" type="text" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="col-sm-12 form-group">
+                                <label>Realisasi Output</label>
+                                <input class="form-control form-control-sm" id="realisasi_output" name="realisasi_output" type="text" placeholder="Dokumen, Laporan, Layanan, Kegiatan" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="col-sm-12 form-group">
+                                <label>Realisasi Durasi Waktu</label>
+                                <input class="form-control form-control-sm" id="realisasi_waktu" name="realisasi_waktu" type="text" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="col-sm-12 form-group">
+                                <label>Realisasi Satuan Waktu</label>
+                                <select class="form-control form-control-sm" id="realisasi_satuan_waktu" name="realisasi_satuan_waktu"  required>
+                                    <option value="Bulan">Bulan</option>
+                                    <option value="Hari">Hari</option>
+                                    <option value="Tahun">Tahun</option>
+                                </select>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="col-sm-12 form-group">
+                                <label>Realisasi Biaya</label>
+                                <input class="form-control form-control-sm thousand" id="realisasi_biaya" name="realisasi_biaya" type="text">
+                                <div class="help-block with-errors"></div>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -188,6 +281,22 @@
             $('#realisasi_satuan_waktu').val(obj.realisasi_satuan_waktu);
             $('#realisasi_biaya').val(obj.realisasi_biaya);
         });
+    }
+
+    function modalTK(id,index)
+    {
+        $('#modal-tk').modal('show');
+        if(id=='0')
+        {
+            $('#id').val('');
+            $('#deskripsi').val('');
+        }
+        else
+        {
+            $('#id').val(id);
+            $('#kategori').val($('#kategori-'+index).val());
+            $('#deskripsi').val($('#deskripsi-'+index).val());
+        }
     }
 
     function setSKP()

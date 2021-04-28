@@ -1,0 +1,47 @@
+CRITICAL - 2021-04-28 08:04:51 --> Unknown column 'tambahan_kreativitas.deleted_at' in 'where clause'
+#0 G:\xampp\htdocs\sicakap\system\Database\MySQLi\Connection.php(314): mysqli->query('SELECT *\nFROM `...')
+#1 G:\xampp\htdocs\sicakap\system\Database\BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 G:\xampp\htdocs\sicakap\system\Database\BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 G:\xampp\htdocs\sicakap\system\Database\BaseBuilder.php(1866): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 G:\xampp\htdocs\sicakap\system\Model.php(174): CodeIgniter\Database\BaseBuilder->get()
+#5 G:\xampp\htdocs\sicakap\system\BaseModel.php(518): CodeIgniter\Model->doFind(false, NULL)
+#6 G:\xampp\htdocs\sicakap\app\Models\Penyesuaian\TambahanKreativitasModel.php(40): CodeIgniter\BaseModel->find()
+#7 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PenyesuaianSKP.php(57): App\Models\Penyesuaian\TambahanKreativitasModel->get(Array)
+#8 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PenyesuaianSKP->index()
+#9 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PenyesuaianSKP))
+#10 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2021-04-28 09:34:27 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 8
+#0 G:\xampp\htdocs\sicakap\system\Database\MySQLi\Connection.php(314): mysqli->query('SELECT tk.* FRO...')
+#1 G:\xampp\htdocs\sicakap\system\Database\BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT tk.* FRO...')
+#2 G:\xampp\htdocs\sicakap\system\Database\BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT tk.* FRO...')
+#3 G:\xampp\htdocs\sicakap\app\Models\Verifikasi\PersetujuanSKPModel.php(85): CodeIgniter\Database\BaseConnection->query('SELECT tk.* FRO...')
+#4 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\CapaianSKP.php(46): App\Models\Verifikasi\PersetujuanSKPModel->daftarSKPLink()
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\CapaianSKP->index()
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\CapaianSKP))
+#7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-04-28 09:36:21 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 8
+#0 G:\xampp\htdocs\sicakap\system\Database\MySQLi\Connection.php(314): mysqli->query('SELECT tk.* FRO...')
+#1 G:\xampp\htdocs\sicakap\system\Database\BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT tk.* FRO...')
+#2 G:\xampp\htdocs\sicakap\system\Database\BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT tk.* FRO...')
+#3 G:\xampp\htdocs\sicakap\app\Models\Verifikasi\PersetujuanSKPModel.php(85): CodeIgniter\Database\BaseConnection->query('SELECT tk.* FRO...')
+#4 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\CapaianSKP.php(46): App\Models\Verifikasi\PersetujuanSKPModel->daftarSKPLink()
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\CapaianSKP->index()
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\CapaianSKP))
+#7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-04-28 10:08:24 --> Undefined index: target_acc
+#0 G:\xampp\htdocs\sicakap\app\Views\backend\penilaian\capaian-skp\page-index.php(118): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'G:\\xampp\\htdocs...', 118, Array)
+#1 G:\xampp\htdocs\sicakap\system\View\View.php(220): include('G:\\xampp\\htdocs...')
+#2 G:\xampp\htdocs\sicakap\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\xampp\htdocs\sicakap\system\Common.php(1217): CodeIgniter\View\View->render('backend/penilai...', Array, true)
+#4 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\CapaianSKP.php(47): view('backend/penilai...', Array)
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\CapaianSKP->index()
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\CapaianSKP))
+#7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}

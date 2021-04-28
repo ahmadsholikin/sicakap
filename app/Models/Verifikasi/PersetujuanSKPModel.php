@@ -72,14 +72,29 @@ class PersetujuanSKPModel extends Model
                                 AND deleted_at IS NULL) ;";
 
                 $kueri_sub  = $this->db->query($kueri_sub)->getResultArray();
+
+                $kueri_tk  = "SELECT tk.* FROM tambahan_kreativitas tk
+                                INNER JOIN periode_skp periode
+                                ON tk.periode_id = periode.periode_id
+                                WHERE periode.nip='".$key['nip']."' AND periode.is_default='Ya' AND tk.nip IN
+                                (SELECT link.nip
+                                FROM link_hirarki link
+                                WHERE link.link_atasan_id='".$_SESSION['id_user']."' 
+                                AND deleted_at IS NULL) AND tk.deleted_at IS NULL";
+
+                $kueri_tk  = $this->db->query($kueri_tk)->getResultArray();
+
+                
                 $dump = array(
-                    "nip"   => $key['nip'],
-                    "nama"  => $key['nama'],
-                    "skp"   => $kueri_sub
+                    "nip"                   => $key['nip'],
+                    "nama"                  => $key['nama'],
+                    "skp"                   => $kueri_sub,
+                    "tambahan_kreativitas"  => $kueri_tk,
                 );
                 
                 array_push($data,$dump);
             }
+   
             return $data;
         }
     }

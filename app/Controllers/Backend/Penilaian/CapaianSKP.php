@@ -3,6 +3,7 @@ use App\Controllers\BackendController;
 use App\Models\EntrianData\SusunanSKPModel;
 use App\Models\EntrianData\PeriodeSKPModel;
 use App\Models\Verifikasi\PersetujuanSKPModel;
+use App\Models\Penyesuaian\TambahanKreativitasModel;
 
 class CapaianSKP extends BackendController
 {
@@ -14,7 +15,7 @@ class CapaianSKP extends BackendController
         $this->SusunanSKPModel      = new SusunanSKPModel();
         $this->PeriodeSKPModel      = new PeriodeSKPModel();
         $this->PersetujuanSKPModel  = new PersetujuanSKPModel();
-
+        $this->TambahanKreativitasModel = new TambahanKreativitasModel();
         $this->db  = \Config\Database::connect();
 	}
 
