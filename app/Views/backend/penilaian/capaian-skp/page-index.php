@@ -119,9 +119,9 @@
                                     <td><?=($itt==1)?$itt:'';?></td>
                                     <td><?=$row['deskripsi'];?>
                                         <?php if($row['is_approve']=="Belum"):?>
-                                        <nav class="nav nav-card-icon float-right">
-                                            <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square svg-14"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg> Acc</a>
-                                            <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-slash svg-14"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg> Tolak</a>
+                                        <nav class="nav nav-card-icon float-right" id="navrow<?=$index;?><?=$no;?>t<?=$itt;?>">
+                                            <a onclick="approveTK('<?=$row['id'];?>','navrow<?=$index;?><?=$no;?>t<?=$itt;?>','Ya')" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square svg-14"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg> Acc</a>
+                                            <a onclick="approveTK('<?=$row['id'];?>','navrow<?=$index;?><?=$no;?>t<?=$itt;?>','Tidak')" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-slash svg-14"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg> Tolak</a>
                                         </nav>
                                         <?php endif;?>
                                     </td>
@@ -138,9 +138,9 @@
                                     <td><?=($ik==2)?$ik:'';?></td>
                                     <td><?=$row['deskripsi'];?>
                                         <?php if($row['is_approve']=="Belum"):?>
-                                        <nav class="nav nav-card-icon float-right">
-                                            <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square svg-14"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg> Acc</a>
-                                            <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-slash svg-14"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg> Tolak</a>
+                                        <nav class="nav nav-card-icon float-right" id="navrow<?=$index;?><?=$no;?>k<?=$ik;?>">
+                                            <a onclick="approveTK('<?=$row['id'];?>','navrow<?=$index;?><?=$no;?>k<?=$ik;?>','Ya')" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square svg-14"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg> Acc</a>
+                                            <a onclick="approveTK('<?=$row['id'];?>','navrow<?=$index;?><?=$no;?>k<?=$ik;?>','Tidak')" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-slash svg-14"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg> Tolak</a>
                                         </nav>
                                         <?php endif;?>
                                     </td>
@@ -190,4 +190,10 @@
             });
         }
 	}
+
+    function approveTK(id,index,status)
+    {
+        alert(id+index+status);
+    }
+    
 </script>
