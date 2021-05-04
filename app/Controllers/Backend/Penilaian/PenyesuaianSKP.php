@@ -139,6 +139,57 @@ class PenyesuaianSKP extends BackendController
 
     public function approveTambahanKreativitas()
     {
-        $id     = $this->request->getGet('id');
+        // Check for AJAX request.
+        if ($request->isAJAX())
+        {
+            $id         = entitiestag($this->request->getPost('id'));
+            $status     = entitiestag($this->request->getPost('status'));
+            $kategori   = entitiestag($this->request->getPost('kategori'));
+
+            $data['is_approve'] = $status;
+            $this->TambahanKreativitasModel->update($id,$data);
+            
+            $row        = $this->TambahanKreativitasModel->get(['id'=>$id]);
+            $periode_id = $row[0]['periode_id'];
+
+            $acc  = $this->TambahanKreativitasModel->get(['nip'=>$row[0]['nip'],'periode_id'=>$row[0]['periode_id'],'is_approve'=>'Ya','kategori'=>$kategori]); 
+            $acc  = count($acc);
+            // perhitungan jumlah nilai berdasarkan rentang
+            $poin = 0;
+            switch(true) 
+            {
+                case in_array($acc, range(1,3)): 
+                    $poin = 1;
+                break;
+
+                case in_array($acc, range(4,6)):
+                    $poin = 2;
+                break;
+
+                case in_array($acc, range(7,999)): 
+                    $poin = 3;
+                break;
+
+                default : $poin = 0;
+            }
+
+        
+            if($kategori=='Tugas Tambahan')
+            {
+                $save['poin_tugas_tambahan'] = $poin;
+                $this->PeriodeSKPModel->update($periode_id,$save);
+            }
+            else
+            {
+                $save['poin_kreativitas'] = $poin;
+                $this->PeriodeSKPModel->update($periode_id,$save);
+            }
+
+            echo $poin;
+        }
+        else
+        {
+            echo "Access Denied";
+        }
     }
 }

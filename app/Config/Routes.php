@@ -225,7 +225,7 @@ $routes->group('backend', function ($routes) {
 
         $routes->post('add-tambahan-kreativitas', $root_groups . '::addTambahanKreativitas', ['filter' => 'auth']);
         $routes->get('delete-tambahan-kreativitas', $root_groups . '::deleteTambahanKreativitas', ['filter' => 'auth']);
-        $routes->get('approve-tambahan-kreativitas', $root_groups . '::approveTambahanKreativitas', ['filter' => 'auth']);
+        $routes->post('approve-tambahan-kreativitas', $root_groups . '::approveTambahanKreativitas', ['filter' => 'auth']);
     });
 
     //Penilaian - capaian skp
@@ -234,6 +234,16 @@ $routes->group('backend', function ($routes) {
         //pages
         $routes->add('/', $root_groups . '::index', ['filter' => 'auth']);
         $routes->post('set-skp', $root_groups . '::setSKP', ['filter' => 'auth']);
+    });
+
+
+    //Penilaian - perilaku kerja
+    $routes->group('perilaku-kerja', function ($routes) {
+        $root_groups = "Backend\Penilaian\PerilakuKerja";
+        //pages
+        $routes->add('/', $root_groups . '::index', ['filter' => 'auth']);
+        $routes->post('set-nilai', $root_groups . '::setNilai', ['filter' => 'auth']);
+        $routes->post('info-wa', $root_groups . '::infoWa', ['filter' => 'auth']);
     });
 
 });

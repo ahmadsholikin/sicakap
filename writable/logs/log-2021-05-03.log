@@ -1,0 +1,297 @@
+CRITICAL - 2021-05-03 08:46:53 --> Cannot use a scalar value as an array
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PenyesuaianSKP.php(173): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot use a sc...', 'G:\\xampp\\htdocs...', 173, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PenyesuaianSKP->approveTambahanKreativitas()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PenyesuaianSKP))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 08:46:55 --> Cannot use a scalar value as an array
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PenyesuaianSKP.php(173): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot use a sc...', 'G:\\xampp\\htdocs...', 173, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PenyesuaianSKP->approveTambahanKreativitas()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PenyesuaianSKP))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 08:47:31 --> Cannot use a scalar value as an array
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PenyesuaianSKP.php(173): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Cannot use a sc...', 'G:\\xampp\\htdocs...', 173, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PenyesuaianSKP->approveTambahanKreativitas()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PenyesuaianSKP))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 08:48:48 --> There is no data to update.
+#0 G:\xampp\htdocs\sicakap\system\BaseModel.php(880): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 G:\xampp\htdocs\sicakap\system\Model.php(737): CodeIgniter\BaseModel->update(Array, Array)
+#2 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PenyesuaianSKP.php(182): CodeIgniter\Model->update('18', Array)
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PenyesuaianSKP->approveTambahanKreativitas()
+#4 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PenyesuaianSKP))
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-05-03 08:48:49 --> There is no data to update.
+#0 G:\xampp\htdocs\sicakap\system\BaseModel.php(880): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 G:\xampp\htdocs\sicakap\system\Model.php(737): CodeIgniter\BaseModel->update(Array, Array)
+#2 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PenyesuaianSKP.php(182): CodeIgniter\Model->update('18', Array)
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PenyesuaianSKP->approveTambahanKreativitas()
+#4 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PenyesuaianSKP))
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2021-05-03 09:25:13 --> Undefined variable: default_periode_id
+#0 G:\xampp\htdocs\sicakap\app\Views\backend\entrian-data\susunan-skp\page-index.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'G:\\xampp\\htdocs...', 21, Array)
+#1 G:\xampp\htdocs\sicakap\system\View\View.php(220): include('G:\\xampp\\htdocs...')
+#2 G:\xampp\htdocs\sicakap\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\xampp\htdocs\sicakap\system\Common.php(1217): CodeIgniter\View\View->render('backend/entrian...', Array, true)
+#4 G:\xampp\htdocs\sicakap\app\Controllers\Backend\EntrianData\SusunanSKP.php(51): view('backend/entrian...', Array)
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\EntrianData\SusunanSKP->index()
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\EntrianData\SusunanSKP))
+#7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-05-03 09:27:18 --> Undefined offset: 0
+#0 G:\xampp\htdocs\sicakap\app\Views\backend\entrian-data\susunan-skp\page-index.php(88): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\xampp\\htdocs...', 88, Array)
+#1 G:\xampp\htdocs\sicakap\system\View\View.php(220): include('G:\\xampp\\htdocs...')
+#2 G:\xampp\htdocs\sicakap\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\xampp\htdocs\sicakap\system\Common.php(1217): CodeIgniter\View\View->render('backend/entrian...', Array, true)
+#4 G:\xampp\htdocs\sicakap\app\Controllers\Backend\EntrianData\SusunanSKP.php(52): view('backend/entrian...', Array)
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\EntrianData\SusunanSKP->index()
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\EntrianData\SusunanSKP))
+#7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-05-03 14:24:14 --> Undefined property: App\Controllers\Backend\Penilaian\PerilakuKerja::$PersetujuanSKPModel
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(29): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'G:\\xampp\\htdocs...', 29, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->index()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 14:26:28 --> Undefined index: skp
+#0 G:\xampp\htdocs\sicakap\app\Views\backend\penilaian\perilaku-kerja\page-index.php(61): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'G:\\xampp\\htdocs...', 61, Array)
+#1 G:\xampp\htdocs\sicakap\system\View\View.php(220): include('G:\\xampp\\htdocs...')
+#2 G:\xampp\htdocs\sicakap\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\xampp\htdocs\sicakap\system\Common.php(1217): CodeIgniter\View\View->render('backend/penilai...', Array, true)
+#4 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(46): view('backend/penilai...', Array)
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->index()
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-05-03 14:54:54 --> Undefined property: App\Controllers\Backend\Penilaian\PerilakuKerja::$IndikatorPerilakuKerjaModel
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(55): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'G:\\xampp\\htdocs...', 55, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 14:54:54 --> Undefined property: App\Controllers\Backend\Penilaian\PerilakuKerja::$IndikatorPerilakuKerjaModel
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(55): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'G:\\xampp\\htdocs...', 55, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 14:54:54 --> Undefined property: App\Controllers\Backend\Penilaian\PerilakuKerja::$IndikatorPerilakuKerjaModel
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(55): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'G:\\xampp\\htdocs...', 55, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 14:54:55 --> Undefined property: App\Controllers\Backend\Penilaian\PerilakuKerja::$IndikatorPerilakuKerjaModel
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(55): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'G:\\xampp\\htdocs...', 55, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 14:54:55 --> Undefined property: App\Controllers\Backend\Penilaian\PerilakuKerja::$IndikatorPerilakuKerjaModel
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(55): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'G:\\xampp\\htdocs...', 55, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 14:54:56 --> Undefined property: App\Controllers\Backend\Penilaian\PerilakuKerja::$IndikatorPerilakuKerjaModel
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(55): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'G:\\xampp\\htdocs...', 55, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 14:54:57 --> Undefined property: App\Controllers\Backend\Penilaian\PerilakuKerja::$IndikatorPerilakuKerjaModel
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(55): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'G:\\xampp\\htdocs...', 55, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 15:28:53 --> Undefined index: periode_id
+#0 G:\xampp\htdocs\sicakap\app\Views\backend\penilaian\perilaku-kerja\page-index.php(68): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'G:\\xampp\\htdocs...', 68, Array)
+#1 G:\xampp\htdocs\sicakap\system\View\View.php(220): include('G:\\xampp\\htdocs...')
+#2 G:\xampp\htdocs\sicakap\system\View\View.php(222): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 G:\xampp\htdocs\sicakap\system\Common.php(1217): CodeIgniter\View\View->render('backend/penilai...', Array, true)
+#4 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(54): view('backend/penilai...', Array)
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->index()
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-05-03 16:17:17 --> Undefined offset: 0
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(106): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\xampp\\htdocs...', 106, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 16:17:45 --> Undefined offset: 0
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(106): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\xampp\\htdocs...', 106, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 16:19:00 --> Undefined offset: 0
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(106): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\xampp\\htdocs...', 106, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 16:19:39 --> Column 'deleted_at' in where clause is ambiguous
+#0 G:\xampp\htdocs\sicakap\system\Database\MySQLi\Connection.php(314): mysqli->query('SELECT * FROM (...')
+#1 G:\xampp\htdocs\sicakap\system\Database\BaseConnection.php(713): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM (...')
+#2 G:\xampp\htdocs\sicakap\system\Database\BaseConnection.php(641): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM (...')
+#3 G:\xampp\htdocs\sicakap\app\Models\Penilaian\PerilakukerjaModel.php(95): CodeIgniter\Database\BaseConnection->query('SELECT * FROM (...')
+#4 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(52): App\Models\Penilaian\PerilakuKerjaModel->daftarPerilakuKerjaLink()
+#5 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->index()
+#6 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#7 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2021-05-03 16:22:13 --> Undefined offset: 0
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(109): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\xampp\\htdocs...', 109, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 16:22:14 --> Undefined offset: 0
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(109): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\xampp\\htdocs...', 109, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 16:35:46 --> Undefined offset: 0
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(115): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\xampp\\htdocs...', 115, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 16:35:46 --> Undefined offset: 0
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(115): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\xampp\\htdocs...', 115, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 16:35:47 --> Undefined offset: 0
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(115): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\xampp\\htdocs...', 115, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 16:36:03 --> Undefined offset: 0
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(115): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\xampp\\htdocs...', 115, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 16:36:04 --> Undefined offset: 0
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(115): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\xampp\\htdocs...', 115, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 16:36:04 --> Undefined offset: 0
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(115): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\xampp\\htdocs...', 115, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 16:36:06 --> Undefined offset: 0
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(115): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\xampp\\htdocs...', 115, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 16:36:06 --> Undefined offset: 0
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(115): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\xampp\\htdocs...', 115, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 16:36:06 --> Undefined offset: 0
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(115): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\xampp\\htdocs...', 115, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 16:36:11 --> Undefined offset: 0
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(115): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\xampp\\htdocs...', 115, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 16:36:11 --> Undefined offset: 0
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(115): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\xampp\\htdocs...', 115, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 16:36:12 --> Undefined offset: 0
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(115): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\xampp\\htdocs...', 115, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 16:39:31 --> Undefined offset: 0
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(101): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\xampp\\htdocs...', 101, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 16:39:32 --> Undefined offset: 0
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(101): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\xampp\\htdocs...', 101, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 16:39:40 --> Undefined offset: 0
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(101): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\xampp\\htdocs...', 101, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2021-05-03 16:39:41 --> Undefined offset: 0
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\PerilakuKerja.php(101): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'G:\\xampp\\htdocs...', 101, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PerilakuKerja->setNilai()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PerilakuKerja))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}

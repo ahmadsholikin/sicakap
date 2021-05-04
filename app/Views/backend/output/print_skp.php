@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cetak SKP</title>
 </head>
-<body>
+<body onload="window.print()">
     <style type="text/css">
         h4{font-family:Verdana, Geneva, sans-serif !important;;font-size:13px;}
         .tg  {border-collapse:collapse;border-spacing:0;}
@@ -59,7 +59,7 @@
             <tr>
                 <td class="tg-z39z bbless">1</td>
                 <td class="tg-ggkl bbless">Nama</td>
-                <td class="tg-ggkl bbless bold" colspan="2"><?=$skp[0]['pejabat_penilai_nama'];?></td>
+                <td class="tg-ggkl bbless bold" colspan="2"><?=$cetak_pejabat_penilai_nama;?></td>
                 <td class="tg-w3t6 bbless">1</td>
                 <td class="tg-ggkl bbless">Nama</td>
                 <td class="tg-ggkl bbless bold" colspan="3"><?=$skp[0]['nama'];?></td>
@@ -67,7 +67,7 @@
             <tr>
                 <td class="tg-z39z bbless">2</td>
                 <td class="tg-ggkl bbless">NIP</td>
-                <td class="tg-ggkl bbless" colspan="2"><?=$skp[0]['pejabat_penilai_nip'];?></td>
+                <td class="tg-ggkl bbless" colspan="2"><?=$cetak_pejabat_penilai_nip;?></td>
                 <td class="tg-w3t6 bbless">2</td>
                 <td class="tg-ggkl bbless">NIP</td>
                 <td class="tg-ggkl bbless" colspan="3"><?=$_SESSION['nip'];?></td>
@@ -75,15 +75,15 @@
             <tr>
                 <td class="tg-z39z bbless">3</td>
                 <td class="tg-ggkl bbless">Pangkat/Gol. Ruang</td>
-                <td class="tg-ggkl bbless" colspan="2"><?=$skp[0]['pejabat_penilai_pangkat'];?> / <?=$skp[0]['pejabat_penilai_gol'];?></td>
+                <td class="tg-ggkl bbless" colspan="2"><?=$skp[0]['pejabat_penilai_pangkat'];?>, <?=$skp[0]['pejabat_penilai_gol'];?></td>
                 <td class="tg-w3t6 bbless">3</td>
                 <td class="tg-ggkl bbless">Pangkat/Gol. Ruang</td>
-                <td class="tg-ggkl bbless" colspan="3"><?=$_SESSION['pangkat'];?> (<?=$_SESSION['gol'];?>)</td>
+                <td class="tg-ggkl bbless" colspan="3"><?=$_SESSION['pangkat'];?>, <?=$_SESSION['gol'];?></td>
             </tr>
             <tr>
                 <td class="tg-z39z bbless">4</td>
                 <td class="tg-ggkl bbless">Jabatan</td>
-                <td class="tg-ggkl bbless" colspan="2"><?=$skp[0]['pejabat_penilai_jabatan'];?></td>
+                <td class="tg-ggkl bbless" colspan="2"><?=$cetak_pejabat_penilai_jabatan;?></td>
                 <td class="tg-w3t6 bbless">4</td>
                 <td class="tg-ggkl bbless">Jabatan</td>
                 <td class="tg-ggkl bbless" colspan="3"><?=$_SESSION['jabatan'];?></td>
@@ -116,10 +116,10 @@
                 <td  class="tg-z39z"><?=$no++;?></td>
                 <td class="tg-ggkl" colspan="3"><?=ucfirst($row['kegiatan']);?></td>
                 <td class="tg-z39z"><?php if(($_SESSION['jenis_jabatan']=='11')||($_SESSION['jenis_jabatan']=='90')){ echo '-'; }else{ echo number_format((float)$row['angka_kredit'], 3, '.', '');} ?></td>
-                <td class="tg-z39z"><?=$row['target_kuantitas'];?> <?=ucfirst($row['target_output']);?></td>
+                <td class="tg-z39z"><?=rp($row['target_kuantitas']);?> <?=ucfirst($row['target_output']);?></td>
                 <td class="tg-z39z"><?=$row['target_kualitas_mutu'];?></td>
                 <td class="tg-z39z"><?=$row['target_waktu'];?> <?=ucfirst($row['target_satuan_waktu']);?></td>
-                <td class="tg-z39z"><?=$row['target_biaya']==0?'-':$row['target_biaya'];?></td>
+                <td class="tg-z39z"><?=$row['target_biaya']==0?'-':rp($row['target_biaya']);?></td>
             </tr>
             <?php endforeach;?>
         </tbody>
@@ -146,12 +146,12 @@
             <td><br><br><br><br></td>
         </tr>
         <tr>
-            <td class="center font-12 strongunderline"><?=$skp[0]['pejabat_penilai_nama'];?></td>
+            <td class="center font-12 strongunderline"><?=$cetak_pejabat_penilai_nama;?></td>
             <td></td>
             <td class="center font-12 strongunderline"><?=$skp[0]['nama'];?></td>
         </tr>
         <tr>
-            <td class="center font-12">NIP. <?=$skp[0]['pejabat_penilai_nip'];?></td>
+            <td class="center font-12">NIP. <?=$cetak_pejabat_penilai_nip;?></td>
             <td></td>
             <td class="center font-12">NIP. <?=$skp[0]['nip'];?></td>
         </tr>

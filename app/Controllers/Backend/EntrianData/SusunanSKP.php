@@ -29,6 +29,8 @@ class SusunanSKP extends BackendController
         $data['periode']            = $this->PeriodeSKPModel->orderBy('is_default','ASC')->get(['nip'=>$_SESSION['id_user']]);
         $default_periode_rentang    = "Periode Belum Ada";
         $default_periode_id         = 0;
+        $periode_terpilih           = array();
+
 
         if(!empty($data['periode']))
         {
@@ -36,6 +38,7 @@ class SusunanSKP extends BackendController
             {
                 $default_periode_rentang    = tanggal_dMY($data['periode'][0]['periode_awal']).' - '.tanggal_dMY($data['periode'][0]['periode_akhir']);
                 $default_periode_id         = $data['periode'][0]['periode_id'];
+                $periode_terpilih           = $this->PeriodeSKPModel->get(['periode_id'=>$default_periode_id]);
             }
             else
             {
@@ -45,6 +48,8 @@ class SusunanSKP extends BackendController
             }
         }
         
+        $data['default_periode_id'] = $default_periode_id;
+        $data['periode_cetak']      = $periode_terpilih;
         $data['periode_terpilih']   = $default_periode_rentang;
         $data['data']               = $this->SusunanSKPModel->get(['nip'=>$_SESSION['id_user'],'periode_id'=>$default_periode_id]);
 		$param['page']              = view($this->path_view . 'page-index',$data);

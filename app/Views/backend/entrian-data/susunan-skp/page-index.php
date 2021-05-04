@@ -18,7 +18,9 @@
 			</div>
 			<div class="d-none d-lg-flex">
 				<a href="" data-toggle="tooltip" title="klik untuk memuat ulang data"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rotate-cw"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg></a>
+				<?php if($default_periode_id<>0):?>
 				<a data-toggle="modal" data-target="#cetakModal" data-toggle="tooltip" title="klik untuk mencetak data SKP"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-printer"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg></a>
+				<?php endif; ?>
 				<a href="" data-toggle="tooltip" title="klik untuk mengunduh data SKP" ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a>
 			</div>
 		</div>
@@ -68,6 +70,7 @@
 	</div>
 </div>
 <!-- Modal -->
+<?php if($default_periode_id<>0):?>
 <div class="modal fade" id="cetakModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
@@ -80,18 +83,26 @@
 				</div>
 				<div class="modal-body">
 					<?= csrf_field() ?>
+					<input type="hidden" name="cetak_periode_id" value="<?=$default_periode_id;?>">
 					<div class="form-row">
-						<div class="col form-group">
-							<label>Pilihan Periode</label>
-							<select class="form-control form-control-sm" name="cetak_periode_id" type="text" required>
-								<?php foreach($periode as $p): ?>
-								<option value="<?=$p['periode_id'];?>"><?=tanggal_dMY($p['periode_awal']);?> - <?=tanggal_dMY($p['periode_akhir']);?></option>
-								<?php endforeach; ?>
-							</select>
+						<div class="col-sm-12 form-group">
+							<label>NIP Pejabat Penilai</label>
+							<input class="form-control form-control-sm" placeholder="Entrikan NIP Pejabat Penilai" name="cetak_pejabat_penilai_nip" type="text" required value="<?=$periode[0]['pejabat_penilai_nip'];?>">
 							<div class="help-block with-errors"></div>
-							<?php if(empty($periode)): ?>
-								<small>Anda belum mengentrikan periode SKP, silakan membuatnya terlebih dahulu.</small>
-							<?php endif;?>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="col-sm-12 form-group">
+							<label>Nama Pejabat Penilai</label>
+							<input class="form-control form-control-sm" placeholder="Entrikan Nama Pejabat Penilai" name="cetak_pejabat_penilai_nama" type="text" required value="<?=$periode[0]['pejabat_penilai_nama'];?>">
+							<div class="help-block with-errors"></div>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="col-sm-12 form-group">
+							<label>Jabatan dari Pejabat Penilai</label>
+							<input class="form-control form-control-sm" placeholder="Entrikan Jabatan dari Pejabat Penilai" name="cetak_pejabat_penilai_jabatan" type="text" required value="<?=$periode[0]['pejabat_penilai_jabatan'];?>">
+							<div class="help-block with-errors"></div>
 						</div>
 					</div>
 					<div class="form-row">
@@ -117,3 +128,4 @@
 		</div>
   	</div>
 </div>
+<?php endif;?>

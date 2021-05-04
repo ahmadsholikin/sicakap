@@ -120,8 +120,8 @@
                                     <td><?=$row['deskripsi'];?>
                                         <?php if($row['is_approve']=="Belum"):?>
                                         <nav class="nav nav-card-icon float-right" id="navrow<?=$index;?><?=$no;?>t<?=$itt;?>">
-                                            <a onclick="approveTK('<?=$row['id'];?>','navrow<?=$index;?><?=$no;?>t<?=$itt;?>','Ya')" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square svg-14"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg> Acc</a>
-                                            <a onclick="approveTK('<?=$row['id'];?>','navrow<?=$index;?><?=$no;?>t<?=$itt;?>','Tidak')" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-slash svg-14"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg> Tolak</a>
+                                            <a onclick="approveTK('<?=$row['id'];?>','navrow<?=$index;?><?=$no;?>t<?=$itt;?>','Ya','Tugas Tambahan','<?=$index;?>')" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square svg-14"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg> Acc</a>
+                                            <a onclick="approveTK('<?=$row['id'];?>','navrow<?=$index;?><?=$no;?>t<?=$itt;?>','Tidak','Tugas Tambahan','<?=$index;?>')" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-slash svg-14"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg> Tolak</a>
                                         </nav>
                                         <?php endif;?>
                                     </td>
@@ -130,7 +130,7 @@
                                     <td></td>
                                     <td colspan="4"></td>
                                     <td></td>
-                                    <?=($itt==1)?"<td rowspan='3'>1</td>":'';?>
+                                    <?=($itt==1)?"<td rowspan='3' id='pointt".$index."'>".$main['poin_tugas_tambahan']."</td>":'';?>
                                 </tr>
                                 <?php $itt++;endif;?>
                                 <?php if($row['kategori']=='Kreativitas'):?>
@@ -139,8 +139,8 @@
                                     <td><?=$row['deskripsi'];?>
                                         <?php if($row['is_approve']=="Belum"):?>
                                         <nav class="nav nav-card-icon float-right" id="navrow<?=$index;?><?=$no;?>k<?=$ik;?>">
-                                            <a onclick="approveTK('<?=$row['id'];?>','navrow<?=$index;?><?=$no;?>k<?=$ik;?>','Ya')" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square svg-14"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg> Acc</a>
-                                            <a onclick="approveTK('<?=$row['id'];?>','navrow<?=$index;?><?=$no;?>k<?=$ik;?>','Tidak')" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-slash svg-14"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg> Tolak</a>
+                                            <a onclick="approveTK('<?=$row['id'];?>','navrow<?=$index;?><?=$no;?>k<?=$ik;?>','Ya','Kreativitas','<?=$index;?>')" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-square svg-14"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg> Acc</a>
+                                            <a onclick="approveTK('<?=$row['id'];?>','navrow<?=$index;?><?=$no;?>k<?=$ik;?>','Tidak','Kreativitas','<?=$index;?>')" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-slash svg-14"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg> Tolak</a>
                                         </nav>
                                         <?php endif;?>
                                     </td>
@@ -149,7 +149,7 @@
                                     <td></td>
                                     <td colspan="4"></td>
                                     <td></td>
-                                    <?=($ik==2)?"<td rowspan='4'>1</td>":'';?>
+                                    <?=($ik==2)?"<td rowspan='4' id='poink".$index."'>".$main['poin_kreativitas']."</td>":'';?>
                                 </tr>
                                 <?php $ik++; endif;?>
                             <?php $ind++;endforeach;?>
@@ -191,9 +191,38 @@
         }
 	}
 
-    function approveTK(id,index,status)
+    function approveTK(id,index,status,kategori,indek)
     {
-        alert(id+index+status);
+        $.ajax(
+        {
+            url 	: '<?=backend_url();?>/penyesuaian-skp/approve-tambahan-kreativitas',
+            type 	: 'POST',
+            data 	: { 
+                        "id"	    : id,
+                        "status"	: status,
+                        "kategori"	: kategori,
+                        "csrf_app"	: $("input[name='csrf_app']").val()
+                    },
+            success: function(data, textStatus, xhr)
+            {
+                console.log(data);
+                $("#"+index).remove();
+                if(kategori=='Tugas Tambahan')
+                {
+                    $("#pointt"+indek).html(data);
+                }
+                else
+                {
+                    $("#poink"+indek).html(data);
+                }
+                
+            },
+            error: function(textStatus,xhr)
+            {
+                console.log(textStatus);
+            }
+        });
+        
     }
     
 </script>

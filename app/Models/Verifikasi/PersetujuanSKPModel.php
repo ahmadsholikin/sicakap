@@ -44,7 +44,8 @@ class PersetujuanSKPModel extends Model
 
     public function daftarSKPLink()
     {
-        $kueri = "SELECT periode.nip,periode.nama FROM susunan_skp skp
+        $kueri = "SELECT periode.nip,periode.nama, periode.poin_tugas_tambahan, periode.poin_kreativitas 
+                    FROM susunan_skp skp
                     INNER JOIN periode_skp periode
                     ON skp.periode_id = periode.periode_id
                     WHERE periode.is_default='Ya' AND skp.nip IN
@@ -88,6 +89,8 @@ class PersetujuanSKPModel extends Model
                 $dump = array(
                     "nip"                   => $key['nip'],
                     "nama"                  => $key['nama'],
+                    "poin_tugas_tambahan"   => $key['poin_tugas_tambahan'],
+                    "poin_kreativitas"      => $key['poin_kreativitas'],
                     "skp"                   => $kueri_sub,
                     "tambahan_kreativitas"  => $kueri_tk,
                 );
