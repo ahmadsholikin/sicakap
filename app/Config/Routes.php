@@ -246,6 +246,13 @@ $routes->group('backend', function ($routes) {
         $routes->post('info-wa', $root_groups . '::infoWa', ['filter' => 'auth']);
     });
 
+    //Penilaian - review
+    $routes->group('review', function ($routes) {
+        $root_groups = "Backend\Penilaian\Review";
+        //pages
+        $routes->add('/', $root_groups . '::index', ['filter' => 'auth']);
+    });
+
 });
 //output - print_skp
 $routes->group('output', function ($routes) {

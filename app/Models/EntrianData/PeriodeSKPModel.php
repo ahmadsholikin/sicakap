@@ -41,10 +41,16 @@ class PeriodeSKPModel extends Model
 
                                         'poin_tugas_tambahan',
                                         'poin_kreativitas',
+                                        
                                         'perilaku_kerja_jumlah',
                                         'perilaku_kerja_rerata',
                                         'perilaku_kerja_sebutan',
                                         'perilaku_kerja_prosentase',
+
+                                        'keberatan',
+                                        'tanggapan',
+                                        'keputusan',
+                                        'rekomendasi',
                                         
                                         'periode_awal',
                                         'periode_akhir',
