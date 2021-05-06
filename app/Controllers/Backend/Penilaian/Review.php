@@ -32,7 +32,7 @@ class Review extends BackendController
 
         $periode_id                = 0;
         $data['terpilih']          = "";
-        $data['periode']           = $this->PeriodeSKPModel->where('nip',$_SESSION['id_user'])->orWhere('pejabat_penilai_nip',$_SESSION['id_user'])->get();
+        $data['periode']           = $this->PeriodeSKPModel->where('nip',$_SESSION['id_user'])->orWhere('pejabat_penilai_nip',$_SESSION['id_user'])->orWhere('atasan_pejabat_penilai_nip',$_SESSION['id_user'])->get();
         $data['periode_terpilih']  = $data['periode'];
         $nip                       = $_SESSION['id_user'];
         $poin_tugas_tambahan       = 0;
@@ -82,7 +82,11 @@ class Review extends BackendController
             $jumlah_nilai += $row['nilai'];
         }
 
-        $rerata_skp          = $jumlah_nilai/$jumlah_row;
+        if($jumlah_row>=1)
+        {
+            $rerata_skp          = $jumlah_nilai/$jumlah_row;
+        }
+
         $jumlah_skp          = $rerata_skp + $poin_tugas_tambahan + $poin_kreativitas;
         $prosentase_skp      = $jumlah_skp*(60/100);
 

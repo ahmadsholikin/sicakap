@@ -23,3 +23,10 @@ CRITICAL - 2021-05-06 09:08:39 --> Undefined index: periode_akhir
 #3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
 #5 {main}
+CRITICAL - 2021-05-06 10:27:04 --> Division by zero
+#0 G:\xampp\htdocs\sicakap\app\Controllers\Backend\Penilaian\Review.php(85): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Division by zer...', 'G:\\xampp\\htdocs...', 85, Array)
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\Review->index()
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\Review))
+#3 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 {main}

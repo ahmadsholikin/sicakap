@@ -260,7 +260,7 @@
                     </div>
                 </li>
                 <?php endif;?>
-
+                
             </ul>
         </div>
         <?php if($periode_terpilih[0]['nip']==$_SESSION['id_user']):?>
@@ -276,7 +276,7 @@
                     <button class="btn btn-icon" name="btn" onclick="kirimPesan()"><i data-feather="send"></i> Kirim</button>
                 </div>
             </div>
-        <?php else : ?>
+        <?php elseif($periode_terpilih[0]['pejabat_penilai_nip']==$_SESSION['id_user']) : ?>
             <div class="chat-panel">
                 <div class="chat-body-footer border-bottom">
                     <div class="chat-body-options">
