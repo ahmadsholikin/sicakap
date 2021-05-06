@@ -50,49 +50,56 @@ class CapaianSKP extends BackendController
 
     public function setSKP()
     {
-        $id     = $this->request->getPost('id');
-        $value  = $this->request->getPost('value');
-        $data['realisasi_kualitas_mutu'] = $value;
-        $this->SusunanSKPModel->update($id, $data);
-        
-        $perhitungan    = 0;
-        $nilai          = 0;
-        $waktu          = 0;
-        $biaya          = 0;
-
-        $skp        = $this->SusunanSKPModel->get(['skp_id'=>$id]);
-        $kondisi    = $this->_waktu1($skp[0]['fix_waktu'],$skp[0]['realisasi_waktu']);
-        
-        if($kondisi > 24)
+        if ($this->request->isAJAX())
         {
-            $waktu = $this->_waktu2($skp[0]['fix_waktu'],$skp[0]['realisasi_waktu']);
-        }
+            $id     = $this->request->getPost('id');
+            $value  = $this->request->getPost('value');
+            $data['realisasi_kualitas_mutu'] = $value;
+            $this->SusunanSKPModel->update($id, $data);
+            
+            $perhitungan    = 0;
+            $nilai          = 0;
+            $waktu          = 0;
+            $biaya          = 0;
+
+            $skp        = $this->SusunanSKPModel->get(['skp_id'=>$id]);
+            $kondisi    = $this->_waktu1($skp[0]['fix_waktu'],$skp[0]['realisasi_waktu']);
+            
+            if($kondisi > 24)
+            {
+                $waktu = $this->_waktu2($skp[0]['fix_waktu'],$skp[0]['realisasi_waktu']);
+            }
+            else
+            {
+                $waktu = $this->_waktu3($skp[0]['fix_waktu'],$skp[0]['realisasi_waktu']);
+            }
+
+            if((int)$skp[0]['realisasi_biaya']>0)
+            {
+                $biaya = $this->_biaya($skp[0]['fix_biaya'],$skp[0]['realisasi_biaya']);
+            }
+
+            $kuantitas = $this->_kuantitas($skp[0]['fix_kuantitas'],$skp[0]['realisasi_kuantitas']);
+            $kualitas  = $this->_kualitas($skp[0]['target_kualitas_mutu'],$skp[0]['realisasi_kualitas_mutu']);
+            
+            $perhitungan  = $waktu + $kuantitas + $kualitas + $biaya;
+            $nilai        = $perhitungan/3;
+
+            if((int)$skp[0]['realisasi_biaya']>0)
+            {
+                $nilai = $perhitungan/4;
+            }
+
+            $data['penghitungan']   = $perhitungan;
+            $data['nilai']          = $nilai;
+            $this->SusunanSKPModel->update($id,$data);
+
+            echo json_encode($data);
+        } 
         else
         {
-            $waktu = $this->_waktu3($skp[0]['fix_waktu'],$skp[0]['realisasi_waktu']);
+            echo "No access permits";
         }
-
-        if((int)$skp[0]['realisasi_biaya']>0)
-        {
-            $biaya = $this->_biaya($skp[0]['fix_biaya'],$skp[0]['realisasi_biaya']);
-        }
-
-        $kuantitas = $this->_kuantitas($skp[0]['fix_kuantitas'],$skp[0]['realisasi_kuantitas']);
-        $kualitas  = $this->_kualitas($skp[0]['target_kualitas_mutu'],$skp[0]['realisasi_kualitas_mutu']);
-        
-        $perhitungan  = $waktu + $kuantitas + $kualitas + $biaya;
-        $nilai        = $perhitungan/3;
-
-        if((int)$skp[0]['realisasi_biaya']>0)
-        {
-            $nilai = $perhitungan/4;
-        }
-
-        $data['penghitungan']   = $perhitungan;
-        $data['nilai']          = $nilai;
-        $this->SusunanSKPModel->update($id,$data);
-
-        echo json_encode($data);
     }
 
     private function _waktu1($target,$realisasi)

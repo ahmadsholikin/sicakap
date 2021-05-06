@@ -89,7 +89,7 @@
                                 <td><?=$row['deskripsi'];?> </td>
                                 <td></td>
                                 <td colspan="10"></td>
-                                <?=($itt==1)?"<td style='vertical-align:middle' class='text-center' rowspan='".$jml_tugas_tambahan."'>".$periode[0]['poin_tugas_tambahan']."</td>":'';?>
+                                <?=($itt==1)?"<td style='vertical-align:middle' class='text-center' rowspan='".$jml_tugas_tambahan."'>".$poin_tugas_tambahan."</td>":'';?>
                             </tr>
                             <?php $itt++;endif;?>
                             <?php if($row['kategori']=='Kreativitas'):?>
@@ -98,7 +98,7 @@
                                 <td><?=$row['deskripsi'];?> </td>
                                 <td></td>
                                 <td colspan="10"></td>
-                                <?=($ik==2)?"<td style='vertical-align:middle' class='text-center' rowspan='".$jml_kreativitas."'>".$periode[0]['poin_kreativitas']."</td>":'';?>
+                                <?=($ik==2)?"<td style='vertical-align:middle' class='text-center' rowspan='".$jml_kreativitas."'>".$poin_kreativitas."</td>":'';?>
                             </tr>
                             <?php $ik++; endif;?>
                         <?php $index++;endforeach;?>
@@ -184,18 +184,18 @@
                     <tr>
                         <td>7.</td>
                         <td colspan="8">Jumlah</td>
-                        <td><?=$periode[0]['perilaku_kerja_jumlah'];?></td>
+                        <td><?=$periode_terpilih[0]['perilaku_kerja_jumlah'];?></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td>8.</td>
                         <td colspan="8">Rata-Rata</td>
-                        <td><?=$periode[0]['perilaku_kerja_rerata'];?></td>
-                        <td><?=$periode[0]['perilaku_kerja_sebutan'];?></td>
+                        <td><?=$periode_terpilih[0]['perilaku_kerja_rerata'];?></td>
+                        <td><?=$periode_terpilih[0]['perilaku_kerja_sebutan'];?></td>
                     </tr>
                     <tr>
-                        <td colspan="11"><b>Nilai Perilaku Kerja =  <?=$periode[0]['perilaku_kerja_rerata'];?> x 40 % </b></td>
-                        <td class="text-center"><b><?=$periode[0]['perilaku_kerja_prosentase'];?></b></td>
+                        <td colspan="11"><b>Nilai Perilaku Kerja =  <?=$periode_terpilih[0]['perilaku_kerja_rerata'];?> x 40 % </b></td>
+                        <td class="text-center"><b><?=$periode_terpilih[0]['perilaku_kerja_prosentase'];?></b></td>
                     </tr>
                     <tr class="bg-light">
                         <th rowspan="2" colspan="12"  class="text-center" style="vertical-align: middle;"><b>NILAI PRESTASI KERJA</b></th>
@@ -207,38 +207,73 @@
                 </tbody>
             </table>
         </div>
-        <div class="form-row p-3">
+        <div class="p-3">
             <ul class="chat-msg-list">
+                <?php if(!empty($periode_terpilih[0]['keberatan'])):?>
                 <li class="msg-item">
                     <div class="avatar avatar-sm">
-                        <span class="avatar-initial rounded-circle bg-dark">A</span>
+                        <span class="avatar-initial rounded-circle bg-dark"><?=substr(ltrim($periode_terpilih[0]['nama'],' '), 0, 1);?></span>
                     </div>
                     <div class="msg-body">
-                        <h6 class="msg-user">Ahmad Sholikin <span>10 Mei 2021</span></h6>
+                        <h6 class="msg-user"><?=$periode_terpilih[0]['nama'];?> <span><?=jam_Hi($periode_terpilih[0]['tanggal_keberatan']);?>, <?=tanggal_dMY($periode_terpilih[0]['tanggal_keberatan']);?></span></h6>
                         <p><span>Keberatan atas penilaian</span></p>
-                        <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur itaque est maxime nemo perspiciatis corrupti quaerat, quod, necessitatibus ratione nulla modi enim voluptate esse in! Officiis numquam accusamus officia quis..</span></p>
+                        <p><span><?=$periode_terpilih[0]['keberatan'];?></span></p>
                     </div>
                 </li>
+                <?php endif;?>
+
+                <?php if(!empty($periode_terpilih[0]['tanggapan'])):?>
                 <li class="msg-item reverse">
-                    <div class="avatar avatar-sm"><span class="avatar-initial rounded-circle bg-dark">M</span></div>
+                    <div class="avatar avatar-sm">
+                        <span class="avatar-initial rounded-circle bg-dark"><?=substr(ltrim($periode_terpilih[0]['pejabat_penilai_nama'],' '), 0, 1);?></span>
+                    </div>
                     <div class="msg-body">
-                        <h6 class="msg-user">Muhammad Khanafi <span>11 Mei 2021</span></h6>
+                        <h6 class="msg-user"><?=$periode_terpilih[0]['pejabat_penilai_nama'];?> <span><?=jam_Hi($periode_terpilih[0]['tanggal_tanggapan']);?>, <?=tanggal_dMY($periode_terpilih[0]['tanggal_tanggapan']);?></span></h6>
                         <p><span>Tanggapan Pejabat Penilai</span></p>
-                        <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta est perspiciatis numquam! Obcaecati consequuntur ab aliquid sed molestiae reiciendis quas doloribus, facere error adipisci harum quo delectus consectetur mollitia cum!</span></p>
-                  </div>
+                        <p><span><?=$periode_terpilih[0]['tanggapan'];?></span></p>
+                    </div>
                 </li>
+                <?php endif;?>
+
+                <?php if(!empty($periode_terpilih[0]['keputusan'])):?>
+                <li class="msg-item reverse">
+                    <div class="avatar avatar-sm">
+                        <span class="avatar-initial rounded-circle bg-dark"><?=substr(ltrim($periode_terpilih[0]['pejabat_penilai_nama'],' '), 0, 1);?></span>
+                    </div>
+                    <div class="msg-body">
+                        <h6 class="msg-user"><?=$periode_terpilih[0]['pejabat_penilai_nama'];?> <span><?=jam_Hi($periode_terpilih[0]['tanggal_keputusan']);?>, <?=tanggal_dMY($periode_terpilih[0]['tanggal_keputusan']);?></span></h6>
+                        <p><span>Keputusan Pejabat Penilai</span></p>
+                        <p><span><?=$periode_terpilih[0]['keputusan'];?></span></p>
+                    </div>
+                </li>
+                <?php endif;?>
+
+                <?php if(!empty($periode_terpilih[0]['rekomendasi'])):?>
+                <li class="msg-item reverse">
+                    <div class="avatar avatar-sm">
+                        <span class="avatar-initial rounded-circle bg-dark"><?=substr(ltrim($periode_terpilih[0]['pejabat_penilai_nama'],' '), 0, 1);?></span>
+                    </div>
+                    <div class="msg-body">
+                        <h6 class="msg-user"><?=$periode_terpilih[0]['pejabat_penilai_nama'];?> <span><?=jam_Hi($periode_terpilih[0]['tanggal_rekomendasi']);?>, <?=tanggal_dMY($periode_terpilih[0]['tanggal_rekomendasi']);?></span></h6>
+                        <p><span>Keputusan Pejabat Penilai</span></p>
+                        <p><span><?=$periode_terpilih[0]['rekomendasi'];?></span></p>
+                    </div>
+                </li>
+                <?php endif;?>
+
             </ul>
         </div>
-        <?php if($periode[0]['nip']==$_SESSION['id_user']):?>
+        <?php if($periode_terpilih[0]['nip']==$_SESSION['id_user']):?>
             <div class="chat-panel">
                 <div class="chat-body-footer border-bottom">
                     <div class="chat-body-options">
                         <a href="" ><i data-feather="frown"></i></a>
                     </div>    
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Apabila ada keberatan mengenai penilaian diatas, silakan tuliskan disini">
+                        <input type="text" name="pesan" class="form-control" placeholder="Apabila ada keberatan mengenai penilaian diatas, silakan tuliskan disini">
                     </div>
-                    <button class="btn btn-icon"><i data-feather="send"></i> Kirim</button>
+                    <input type="hidden" name="konteks" id="konteks" value="Keberatan">
+                    <button class="btn btn-icon" name="btn" onclick="kirimPesan()"><i data-feather="send"></i> Kirim</button>
                 </div>
             </div>
         <?php else : ?>
@@ -248,15 +283,16 @@
                         <a href=""><i data-feather="smile"></i></a>
                         <a href="" class="link-01 dropdown-toggle" type="button" id="dropdown-menu-reply" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tanggapan</a>
                         <div class="dropdown-menu">
-                            <span class="dropdown-item">Tanggapan</span>
-                            <span class="dropdown-item">Keputusan</span>
-                            <span class="dropdown-item">Rekomendasi</span>
+                            <span onclick="selectThis('Tanggapan')" class="dropdown-item">Tanggapan</span>
+                            <span onclick="selectThis('Keputusan')" class="dropdown-item">Keputusan</span>
+                            <span onclick="selectThis('Rekomendasi')" class="dropdown-item">Rekomendasi</span>
                         </div>
                     </div>    
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Silakan berikan komentar atas tanggapan yang dikirimkan ke Anda disini...">
+                        <input type="text" name="pesan" class="form-control" placeholder="Silakan berikan komentar atas tanggapan yang dikirimkan ke Anda disini...">
                     </div>
-                    <button class="btn btn-icon"><i data-feather="send"></i> Kirim</button>
+                    <input type="hidden" name="konteks" id="konteks" value="Tanggapan">
+                    <button class="btn btn-icon" name="btn" onclick="kirimPesan()" value="Tanggapan"><i data-feather="send"></i> Kirim</button>
                 </div>
             </div>   
         <?php endif;?>
@@ -264,3 +300,45 @@
 </div>
 <?php endif; ?>
 <div class="divider-text mt-5 mb-3">Sistem Informas Catatan Kinerja dan Penilaian ASN. Pemerintah Kabupaten Magelang</div>
+<script>
+    function kirimPesan()
+    {
+        const pesan     = $("input[name='pesan']").val();
+        const konteks   = $("input[name='konteks']").val();
+
+        if(pesan!='')
+        {
+            $.dialog({
+                icon: 'fa fa-spinner fa-spin',
+                title: 'Sending...',
+                content: 'Mohon tunggu sebentar, sistem sedang proses mengirimkan WA kepada yang bersangkutan ;)'
+            });
+
+            $.ajax(
+            {
+                url 	: '<?=backend_url();?>/review/kirim-pesan',
+                type 	: 'POST',
+                data 	: { 
+                            "pesan"	    : pesan,
+                            "konteks"	: konteks,
+                            "periode_id": "<?=$periode_terpilih[0]['periode_id'];?>", 
+                            "csrf_app"	: $("input[name='csrf_app']").val()
+                        },
+                success: function(data, textStatus, xhr)
+                {
+                    location.reload();
+                },
+                error: function(textStatus,xhr)
+                {
+                    console.log(textStatus);
+                }
+            });
+        }
+    }
+
+    function selectThis(konteks)
+    {
+        $("input[name='konteks']").val(konteks);
+        $("#dropdown-menu-reply").html(konteks);
+    }
+</script>

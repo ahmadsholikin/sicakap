@@ -61,52 +61,62 @@ class PenyesuaianSKP extends BackendController
 
     public function getSKP()
     {
-        $id     = $this->request->getGet('id');
-        $data   = $this->SusunanSKPModel->get(['nip'=>$_SESSION['id_user'],"skp_id"=>$id]);
+        if ($this->request->isAJAX())
+        {
+            $id     = $this->request->getGet('id');
+            $data   = $this->SusunanSKPModel->get(['nip'=>$_SESSION['id_user'],"skp_id"=>$id]);
 
-        $response['fix_kuantitas']              = ($data[0]['fix_kuantitas']=='') ? $data[0]['target_kuantitas']  : $data[0]['fix_kuantitas'] ;
-        $response['realisasi_kuantitas']        = ($data[0]['realisasi_kuantitas']=='') ? (($data[0]['fix_kuantitas']=='') ? $data[0]['target_kuantitas']  : $data[0]['fix_kuantitas'])  : $data[0]['realisasi_kuantitas'] ;
-        $response['fix_output']                 = ($data[0]['fix_output']=='') ? $data[0]['target_output']  : $data[0]['fix_output'] ;
-        $response['realisasi_output']           = ($data[0]['realisasi_output']=='') ? (($data[0]['fix_output']=='') ? $data[0]['target_output']  : $data[0]['fix_output'])  : $data[0]['realisasi_output'] ;
-        $response['fix_kualitas_mutu']          = ($data[0]['fix_kualitas_mutu']=='') ? $data[0]['target_kualitas_mutu']  : $data[0]['fix_kualitas_mutu'] ;
-        $response['realisasi_kualitas_mutu']    = ($data[0]['realisasi_kualitas_mutu']=='') ? (($data[0]['fix_kualitas_mutu']=='') ? $data[0]['target_kualitas_mutu']  : $data[0]['fix_kualitas_mutu'])  : $data[0]['realisasi_kualitas_mutu'] ;
-        $response['fix_waktu']                  = ($data[0]['fix_waktu']=='') ? $data[0]['target_waktu']  : $data[0]['fix_waktu'] ;
-        $response['realisasi_waktu']            = ($data[0]['realisasi_waktu']=='') ? (($data[0]['fix_waktu']=='') ? $data[0]['target_waktu']  : $data[0]['fix_waktu'])  : $data[0]['realisasi_waktu'] ;
-        $response['fix_satuan_waktu']           = ($data[0]['fix_satuan_waktu']=='') ? $data[0]['target_satuan_waktu']  : $data[0]['fix_satuan_waktu'] ;
-        $response['realisasi_satuan_waktu']     = ($data[0]['realisasi_satuan_waktu']=='') ? (($data[0]['fix_satuan_waktu']=='') ? $data[0]['target_satuan_waktu']  : $data[0]['fix_satuan_waktu'])  : $data[0]['realisasi_satuan_waktu'] ;
-        $response['fix_biaya']                  = ($data[0]['fix_biaya']=='') ? $data[0]['target_biaya']  : $data[0]['fix_biaya'] ;
-        $response['realisasi_biaya']            = ($data[0]['realisasi_biaya']=='') ? (($data[0]['fix_biaya']=='') ? $data[0]['target_biaya']  : $data[0]['fix_biaya'])  : $data[0]['realisasi_biaya'] ;
+            $response['fix_kuantitas']              = ($data[0]['fix_kuantitas']=='') ? $data[0]['target_kuantitas']  : $data[0]['fix_kuantitas'] ;
+            $response['realisasi_kuantitas']        = ($data[0]['realisasi_kuantitas']=='') ? (($data[0]['fix_kuantitas']=='') ? $data[0]['target_kuantitas']  : $data[0]['fix_kuantitas'])  : $data[0]['realisasi_kuantitas'] ;
+            $response['fix_output']                 = ($data[0]['fix_output']=='') ? $data[0]['target_output']  : $data[0]['fix_output'] ;
+            $response['realisasi_output']           = ($data[0]['realisasi_output']=='') ? (($data[0]['fix_output']=='') ? $data[0]['target_output']  : $data[0]['fix_output'])  : $data[0]['realisasi_output'] ;
+            $response['fix_kualitas_mutu']          = ($data[0]['fix_kualitas_mutu']=='') ? $data[0]['target_kualitas_mutu']  : $data[0]['fix_kualitas_mutu'] ;
+            $response['realisasi_kualitas_mutu']    = ($data[0]['realisasi_kualitas_mutu']=='') ? (($data[0]['fix_kualitas_mutu']=='') ? $data[0]['target_kualitas_mutu']  : $data[0]['fix_kualitas_mutu'])  : $data[0]['realisasi_kualitas_mutu'] ;
+            $response['fix_waktu']                  = ($data[0]['fix_waktu']=='') ? $data[0]['target_waktu']  : $data[0]['fix_waktu'] ;
+            $response['realisasi_waktu']            = ($data[0]['realisasi_waktu']=='') ? (($data[0]['fix_waktu']=='') ? $data[0]['target_waktu']  : $data[0]['fix_waktu'])  : $data[0]['realisasi_waktu'] ;
+            $response['fix_satuan_waktu']           = ($data[0]['fix_satuan_waktu']=='') ? $data[0]['target_satuan_waktu']  : $data[0]['fix_satuan_waktu'] ;
+            $response['realisasi_satuan_waktu']     = ($data[0]['realisasi_satuan_waktu']=='') ? (($data[0]['fix_satuan_waktu']=='') ? $data[0]['target_satuan_waktu']  : $data[0]['fix_satuan_waktu'])  : $data[0]['realisasi_satuan_waktu'] ;
+            $response['fix_biaya']                  = ($data[0]['fix_biaya']=='') ? $data[0]['target_biaya']  : $data[0]['fix_biaya'] ;
+            $response['realisasi_biaya']            = ($data[0]['realisasi_biaya']=='') ? (($data[0]['fix_biaya']=='') ? $data[0]['target_biaya']  : $data[0]['fix_biaya'])  : $data[0]['realisasi_biaya'] ;
 
-        echo json_encode($response);
+            echo json_encode($response);
+        }
+        else
+        {
+            echo "Access Denied";
+        }
     }
 
     public function setSKP()
     {
-        $id = entitiestag($this->request->getPost('skp_id'));
-
-        $data['fix_kuantitas']  	     = entitiestag($this->request->getPost('fix_kuantitas'));
-        $data['fix_output']  	         = entitiestag($this->request->getPost('fix_output'));
-        $data['fix_kualitas_mutu']       = entitiestag($this->request->getPost('fix_kualitas_mutu'));
-        $data['fix_waktu']  	         = entitiestag($this->request->getPost('fix_waktu'));
-        $data['fix_satuan_waktu']        = entitiestag($this->request->getPost('fix_satuan_waktu'));
-        $data['fix_biaya']  	         = entitiestag(str_replace(".","",$this->request->getPost('fix_biaya')));
-
-        $data['realisasi_kuantitas']  	 = entitiestag($this->request->getPost('realisasi_kuantitas'));
-        $data['realisasi_output']  	     = entitiestag($this->request->getPost('realisasi_output'));
-        $data['realisasi_waktu']  	     = entitiestag($this->request->getPost('realisasi_waktu'));
-        $data['realisasi_satuan_waktu']  = entitiestag($this->request->getPost('realisasi_satuan_waktu'));
-        $data['realisasi_biaya']  	     = entitiestag(str_replace(".","",$this->request->getPost('realisasi_biaya')));
-
-        $exist   = $this->SusunanSKPModel->get(['nip'=>$_SESSION['id_user'],"skp_id"=>$id]);
-
-        if(empty($exist))
+        if ($this->request->isAJAX())
         {
-            echo "Akses Ditolak";
-        }
-        else
-        {
-            $this->SusunanSKPModel->update($id, $data);
-            echo "Berhasil";
+            $id = entitiestag($this->request->getPost('skp_id'));
+
+            $data['fix_kuantitas']  	     = entitiestag($this->request->getPost('fix_kuantitas'));
+            $data['fix_output']  	         = entitiestag($this->request->getPost('fix_output'));
+            $data['fix_kualitas_mutu']       = entitiestag($this->request->getPost('fix_kualitas_mutu'));
+            $data['fix_waktu']  	         = entitiestag($this->request->getPost('fix_waktu'));
+            $data['fix_satuan_waktu']        = entitiestag($this->request->getPost('fix_satuan_waktu'));
+            $data['fix_biaya']  	         = entitiestag(str_replace(".","",$this->request->getPost('fix_biaya')));
+
+            $data['realisasi_kuantitas']  	 = entitiestag($this->request->getPost('realisasi_kuantitas'));
+            $data['realisasi_output']  	     = entitiestag($this->request->getPost('realisasi_output'));
+            $data['realisasi_waktu']  	     = entitiestag($this->request->getPost('realisasi_waktu'));
+            $data['realisasi_satuan_waktu']  = entitiestag($this->request->getPost('realisasi_satuan_waktu'));
+            $data['realisasi_biaya']  	     = entitiestag(str_replace(".","",$this->request->getPost('realisasi_biaya')));
+
+            $exist   = $this->SusunanSKPModel->get(['nip'=>$_SESSION['id_user'],"skp_id"=>$id]);
+
+            if(empty($exist))
+            {
+                echo "Akses Ditolak";
+            }
+            else
+            {
+                $this->SusunanSKPModel->update($id, $data);
+                echo "Berhasil";
+            }
         }
     }
 

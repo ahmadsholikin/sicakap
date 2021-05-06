@@ -251,6 +251,7 @@ $routes->group('backend', function ($routes) {
         $root_groups = "Backend\Penilaian\Review";
         //pages
         $routes->add('/', $root_groups . '::index', ['filter' => 'auth']);
+        $routes->post('kirim-pesan', $root_groups . '::kirimPesan', ['filter' => 'auth']);
     });
 
 });

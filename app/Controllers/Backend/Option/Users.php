@@ -138,61 +138,89 @@ class Users extends BackendController
     //link ke atasan
     public function simpanLink()
     {
-        $link_atasan_id = $this->request->getPost('link_atasan_id');
-        $link           = explode(" - ",$link_atasan_id);
-
-        $data['link_atasan_id']     = $link[0];
-        $data['link_atasan_nama']   = $link[1];
-        $data['nip']                = $_SESSION['id_user'];
-        $data['nama']               = $_SESSION['nama_pegawai'];
-
-        $exist = $this->LinkHirarkiModel->get(['link_atasan_id'=>$link[0],'nip'=>$_SESSION['id_user']]);
-        if(count($exist)==0)
+        if ($this->request->isAJAX())
         {
-            $this->LinkHirarkiModel->insert($data);
-            echo "Data akun telah terhubung dengan profil atasan";
-        }
+            $link_atasan_id = $this->request->getPost('link_atasan_id');
+            $link           = explode(" - ",$link_atasan_id);
+
+            $data['link_atasan_id']     = $link[0];
+            $data['link_atasan_nama']   = $link[1];
+            $data['nip']                = $_SESSION['id_user'];
+            $data['nama']               = $_SESSION['nama_pegawai'];
+
+            $exist = $this->LinkHirarkiModel->get(['link_atasan_id'=>$link[0],'nip'=>$_SESSION['id_user']]);
+            if(count($exist)==0)
+            {
+                $this->LinkHirarkiModel->insert($data);
+                echo "Data akun telah terhubung dengan profil atasan";
+            }
+            else
+            {
+                echo "Data sudah tersedia";
+            }
+        } 
         else
         {
-            echo "Data sudah tersedia";
+            echo "No access permits";
         }
     }
 
     public function memuatLink()
     {
-        $exist = $this->LinkHirarkiModel->get(['nip'=>$_SESSION['id_user']]);
-        if(!empty($exist))
+        if ($this->request->isAJAX())
         {
-            echo json_encode($exist);
-        }
+            $exist = $this->LinkHirarkiModel->get(['nip'=>$_SESSION['id_user']]);
+            if(!empty($exist))
+            {
+                echo json_encode($exist);
+            }
+            else
+            {
+                echo json_encode(array());
+            }
+        } 
         else
         {
-            echo json_encode(array());
+            echo "No access permits";
         }
     }
 
     public function hapusLink()
     {
-        $link_hirarki_id = $this->request->getPost('link_hirarki_id');
-        $this->LinkHirarkiModel->delete($link_hirarki_id);
+        if ($this->request->isAJAX())
+        {
+            $link_hirarki_id = $this->request->getPost('link_hirarki_id');
+            $this->LinkHirarkiModel->delete($link_hirarki_id);
+        }
+        else
+        {
+            echo "No access permits";
+        }
     }
 
     public function aktifLink()
     {
-        $link_hirarki_id = $this->request->getPost('link_hirarki_id');
-        $cek             = $this->LinkHirarkiModel->get(['link_hirarki_id' => $link_hirarki_id]);
-        $last_status     = $cek[0]['is_active'];
+        if ($this->request->isAJAX())
+        {   
+            $link_hirarki_id = $this->request->getPost('link_hirarki_id');
+            $cek             = $this->LinkHirarkiModel->get(['link_hirarki_id' => $link_hirarki_id]);
+            $last_status     = $cek[0]['is_active'];
 
-        if($last_status=='Ya')
-        {
-            $last_status='Tidak';
-        }
+            if($last_status=='Ya')
+            {
+                $last_status='Tidak';
+            }
+            else
+            {
+                $last_status='Ya';
+            }
+
+            $data['is_active'] = $last_status;
+            $this->LinkHirarkiModel->update($link_hirarki_id,$data);
+        } 
         else
         {
-            $last_status='Ya';
+            echo "No access permits";
         }
-
-        $data['is_active'] = $last_status;
-        $this->LinkHirarkiModel->update($link_hirarki_id,$data);
     }
 }

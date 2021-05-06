@@ -30,9 +30,16 @@ class verifAktivitasHarian extends BackendController
 
     public function setStatus()
     {
-        $id                         = $this->request->getPost('id');
-        $data['is_approve']         = $this->request->getPost('status');
-        $data['tanggal_verifikasi'] = date('Y-m-d H:i:s');
-        echo $this->AktivitasHarianModel->update($id,$data);
+		if ($this->request->isAJAX())
+        {
+			$id                         = $this->request->getPost('id');
+			$data['is_approve']         = $this->request->getPost('status');
+			$data['tanggal_verifikasi'] = date('Y-m-d H:i:s');
+			echo $this->AktivitasHarianModel->update($id,$data);
+		}
+		else
+		{
+			echo "Access Denied";
+		}
     }
 }

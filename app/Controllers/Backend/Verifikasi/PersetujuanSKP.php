@@ -62,8 +62,15 @@ class PersetujuanSKP extends BackendController
 
     public function setStatus()
     {
-        $id = $this->request->getPost('id');
-        $data['target_acc'] = $this->request->getPost('status');
-        echo $this->SusunanSKPModel->update($id,$data);
+        if ($this->request->isAJAX())
+        {
+            $id = $this->request->getPost('id');
+            $data['target_acc'] = $this->request->getPost('status');
+            echo $this->SusunanSKPModel->update($id,$data);
+        }
+        else
+        {
+            echo "Access Denied";
+        }
     }
 }

@@ -39,11 +39,18 @@ class Role extends BackendController
 
 	public function setRole()
 	{
-		$group_id	= entitiestag($this->request->getPost('group_id'));
-		$menu_id	= entitiestag($this->request->getPost('menu_id'));
-		$akses		= entitiestag($this->request->getPost('akses'));
-		$value		= entitiestag($this->request->getPost('value'));
-		echo json_encode($this->RoleModel->setRole($group_id,$menu_id,$akses,$value));
+		if ($this->request->isAJAX())
+        {
+			$group_id	= entitiestag($this->request->getPost('group_id'));
+			$menu_id	= entitiestag($this->request->getPost('menu_id'));
+			$akses		= entitiestag($this->request->getPost('akses'));
+			$value		= entitiestag($this->request->getPost('value'));
+			echo json_encode($this->RoleModel->setRole($group_id,$menu_id,$akses,$value));
+		} 
+        else
+        {
+            echo "No access permits";
+        }
 	}
 
 

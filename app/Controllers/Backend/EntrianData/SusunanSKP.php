@@ -31,7 +31,6 @@ class SusunanSKP extends BackendController
         $default_periode_id         = 0;
         $periode_terpilih           = array();
 
-
         if(!empty($data['periode']))
         {
             if(empty($this->request->getGet('periode_id')))

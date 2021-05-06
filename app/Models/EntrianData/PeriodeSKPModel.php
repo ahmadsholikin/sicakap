@@ -51,6 +51,11 @@ class PeriodeSKPModel extends Model
                                         'tanggapan',
                                         'keputusan',
                                         'rekomendasi',
+
+                                        'tanggal_keberatan',
+                                        'tanggal_tanggapan',
+                                        'tanggal_keputusan',
+                                        'tanggal_rekomendasi',
                                         
                                         'periode_awal',
                                         'periode_akhir',

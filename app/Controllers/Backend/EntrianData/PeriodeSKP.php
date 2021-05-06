@@ -159,7 +159,6 @@ class PeriodeSKP extends BackendController
                 $data['atasan_unit_kerja'] = $rest->skpd_nm;
             }
         }
-       
         
         //pejabat penilai
         $pejabat_penilai        = entitiestag($this->request->getPost('pejabat_penilai'));
