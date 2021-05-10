@@ -73,8 +73,8 @@
                             <td><?=$row['realisasi_kualitas_mutu'];?></td>
                             <td><?=$row['realisasi_waktu'];?> <?=ucfirst($row['realisasi_satuan_waktu']);?></td>
                             <td><?=$row['realisasi_biaya']==0?'-':rp($row['realisasi_biaya']);?></td>
-                            <td class="text-center"><?=$row['penghitungan'];?></td>
-                            <td class="text-center"><?=$row['nilai'];?></td>
+                            <td class="text-center"><?=round($row['penghitungan'],2,2);?></td>
+                            <td class="text-center"><?=round($row['nilai'],2,2);?></td>
                         </tr>
                     <?php endforeach;?>
                     <?php if(!empty($tambahan_kreativitas)):?>
@@ -143,7 +143,7 @@
                     <?php endif;?>
                     <tr>
                         <td rowspan="2" colspan="13" class="text-center" style="vertical-align: middle;"><b>Nilai Capaian SKP</b></td>
-                        <td class="text-center"><b><?=$jumlah_skp;?></b></td>
+                        <td class="text-center"><b><?=round($jumlah_skp,2,2);?></b></td>
                     </tr>
                     <tr>
                         <td class="text-center"><b>(<?=$sebutan_skp;?>)</b></td>
@@ -156,8 +156,8 @@
                         <td class="text-center">JUMLAH</td>
                     </tr>
                     <tr>
-                        <td colspan="12"><b>a. Sasaran Kinerja PNS (SKP) = <?=$jumlah_skp;?> X 60 % </b></td>
-                        <td class="text-center"><b><?=$prosentase_skp;?></b></td>
+                        <td colspan="12"><b>a. Sasaran Kinerja PNS (SKP) = <?=round($jumlah_skp,2,2);?> X 60 % </b></td>
+                        <td class="text-center"><b><?=round($prosentase_skp,2,2);?></b></td>
                     </tr>
                     <tr>
                         <td rowspan="10">b. Perilaku Kerja</td>
@@ -184,7 +184,7 @@
                     <tr>
                         <td>7.</td>
                         <td colspan="8">Jumlah</td>
-                        <td><?=$periode_terpilih[0]['perilaku_kerja_jumlah'];?></td>
+                        <td><?=round($periode_terpilih[0]['perilaku_kerja_jumlah'],2,2);?></td>
                         <td></td>
                     </tr>
                     <tr>
@@ -199,7 +199,7 @@
                     </tr>
                     <tr class="bg-light">
                         <th rowspan="2" colspan="12"  class="text-center" style="vertical-align: middle;"><b>NILAI PRESTASI KERJA</b></th>
-                        <th class="text-center"><b><?=$jumlah_ppk;?></b></th>
+                        <th class="text-center"><b><?=round($jumlah_ppk,2,2);?></b></th>
                     </tr>
                     <tr class="bg-light">
                         <th class="text-center"><b>(<?=$sebutan_ppk;?>)</b></th>

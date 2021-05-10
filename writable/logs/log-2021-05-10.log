@@ -1,0 +1,12 @@
+CRITICAL - 2021-05-10 08:26:15 --> Call to a member function isAJAX() on null
+#0 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PenyesuaianSKP->approveTambahanKreativitas()
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PenyesuaianSKP))
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2021-05-10 08:26:17 --> Call to a member function isAJAX() on null
+#0 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(936): App\Controllers\Backend\Penilaian\PenyesuaianSKP->approveTambahanKreativitas()
+#1 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(432): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Backend\Penilaian\PenyesuaianSKP))
+#2 G:\xampp\htdocs\sicakap\system\CodeIgniter.php(333): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 G:\xampp\htdocs\sicakap\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 {main}

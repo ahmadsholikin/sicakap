@@ -74,10 +74,10 @@
 						<tr>
 							<td colspan="14"><a data-toggle="collapse" href="#col<?=$index;?>" role="button" aria-expanded="false" aria-controls="col<?=$index;?>"><span class="mdi mdi-chevron-down"></span><b><?=$main['nama'];?> - <?=$main['nip'];?></b></a>. &nbsp;&nbsp; Terdapat <?=count($main['skp']);?> Baris Kegiatan</td>
 						</tr>
-						<?php $no=1; foreach ($main['skp'] as $row): ?>
+						<?php $no=1; $urutan=1; foreach ($main['skp'] as $row): ?>
                         <div>
 						<tr class="collapse multi-collapse <?=status_bl($row['target_acc']);?> row<?=$index;?><?=$no;?>" id="col<?=$index;?>">
-                            <td><?=$no;?></td>
+                            <td><?=$urutan;?></td>
                             <td><?=ucfirst($row['kegiatan']);?> <?php if($row['link_skp_kegiatan']<>'-'){ ?> <span class="mdi mdi-link-variant bd-highlight" data-toggle="tooltip" data-placement="bottom" title="Link : <?=$row['link_skp_kegiatan'];?>"> Link</span><?php } ?></td>
 							<td><?php if(($_SESSION['jenis_jabatan']=='11')||($_SESSION['jenis_jabatan']=='90')){ echo '-'; }else{ echo number_format((float)$row['angka_kredit'], 3, '.', '');} ?></td>
                             <td>
@@ -102,6 +102,7 @@
                             <td><span id="ph<?=$index;?><?=$no;?>"><?=$row['penghitungan'];?></span></td>
                             <td><span id="ncs<?=$index;?><?=$no;?>"><?=$row['nilai'];?></span></td>
 						</tr>
+                        <?php $urutan++; endforeach ?>
                         <?php if(!empty($main['tambahan_kreativitas'])):?>
                             <tr class="collapse multi-collapse row<?=$index;?><?=$no;?>" id="col<?=$index;?>">
                                 <th></th>
@@ -154,7 +155,7 @@
                                 <?php $ik++; endif;?>
                             <?php $ind++;endforeach;?>
                         <?php endif;?>
-                        <?php $index++; endforeach ?>
+                        <?php $index++;?>
 					<?php $no++;endforeach ?>
 				</tbody>
 			</table>
